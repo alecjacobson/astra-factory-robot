@@ -5,7 +5,7 @@ from mathutils import Vector
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from headliner_design import DESIGN_SCALE, CUP_DIAMETER_M
-main=bpy.context.scene
+main=bpy.data.scenes['01 • HEADLINER TRANSFER'];bpy.context.window.scene=main
 prefs=bpy.context.preferences.addons['cycles'].preferences
 try:
  prefs.compute_device_type='OPTIX';prefs.get_devices()
@@ -15,12 +15,20 @@ except Exception:main.cycles.device='CPU'
 mode=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'animation'
 def render(s,path,w=1200,h=900,samples=48):
  bpy.context.window.scene=s;s.render.resolution_x=w;s.render.resolution_y=h;s.render.resolution_percentage=100;s.cycles.samples=samples;s.cycles.denoiser='OPTIX' if s.cycles.device=='GPU' else 'OPENIMAGEDENOISE';s.render.filepath=str(path);bpy.ops.render.render(write_still=True)
-if mode=='animation':
+if mode in ['animation','animation-2']:
+ if mode=='animation-2':
+  main=bpy.data.scenes['06 • TWO-CONTACT TRANSFER'];bpy.context.window.scene=main
+  main.cycles.device='GPU' if any(d.type=='OPTIX' for d in prefs.devices) else 'CPU'
+ folder=ROOT/('build/frames-2' if mode=='animation-2' else 'build/frames');folder.mkdir(parents=True,exist_ok=True)
  main.render.use_persistent_data=True
  for f in range(1,98,2):
   main.frame_set(f)
-  path=ROOT/f'build/frames/{f:04d}.png'
+  path=folder/f'{f:04d}.png'
   if not path.exists():render(main,path,960,720,24)
+elif mode=='two-contact-hero':
+ main=bpy.data.scenes['06 • TWO-CONTACT TRANSFER'];bpy.context.window.scene=main;main.frame_set(49)
+ main.cycles.device='GPU' if any(d.type=='OPTIX' for d in prefs.devices) else 'CPU'
+ render(main,ROOT/'build/hero-two-contacts.png',1440,1080,64)
 else:
  main.frame_set(49)
  render(main,ROOT/'build/hero.png',1440,1080,64)
@@ -75,8 +83,8 @@ else:
  render(s2,ROOT/'build/subdivision_wireframe.png',1200,1100,48)
  # Robot rigid-body mesh inspection, at a less foreshortened three-quarter angle.
  s3=scene_copy('04 • Robot rigid mesh topology')
- for collname in ['01 • Robot — rigid links','02 • Vacuum tooling — four contacts','03 • Headliner — open midsurface']:
-  for original in bpy.data.collections[collname].objects:
+ for collname in ['01 • Robot — rigid links','02 • Vacuum tooling — configurable contacts','03 • Headliner — open midsurface']:
+  for original in bpy.data.collections[collname].all_objects:
    if original.type!='MESH':continue
    o=original.copy();o.data=original.data.copy();o.animation_data_clear();o.parent=None;o.matrix_world=original.matrix_world.copy();s3.collection.objects.link(o);o.data.materials.clear();o.data.materials.append(navy if collname.startswith('01') else ivory)
    for poly in o.data.polygons:poly.material_index=0

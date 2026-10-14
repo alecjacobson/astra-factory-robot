@@ -1,10 +1,18 @@
 # HL / 04 — Robotic headliner transfer
 
-A factory robot lifts an automobile headliner from station A, carries it up and over to station B, and returns it in a continuous animation. Four turquoise bellows suction cups stay attached to the panel throughout the motion.
+A factory robot lifts an automobile headliner from station A, carries it up and over to station B, and returns it in a continuous animation. Choose either four corner suction contacts or two opposing diagonal contacts. The cup size, headliner, tooling frame, and prescribed motion are shared between both layouts.
+
+**Four-contact baseline**
 
 ![Animated headliner transfer](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/headliner-transfer.gif)
 
-**[Download the Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_transfer.blend)** · **[Animation GIF](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/headliner-transfer.gif)** · **[Visual and dimensional references](references/README.md)**
+**Two-contact comparison — cups 01 and 04**
+
+![Two-contact headliner transfer](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/headliner-transfer-2-contacts.gif)
+
+The two-contact GIF is a geometric, kinematic comparison prepared for later stability analysis. It does not predict wobble, slipping, loss of suction, or shell deformation.
+
+**[Download the Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_transfer.blend)** · **[Animation GIF](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/headliner-transfer.gif)** · **[Two-contact GIF](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/headliner-transfer-2-contacts.gif)** · **[Visual and dimensional references](references/README.md)**
 
 ![Factory cell overview](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/hero.png)
 
@@ -56,6 +64,21 @@ The arm consists of rigid meshes: pedestal, turntable, shoulder casting, upper a
 
 ![Robot and gripper mesh wireframes](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/robot-wireframe.png)
 
+## Selecting two or four suction contacts
+
+Use Blender's **Scene dropdown** in the top bar:
+
+| Scene | Active suction contacts |
+|---|---|
+| **01 • HEADLINER TRANSFER** | Four corners: 01, 02, 03, 04 |
+| **06 • TWO-CONTACT TRANSFER** | Opposing diagonal pair: 01 and 04 |
+
+Press Space to play, or F12 to render the selected configuration. Both options are in the same `.blend`; switching requires no scripts, add-ons, drivers, or automatic Python execution. The in-file text **START HERE • contact configurations** repeats these instructions.
+
+The two-contact scene excludes the complete optional 02/03 assembly collection: bellows cups, stems, collars, fittings, contact markers, and hoses. The rectangular frame is retained, with two empty attachment locations. The four passive pads on each stationary receiving fixture are unchanged. Existing topology inspection scenes show the four-contact reference layout.
+
+Both layouts keep the headliner rigidly attached to the tool. The reduced-contact arrangement is provided for examination; the prescribed motion does not establish mechanical stability. Active contact IDs, local contact coordinates, cup diameter, and verification results are in [contact-configurations.json](validation/contact-configurations.json).
+
 ## Animation and inspection
 
 Open `scene/headliner_transfer.blend` in **Blender 4.5 LTS** and press Space in the main scene. No add-ons, external textures, or running Python scripts are required for playback. Use the Scene selector to switch between:
@@ -65,6 +88,7 @@ Open `scene/headliner_transfer.blend` in **Blender 4.5 LTS** and press Space in 
 3. **03 • Subdivision surface topology** — refined surface and evaluated wireframe.
 4. **04 • Robot rigid mesh topology** — arm, gripper, and panel wireframes.
 5. **05 • Headliner formed details** — shaded close-up with lighting that reveals the molded contours.
+6. **06 • TWO-CONTACT TRANSFER** — the same transfer with only diagonal cups 01 and 04.
 
 The animation has 192 frames at 24 fps (8 seconds). The GIF samples it at 12 fps. Timeline markers identify the station holds, lift, overhead crossing, and return. Analytical two-link inverse kinematics drives the arm, with base azimuth and wrist compensation preserving the horizontal headliner orientation. Joint rotations are baked at every frame.
 
@@ -81,10 +105,12 @@ The builder checks shell topology, subdivided-surface contact positions, the too
 | Open boundary loops | 12: outer perimeter + 11 apertures |
 | Edges incident to more than two faces | 0 |
 | Euler characteristic | −10 |
-| Suction attachments | 4 |
+| Suction attachments | Selectable 4 or 2 |
 | Tool path and rigid-link errors | < 0.001 mm |
 | Suction-center, lip, and receiving-pad contact errors | < 0.001 mm |
 | Unit settings | Metric, 1 meter per Blender unit, all object scales applied |
+
+The [configuration audit](validation/contact-configurations.json) separately verifies both layouts for all 192 frames: exactly four or two visible suction assemblies and hoses, correct center and lip contact, and identical evaluated headliner transforms.
 
 ## Reproduce
 
@@ -103,11 +129,17 @@ Rebuild and render with Blender 4.5, Python 3, Pillow, DejaVu Sans fonts, and [g
 mkdir -p build/frames scene media validation
 blender -b --python scripts/build_scene.py
 blender -b scene/headliner_transfer.blend --python scripts/render.py -- animation
+blender -b scene/headliner_transfer.blend --python scripts/render.py -- animation-2
+blender -b scene/headliner_transfer.blend --python scripts/render.py -- two-contact-hero
 blender -b scene/headliner_transfer.blend --python scripts/render.py -- stills
 blender -b scene/headliner_transfer.blend --python scripts/audit_dimensions.py --python scripts/validate_scene.py
+blender -b scene/headliner_transfer.blend --python scripts/validate_contact_configurations.py
 python scripts/package_media.py --gifski /path/to/gifski
+python scripts/package_media.py --contacts 2 --gifski /path/to/gifski
 ```
 
-Rendering uses Cycles with OptiX when available, with a CPU fallback in the render scripts. For a nonstandard font installation, pass `--font-dir /path/to/dejavu` to the packaging script. The animation renderer reuses the symmetric return trajectory when packaging the GIF; the Blender file contains the complete baked return motion. The renderer skips existing animation frames, so clear `build/frames/*.png` after editing geometry before rerendering. `build/` contains disposable intermediate renders and is ignored by Git.
+Rendering uses Cycles with OptiX when available, with a CPU fallback in the render scripts. For a nonstandard font installation, pass `--font-dir /path/to/dejavu` to the packaging script. The animation renderer reuses the symmetric return trajectory when packaging the GIF; the Blender file contains the complete baked return motion. The renderer skips existing animation frames, so clear `build/frames/*.png` and `build/frames-2/*.png` after editing geometry before rerendering. `build/` contains disposable intermediate renders and is ignored by Git.
 
 The forming layout is in [headliner_design.py](scripts/headliner_design.py). `DESIGN_SCALE = 0.85` is a baked geometric resize of the first-pass layout, not a change of physical units. Hardware dimensions in that module are specified in final meters. Reference sources and dimensional rationale are recorded in [references/README.md](references/README.md).
+
+Contact layouts and native scene exclusions are defined in [contact_configurations.py](scripts/contact_configurations.py). The four-contact scene is the default when the file opens.

@@ -14,7 +14,7 @@ scene.unit_settings.system='METRIC';scene.unit_settings.scale_length=1.0;scene.u
 basecoll=bpy.data.collections.get('Collection');basecoll.name='00 • Cell architecture'
 def collection(name):
  c=bpy.data.collections.new(name);scene.collection.children.link(c);return c
-robotcoll=collection('01 • Robot — rigid links');toolcoll=collection('02 • Vacuum tooling — four contacts');panelcoll=collection('03 • Headliner — open midsurface');stagecoll=basecoll
+robotcoll=collection('01 • Robot — rigid links');toolcoll=collection('02 • Vacuum tooling — configurable contacts');panelcoll=collection('03 • Headliner — open midsurface');stagecoll=basecoll
 activecoll=stagecoll
 def move(o):
  for c in list(o.users_collection):c.objects.unlink(o)
@@ -315,6 +315,8 @@ assert max(errors)<1e-5 and max(rigid_errors)<1e-5 and max(contact_errors)<.002
 (ROOT/'validation/geometry.json').write_text(json.dumps(report,indent=2)+'\n')
 (ROOT/'validation/motion.json').write_text(json.dumps(records,indent=2)+'\n')
 scene.frame_set(49)
+from contact_configurations import install
+install()
 bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'scene/headliner_transfer.blend'))
 print('VALIDATION',json.dumps(report))
 if '--preview' in sys.argv:

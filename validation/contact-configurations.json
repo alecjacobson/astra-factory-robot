@@ -1,0 +1,74 @@
+{
+  "comparison": "Identical prescribed motion; visibility and geometric contacts verified, no mechanical stability simulation.",
+  "two_contact_pair": [
+    1,
+    4
+  ],
+  "configurations": {
+    "4": {
+      "scene": "01 \u2022 HEADLINER TRANSFER",
+      "active_contact_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "visible_suction_assemblies": 4,
+      "visible_vacuum_hoses": 4,
+      "frames_checked": 192,
+      "maximum_contact_center_error_m": 2.893282271543285e-07,
+      "maximum_contact_lip_error_m": 3.3155083656311035e-07,
+      "maximum_path_error_m": 4.5491270787935696e-07,
+      "contact_centers_in_headliner_coordinates_m": {
+        "1": [
+          -0.47599560022354126,
+          -0.5524990558624268,
+          0.05341359227895737
+        ],
+        "2": [
+          0.47599560022354126,
+          -0.5524990558624268,
+          0.05341359227895737
+        ],
+        "3": [
+          -0.4759969115257263,
+          0.5524992942810059,
+          0.05342293903231621
+        ],
+        "4": [
+          0.4759969115257263,
+          0.5524992942810059,
+          0.05342293903231621
+        ]
+      },
+      "nominal_contact_diameter_m": 0.1
+    },
+    "2": {
+      "scene": "06 \u2022 TWO-CONTACT TRANSFER",
+      "active_contact_ids": [
+        1,
+        4
+      ],
+      "visible_suction_assemblies": 2,
+      "visible_vacuum_hoses": 2,
+      "frames_checked": 192,
+      "maximum_contact_center_error_m": 2.893282271543285e-07,
+      "maximum_contact_lip_error_m": 3.3155083656311035e-07,
+      "maximum_path_error_m": 4.5491270787935696e-07,
+      "contact_centers_in_headliner_coordinates_m": {
+        "1": [
+          -0.47599560022354126,
+          -0.5524990558624268,
+          0.05341359227895737
+        ],
+        "4": [
+          0.4759969115257263,
+          0.5524992942810059,
+          0.05342293903231621
+        ]
+      },
+      "nominal_contact_diameter_m": 0.1
+    }
+  },
+  "identical_headliner_transform_all_frames": true
+}
