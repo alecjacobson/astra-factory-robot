@@ -1,0 +1,1932 @@
+[
+  {
+    "frame": 1,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 2,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 3,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 4,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 5,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 6,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 7,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 8,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 9,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 10,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 11,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 12,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 13,
+    "headliner_center": [
+      -2.349986748306064,
+      -0.35,
+      1.1500137295122745
+    ],
+    "shoulder_angle": 0.7476033059360809,
+    "elbow_absolute_angle": -0.40290027233163433
+  },
+  {
+    "frame": 14,
+    "headliner_center": [
+      -2.3496195309513017,
+      -0.35,
+      1.150394187674661
+    ],
+    "shoulder_angle": 0.7478315835994198,
+    "elbow_absolute_angle": -0.4028676242280142
+  },
+  {
+    "frame": 15,
+    "headliner_center": [
+      -2.348246976293585,
+      -0.35,
+      1.151816232332535
+    ],
+    "shoulder_angle": 0.7486845213537057,
+    "elbow_absolute_angle": -0.40274497107642765
+  },
+  {
+    "frame": 16,
+    "headliner_center": [
+      -2.3452578038184058,
+      -0.35,
+      1.1549131780411486
+    ],
+    "shoulder_angle": 0.7505404291325897,
+    "elbow_absolute_angle": -0.402474455802465
+  },
+  {
+    "frame": 17,
+    "headliner_center": [
+      -2.3400963855710333,
+      -0.35,
+      1.160260635616445
+    ],
+    "shoulder_angle": 0.7537397704700606,
+    "elbow_absolute_angle": -0.4019964303331425
+  },
+  {
+    "frame": 18,
+    "headliner_center": [
+      -2.332261109316522,
+      -0.35,
+      1.1683780739176644
+    ],
+    "shoulder_angle": 0.75858381945902,
+    "elbow_absolute_angle": -0.4012444901397925
+  },
+  {
+    "frame": 19,
+    "headliner_center": [
+      -2.321302741699718,
+      -0.35,
+      1.1797301764319474
+    ],
+    "shoulder_angle": 0.76533309695763,
+    "elbow_absolute_angle": -0.40014020823069624
+  },
+  {
+    "frame": 20,
+    "headliner_center": [
+      -2.306822791405265,
+      -0.35,
+      1.1947278458916797
+    ],
+    "shoulder_angle": 0.7742058227795489,
+    "elbow_absolute_angle": -0.39858820274492796
+  },
+  {
+    "frame": 21,
+    "headliner_center": [
+      -2.288471872317611,
+      -0.35,
+      1.213728687843076
+    ],
+    "shoulder_angle": 0.7853765627998569,
+    "elbow_absolute_angle": -0.3964721148749893
+  },
+  {
+    "frame": 22,
+    "headliner_center": [
+      -2.265948066681015,
+      -0.35,
+      1.2370368018221294
+    ],
+    "shoulder_angle": 0.7989751756798341,
+    "elbow_absolute_angle": -0.3936519909043408
+  },
+  {
+    "frame": 23,
+    "headliner_center": [
+      -2.2389952882595527,
+      -0.35,
+      1.2649017282119788
+    ],
+    "shoulder_angle": 0.8150860798848951,
+    "elbow_absolute_angle": -0.38996345827282214
+  },
+  {
+    "frame": 24,
+    "headliner_center": [
+      -2.2074016454971255,
+      -0.35,
+      1.297516439367367
+    ],
+    "shoulder_angle": 0.8337477813418415,
+    "elbow_absolute_angle": -0.38521897143504097
+  },
+  {
+    "frame": 25,
+    "headliner_center": [
+      -2.1709978046774636,
+      -0.35,
+      1.3350143230117695
+    ],
+    "shoulder_angle": 0.8549525429343992,
+    "elbow_absolute_angle": -0.379211291093923
+  },
+  {
+    "frame": 26,
+    "headliner_center": [
+      -2.129655353084134,
+      -0.35,
+      1.3774651809077765
+    ],
+    "shoulder_angle": 0.8786460561525884,
+    "elbow_absolute_angle": -0.37171925866918265
+  },
+  {
+    "frame": 27,
+    "headliner_center": [
+      -2.083285162160549,
+      -0.35,
+      1.4248703521871122
+    ],
+    "shoulder_angle": 0.9047270048864977,
+    "elbow_absolute_angle": -0.36251583709326607
+  },
+  {
+    "frame": 28,
+    "headliner_center": [
+      -2.0318357506699685,
+      -0.35,
+      1.47715716364155
+    ],
+    "shoulder_angle": 0.9330464958828211,
+    "elbow_absolute_angle": -0.3513783002878812
+  },
+  {
+    "frame": 29,
+    "headliner_center": [
+      -1.9752916478555105,
+      -0.35,
+      1.5341730032764627
+    ],
+    "shoulder_angle": 0.9634074643547298,
+    "elbow_absolute_angle": -0.3381003509146904
+  },
+  {
+    "frame": 30,
+    "headliner_center": [
+      -1.9136717566001562,
+      -0.35,
+      1.5956794025611398
+    ],
+    "shoulder_angle": 0.9955643308752846,
+    "elbow_absolute_angle": -0.32250581184360383
+  },
+  {
+    "frame": 31,
+    "headliner_center": [
+      -1.8470277165867555,
+      -0.35,
+      1.6613465907121632
+    ],
+    "shoulder_angle": 1.0292233606112422,
+    "elbow_absolute_angle": -0.30446336066436147
+  },
+  {
+    "frame": 32,
+    "headliner_center": [
+      -1.7754422674580344,
+      -0.35,
+      1.730749044428114
+    ],
+    "shoulder_angle": 1.0640443215060063,
+    "elbow_absolute_angle": -0.28390156321406684
+  },
+  {
+    "frame": 33,
+    "headliner_center": [
+      -1.6990276119766028,
+      -0.35,
+      1.803362592230811
+    ],
+    "shoulder_angle": 1.0996441094765106,
+    "elbow_absolute_angle": -0.2608232378226601
+  },
+  {
+    "frame": 34,
+    "headliner_center": [
+      -1.617923779184958,
+      -0.35,
+      1.8785636379197843
+    ],
+    "shoulder_angle": 1.1356029595827453,
+    "elbow_absolute_angle": -0.23531799543655668
+  },
+  {
+    "frame": 35,
+    "headliner_center": [
+      -1.5322969875654937,
+      -0.35,
+      1.9556310375910342
+    ],
+    "shoulder_angle": 1.1714736563030206,
+    "elbow_absolute_angle": -0.20757171495123472
+  },
+  {
+    "frame": 36,
+    "headliner_center": [
+      -1.4423380082005064,
+      -0.35,
+      2.0337510958171987
+    ],
+    "shoulder_angle": 1.2067937844481804,
+    "elbow_absolute_angle": -0.1778717873263732
+  },
+  {
+    "frame": 37,
+    "headliner_center": [
+      -1.3482605279322,
+      -0.35,
+      2.1120260377996383
+    ],
+    "shoulder_angle": 1.2411005591588142,
+    "elbow_absolute_angle": -0.1466072274608913
+  },
+  {
+    "frame": 38,
+    "headliner_center": [
+      -1.2502995125226946,
+      -0.35,
+      2.1894861672652954
+    ],
+    "shoulder_angle": 1.2739472231318618,
+    "elbow_absolute_angle": -0.1142631899680299
+  },
+  {
+    "frame": 39,
+    "headliner_center": [
+      -1.1487095698140326,
+      -0.35,
+      2.2651057394886642
+    ],
+    "shoulder_angle": 1.304919524381265,
+    "elbow_absolute_angle": -0.08140995686854427
+  },
+  {
+    "frame": 40,
+    "headliner_center": [
+      -1.0437633128881822,
+      -0.35,
+      2.33782237332995
+    ],
+    "shoulder_angle": 1.3336505177085414,
+    "elbow_absolute_angle": -0.04868697453396932
+  },
+  {
+    "frame": 41,
+    "headliner_center": [
+      -0.9357497232270491,
+      -0.35,
+      2.4065596070365864
+    ],
+    "shoulder_angle": 1.3598319609293923,
+    "elbow_absolute_angle": -0.016782886883060632
+  },
+  {
+    "frame": 42,
+    "headliner_center": [
+      -0.8249725138724797,
+      -0.35,
+      2.4702519838345816
+    ],
+    "shoulder_angle": 1.3832209251655214,
+    "elbow_absolute_angle": 0.013587327069130099
+  },
+  {
+    "frame": 43,
+    "headliner_center": [
+      -0.7117484925862665,
+      -0.35,
+      2.527871850834015
+    ],
+    "shoulder_angle": 1.403640848891157,
+    "elbow_absolute_angle": 0.04170703935967238
+  },
+  {
+    "frame": 44,
+    "headliner_center": [
+      -0.5964059250101583,
+      -0.35,
+      2.5784568847633613
+    ],
+    "shoulder_angle": 1.420977019464033,
+    "elbow_absolute_angle": 0.06688355490342524
+  },
+  {
+    "frame": 45,
+    "headliner_center": [
+      -0.47928289782586386,
+      -0.35,
+      2.621137235824527
+    ],
+    "shoulder_angle": 1.4351672243894815,
+    "elbow_absolute_angle": 0.08847378397106435
+  },
+  {
+    "frame": 46,
+    "headliner_center": [
+      -0.3607256819150597,
+      -0.35,
+      2.655161119306884
+    ],
+    "shoulder_angle": 1.4461889556930414,
+    "elbow_absolute_angle": 0.10590919477065121
+  },
+  {
+    "frame": 47,
+    "headliner_center": [
+      -0.24108709551939667,
+      -0.35,
+      2.6799176923527424
+    ],
+    "shoulder_angle": 1.454044990467397,
+    "elbow_absolute_angle": 0.11871907093045832
+  },
+  {
+    "frame": 48,
+    "headliner_center": [
+      -0.12072486740050437,
+      -0.35,
+      2.694956134171958
+    ],
+    "shoulder_angle": 1.4587493633173492,
+    "elbow_absolute_angle": 0.12655084638135136
+  },
+  {
+    "frame": 49,
+    "headliner_center": [
+      0.0,
+      -0.35,
+      2.7
+    ],
+    "shoulder_angle": 1.4603156759338871,
+    "elbow_absolute_angle": 0.12918610173829667
+  },
+  {
+    "frame": 50,
+    "headliner_center": [
+      0.12072486740050348,
+      -0.35,
+      2.694956134171958
+    ],
+    "shoulder_angle": 1.4587493633173492,
+    "elbow_absolute_angle": 0.12655084638135136
+  },
+  {
+    "frame": 51,
+    "headliner_center": [
+      0.24108709551939622,
+      -0.35,
+      2.679917692352743
+    ],
+    "shoulder_angle": 1.4540449904673973,
+    "elbow_absolute_angle": 0.11871907093045843
+  },
+  {
+    "frame": 52,
+    "headliner_center": [
+      0.36072568191505905,
+      -0.35,
+      2.6551611193068845
+    ],
+    "shoulder_angle": 1.4461889556930416,
+    "elbow_absolute_angle": 0.10590919477065133
+  },
+  {
+    "frame": 53,
+    "headliner_center": [
+      0.4792828978258643,
+      -0.35,
+      2.621137235824527
+    ],
+    "shoulder_angle": 1.4351672243894813,
+    "elbow_absolute_angle": 0.08847378397106435
+  },
+  {
+    "frame": 54,
+    "headliner_center": [
+      0.596405925010159,
+      -0.35,
+      2.5784568847633613
+    ],
+    "shoulder_angle": 1.420977019464033,
+    "elbow_absolute_angle": 0.06688355490342524
+  },
+  {
+    "frame": 55,
+    "headliner_center": [
+      0.7117484925862669,
+      -0.35,
+      2.527871850834015
+    ],
+    "shoulder_angle": 1.4036408488911565,
+    "elbow_absolute_angle": 0.041707039359672515
+  },
+  {
+    "frame": 56,
+    "headliner_center": [
+      0.8249725138724795,
+      -0.35,
+      2.4702519838345816
+    ],
+    "shoulder_angle": 1.3832209251655214,
+    "elbow_absolute_angle": 0.013587327069130099
+  },
+  {
+    "frame": 57,
+    "headliner_center": [
+      0.9357497232270497,
+      -0.35,
+      2.406559607036586
+    ],
+    "shoulder_angle": 1.3598319609293918,
+    "elbow_absolute_angle": -0.016782886883060757
+  },
+  {
+    "frame": 58,
+    "headliner_center": [
+      1.0437633128881822,
+      -0.35,
+      2.3378223733299506
+    ],
+    "shoulder_angle": 1.3336505177085416,
+    "elbow_absolute_angle": -0.04868697453396919
+  },
+  {
+    "frame": 59,
+    "headliner_center": [
+      1.1487095698140313,
+      -0.35,
+      2.265105739488666
+    ],
+    "shoulder_angle": 1.3049195243812655,
+    "elbow_absolute_angle": -0.0814099568685434
+  },
+  {
+    "frame": 60,
+    "headliner_center": [
+      1.2502995125226963,
+      -0.35,
+      2.189486167265294
+    ],
+    "shoulder_angle": 1.2739472231318612,
+    "elbow_absolute_angle": -0.11426318996803041
+  },
+  {
+    "frame": 61,
+    "headliner_center": [
+      1.3482605279321995,
+      -0.35,
+      2.1120260377996387
+    ],
+    "shoulder_angle": 1.2411005591588142,
+    "elbow_absolute_angle": -0.14660722746089108
+  },
+  {
+    "frame": 62,
+    "headliner_center": [
+      1.442338008200506,
+      -0.35,
+      2.0337510958171996
+    ],
+    "shoulder_angle": 1.2067937844481809,
+    "elbow_absolute_angle": -0.1778717873263728
+  },
+  {
+    "frame": 63,
+    "headliner_center": [
+      1.5322969875654953,
+      -0.35,
+      1.9556310375910329
+    ],
+    "shoulder_angle": 1.17147365630302,
+    "elbow_absolute_angle": -0.20757171495123514
+  },
+  {
+    "frame": 64,
+    "headliner_center": [
+      1.6179237791849586,
+      -0.35,
+      1.8785636379197845
+    ],
+    "shoulder_angle": 1.135602959582745,
+    "elbow_absolute_angle": -0.23531799543655654
+  },
+  {
+    "frame": 65,
+    "headliner_center": [
+      1.6990276119766006,
+      -0.35,
+      1.8033625922308136
+    ],
+    "shoulder_angle": 1.0996441094765115,
+    "elbow_absolute_angle": -0.260823237822659
+  },
+  {
+    "frame": 66,
+    "headliner_center": [
+      1.7754422674580357,
+      -0.35,
+      1.730749044428113
+    ],
+    "shoulder_angle": 1.0640443215060054,
+    "elbow_absolute_angle": -0.28390156321406723
+  },
+  {
+    "frame": 67,
+    "headliner_center": [
+      1.8470277165867555,
+      -0.35,
+      1.6613465907121638
+    ],
+    "shoulder_angle": 1.0292233606112422,
+    "elbow_absolute_angle": -0.30446336066436125
+  },
+  {
+    "frame": 68,
+    "headliner_center": [
+      1.913671756600157,
+      -0.35,
+      1.5956794025611394
+    ],
+    "shoulder_angle": 0.9955643308752844,
+    "elbow_absolute_angle": -0.32250581184360394
+  },
+  {
+    "frame": 69,
+    "headliner_center": [
+      1.9752916478555123,
+      -0.35,
+      1.534173003276461
+    ],
+    "shoulder_angle": 0.9634074643547286,
+    "elbow_absolute_angle": -0.3381003509146907
+  },
+  {
+    "frame": 70,
+    "headliner_center": [
+      2.031835750669965,
+      -0.35,
+      1.477157163641553
+    ],
+    "shoulder_angle": 0.9330464958828231,
+    "elbow_absolute_angle": -0.35137830028788075
+  },
+  {
+    "frame": 71,
+    "headliner_center": [
+      2.0832851621605513,
+      -0.35,
+      1.4248703521871096
+    ],
+    "shoulder_angle": 0.9047270048864963,
+    "elbow_absolute_angle": -0.3625158370932666
+  },
+  {
+    "frame": 72,
+    "headliner_center": [
+      2.1296553530841336,
+      -0.35,
+      1.3774651809077774
+    ],
+    "shoulder_angle": 0.8786460561525888,
+    "elbow_absolute_angle": -0.3717192586691824
+  },
+  {
+    "frame": 73,
+    "headliner_center": [
+      2.17099780467746,
+      -0.35,
+      1.3350143230117728
+    ],
+    "shoulder_angle": 0.8549525429344008,
+    "elbow_absolute_angle": -0.37921129109392254
+  },
+  {
+    "frame": 74,
+    "headliner_center": [
+      2.2074016454971273,
+      -0.35,
+      1.2975164393673653
+    ],
+    "shoulder_angle": 0.8337477813418404,
+    "elbow_absolute_angle": -0.38521897143504114
+  },
+  {
+    "frame": 75,
+    "headliner_center": [
+      2.2389952882595527,
+      -0.35,
+      1.2649017282119794
+    ],
+    "shoulder_angle": 0.8150860798848953,
+    "elbow_absolute_angle": -0.389963458272822
+  },
+  {
+    "frame": 76,
+    "headliner_center": [
+      2.2659480666810166,
+      -0.35,
+      1.2370368018221276
+    ],
+    "shoulder_angle": 0.798975175679833,
+    "elbow_absolute_angle": -0.3936519909043409
+  },
+  {
+    "frame": 77,
+    "headliner_center": [
+      2.288471872317612,
+      -0.35,
+      1.2137286878430749
+    ],
+    "shoulder_angle": 0.785376562799856,
+    "elbow_absolute_angle": -0.39647211487498946
+  },
+  {
+    "frame": 78,
+    "headliner_center": [
+      2.306822791405264,
+      -0.35,
+      1.1947278458916808
+    ],
+    "shoulder_angle": 0.7742058227795496,
+    "elbow_absolute_angle": -0.39858820274492807
+  },
+  {
+    "frame": 79,
+    "headliner_center": [
+      2.321302741699713,
+      -0.35,
+      1.1797301764319523
+    ],
+    "shoulder_angle": 0.765333096957633,
+    "elbow_absolute_angle": -0.40014020823069574
+  },
+  {
+    "frame": 80,
+    "headliner_center": [
+      2.3322611093165206,
+      -0.35,
+      1.1683780739176652
+    ],
+    "shoulder_angle": 0.7585838194590204,
+    "elbow_absolute_angle": -0.40124449013979246
+  },
+  {
+    "frame": 81,
+    "headliner_center": [
+      2.3400963855710324,
+      -0.35,
+      1.160260635616446
+    ],
+    "shoulder_angle": 0.7537397704700611,
+    "elbow_absolute_angle": -0.4019964303331423
+  },
+  {
+    "frame": 82,
+    "headliner_center": [
+      2.345257803818407,
+      -0.35,
+      1.1549131780411481
+    ],
+    "shoulder_angle": 0.7505404291325892,
+    "elbow_absolute_angle": -0.40247445580246477
+  },
+  {
+    "frame": 83,
+    "headliner_center": [
+      2.348246976293582,
+      -0.35,
+      1.1518162323325385
+    ],
+    "shoulder_angle": 0.7486845213537074,
+    "elbow_absolute_angle": -0.4027449710764272
+  },
+  {
+    "frame": 84,
+    "headliner_center": [
+      2.349619530951299,
+      -0.35,
+      1.150394187674664
+    ],
+    "shoulder_angle": 0.7478315835994211,
+    "elbow_absolute_angle": -0.40286762422801375
+  },
+  {
+    "frame": 85,
+    "headliner_center": [
+      2.3499867483060695,
+      -0.35,
+      1.1500137295122697
+    ],
+    "shoulder_angle": 0.7476033059360782,
+    "elbow_absolute_angle": -0.4029002723316347
+  },
+  {
+    "frame": 86,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 87,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 88,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 89,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 90,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 91,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 92,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 93,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 94,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 95,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 96,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 97,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 98,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 99,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 100,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 101,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 102,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 103,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 104,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 105,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 106,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 107,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 108,
+    "headliner_center": [
+      2.35,
+      -0.35,
+      1.1500000000000001
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 109,
+    "headliner_center": [
+      2.349986748306064,
+      -0.35,
+      1.150013729512275
+    ],
+    "shoulder_angle": 0.747603305936081,
+    "elbow_absolute_angle": -0.40290027233163417
+  },
+  {
+    "frame": 110,
+    "headliner_center": [
+      2.3496195309513017,
+      -0.35,
+      1.1503941876746613
+    ],
+    "shoulder_angle": 0.7478315835994198,
+    "elbow_absolute_angle": -0.4028676242280142
+  },
+  {
+    "frame": 111,
+    "headliner_center": [
+      2.3482469762935856,
+      -0.35,
+      1.1518162323325352
+    ],
+    "shoulder_angle": 0.7486845213537057,
+    "elbow_absolute_angle": -0.4027449710764273
+  },
+  {
+    "frame": 112,
+    "headliner_center": [
+      2.3452578038184053,
+      -0.35,
+      1.1549131780411488
+    ],
+    "shoulder_angle": 0.7505404291325901,
+    "elbow_absolute_angle": -0.40247445580246527
+  },
+  {
+    "frame": 113,
+    "headliner_center": [
+      2.3400963855710333,
+      -0.35,
+      1.160260635616445
+    ],
+    "shoulder_angle": 0.7537397704700606,
+    "elbow_absolute_angle": -0.4019964303331425
+  },
+  {
+    "frame": 114,
+    "headliner_center": [
+      2.3322611093165224,
+      -0.35,
+      1.1683780739176646
+    ],
+    "shoulder_angle": 0.75858381945902,
+    "elbow_absolute_angle": -0.4012444901397922
+  },
+  {
+    "frame": 115,
+    "headliner_center": [
+      2.3213027416997183,
+      -0.35,
+      1.1797301764319477
+    ],
+    "shoulder_angle": 0.76533309695763,
+    "elbow_absolute_angle": -0.4001402082306961
+  },
+  {
+    "frame": 116,
+    "headliner_center": [
+      2.306822791405265,
+      -0.35,
+      1.1947278458916801
+    ],
+    "shoulder_angle": 0.774205822779549,
+    "elbow_absolute_angle": -0.39858820274492773
+  },
+  {
+    "frame": 117,
+    "headliner_center": [
+      2.288471872317611,
+      -0.35,
+      1.2137286878430764
+    ],
+    "shoulder_angle": 0.7853765627998566,
+    "elbow_absolute_angle": -0.39647211487498885
+  },
+  {
+    "frame": 118,
+    "headliner_center": [
+      2.265948066681015,
+      -0.35,
+      1.2370368018221298
+    ],
+    "shoulder_angle": 0.7989751756798342,
+    "elbow_absolute_angle": -0.3936519909043406
+  },
+  {
+    "frame": 119,
+    "headliner_center": [
+      2.2389952882595527,
+      -0.35,
+      1.2649017282119788
+    ],
+    "shoulder_angle": 0.8150860798848951,
+    "elbow_absolute_angle": -0.38996345827282214
+  },
+  {
+    "frame": 120,
+    "headliner_center": [
+      2.2074016454971255,
+      -0.35,
+      1.2975164393673673
+    ],
+    "shoulder_angle": 0.8337477813418415,
+    "elbow_absolute_angle": -0.38521897143504075
+  },
+  {
+    "frame": 121,
+    "headliner_center": [
+      2.1709978046774636,
+      -0.35,
+      1.3350143230117695
+    ],
+    "shoulder_angle": 0.8549525429343992,
+    "elbow_absolute_angle": -0.379211291093923
+  },
+  {
+    "frame": 122,
+    "headliner_center": [
+      2.1296553530841336,
+      -0.35,
+      1.3774651809077774
+    ],
+    "shoulder_angle": 0.8786460561525888,
+    "elbow_absolute_angle": -0.3717192586691824
+  },
+  {
+    "frame": 123,
+    "headliner_center": [
+      2.0832851621605495,
+      -0.35,
+      1.4248703521871118
+    ],
+    "shoulder_angle": 0.9047270048864975,
+    "elbow_absolute_angle": -0.3625158370932662
+  },
+  {
+    "frame": 124,
+    "headliner_center": [
+      2.0318357506699685,
+      -0.35,
+      1.4771571636415497
+    ],
+    "shoulder_angle": 0.9330464958828211,
+    "elbow_absolute_angle": -0.3513783002878812
+  },
+  {
+    "frame": 125,
+    "headliner_center": [
+      1.9752916478555105,
+      -0.35,
+      1.5341730032764636
+    ],
+    "shoulder_angle": 0.9634074643547301,
+    "elbow_absolute_angle": -0.33810035091469004
+  },
+  {
+    "frame": 126,
+    "headliner_center": [
+      1.913671756600157,
+      -0.35,
+      1.5956794025611394
+    ],
+    "shoulder_angle": 0.9955643308752844,
+    "elbow_absolute_angle": -0.32250581184360394
+  },
+  {
+    "frame": 127,
+    "headliner_center": [
+      1.8470277165867555,
+      -0.35,
+      1.6613465907121632
+    ],
+    "shoulder_angle": 1.0292233606112422,
+    "elbow_absolute_angle": -0.30446336066436147
+  },
+  {
+    "frame": 128,
+    "headliner_center": [
+      1.7754422674580348,
+      -0.35,
+      1.7307490444281142
+    ],
+    "shoulder_angle": 1.0640443215060058,
+    "elbow_absolute_angle": -0.28390156321406684
+  },
+  {
+    "frame": 129,
+    "headliner_center": [
+      1.6990276119766032,
+      -0.35,
+      1.803362592230811
+    ],
+    "shoulder_angle": 1.0996441094765101,
+    "elbow_absolute_angle": -0.2608232378226599
+  },
+  {
+    "frame": 130,
+    "headliner_center": [
+      1.6179237791849577,
+      -0.35,
+      1.8785636379197845
+    ],
+    "shoulder_angle": 1.1356029595827455,
+    "elbow_absolute_angle": -0.23531799543655668
+  },
+  {
+    "frame": 131,
+    "headliner_center": [
+      1.5322969875654935,
+      -0.35,
+      1.9556310375910346
+    ],
+    "shoulder_angle": 1.1714736563030206,
+    "elbow_absolute_angle": -0.20757171495123447
+  },
+  {
+    "frame": 132,
+    "headliner_center": [
+      1.4423380082005068,
+      -0.35,
+      2.0337510958171987
+    ],
+    "shoulder_angle": 1.2067937844481804,
+    "elbow_absolute_angle": -0.1778717873263732
+  },
+  {
+    "frame": 133,
+    "headliner_center": [
+      1.3482605279322,
+      -0.35,
+      2.1120260377996383
+    ],
+    "shoulder_angle": 1.2411005591588142,
+    "elbow_absolute_angle": -0.1466072274608913
+  },
+  {
+    "frame": 134,
+    "headliner_center": [
+      1.2502995125226941,
+      -0.35,
+      2.1894861672652954
+    ],
+    "shoulder_angle": 1.2739472231318618,
+    "elbow_absolute_angle": -0.1142631899680299
+  },
+  {
+    "frame": 135,
+    "headliner_center": [
+      1.1487095698140335,
+      -0.35,
+      2.265105739488664
+    ],
+    "shoulder_angle": 1.304919524381265,
+    "elbow_absolute_angle": -0.08140995686854449
+  },
+  {
+    "frame": 136,
+    "headliner_center": [
+      1.0437633128881827,
+      -0.35,
+      2.33782237332995
+    ],
+    "shoulder_angle": 1.3336505177085414,
+    "elbow_absolute_angle": -0.04868697453396931
+  },
+  {
+    "frame": 137,
+    "headliner_center": [
+      0.9357497232270489,
+      -0.35,
+      2.4065596070365864
+    ],
+    "shoulder_angle": 1.3598319609293923,
+    "elbow_absolute_angle": -0.016782886883060632
+  },
+  {
+    "frame": 138,
+    "headliner_center": [
+      0.8249725138724799,
+      -0.35,
+      2.4702519838345816
+    ],
+    "shoulder_angle": 1.3832209251655214,
+    "elbow_absolute_angle": 0.013587327069130099
+  },
+  {
+    "frame": 139,
+    "headliner_center": [
+      0.711748492586266,
+      -0.35,
+      2.527871850834015
+    ],
+    "shoulder_angle": 1.403640848891157,
+    "elbow_absolute_angle": 0.04170703935967238
+  },
+  {
+    "frame": 140,
+    "headliner_center": [
+      0.5964059250101572,
+      -0.35,
+      2.578456884763362
+    ],
+    "shoulder_angle": 1.420977019464033,
+    "elbow_absolute_angle": 0.06688355490342573
+  },
+  {
+    "frame": 141,
+    "headliner_center": [
+      0.47928289782586475,
+      -0.35,
+      2.621137235824527
+    ],
+    "shoulder_angle": 1.4351672243894813,
+    "elbow_absolute_angle": 0.08847378397106435
+  },
+  {
+    "frame": 142,
+    "headliner_center": [
+      0.3607256819150595,
+      -0.35,
+      2.655161119306884
+    ],
+    "shoulder_angle": 1.4461889556930414,
+    "elbow_absolute_angle": 0.10590919477065121
+  },
+  {
+    "frame": 143,
+    "headliner_center": [
+      0.2410870955193949,
+      -0.35,
+      2.679917692352743
+    ],
+    "shoulder_angle": 1.4540449904673973,
+    "elbow_absolute_angle": 0.11871907093045843
+  },
+  {
+    "frame": 144,
+    "headliner_center": [
+      0.12072486740050437,
+      -0.35,
+      2.6949561341719575
+    ],
+    "shoulder_angle": 1.458749363317349,
+    "elbow_absolute_angle": 0.12655084638135114
+  },
+  {
+    "frame": 145,
+    "headliner_center": [
+      0.0,
+      -0.35,
+      2.7
+    ],
+    "shoulder_angle": 1.4603156759338871,
+    "elbow_absolute_angle": 0.12918610173829667
+  },
+  {
+    "frame": 146,
+    "headliner_center": [
+      -0.12072486740050437,
+      -0.35,
+      2.6949561341719575
+    ],
+    "shoulder_angle": 1.458749363317349,
+    "elbow_absolute_angle": 0.12655084638135114
+  },
+  {
+    "frame": 147,
+    "headliner_center": [
+      -0.2410870955193949,
+      -0.35,
+      2.679917692352743
+    ],
+    "shoulder_angle": 1.4540449904673973,
+    "elbow_absolute_angle": 0.11871907093045843
+  },
+  {
+    "frame": 148,
+    "headliner_center": [
+      -0.36072568191505927,
+      -0.35,
+      2.655161119306884
+    ],
+    "shoulder_angle": 1.4461889556930416,
+    "elbow_absolute_angle": 0.1059091947706511
+  },
+  {
+    "frame": 149,
+    "headliner_center": [
+      -0.47928289782586475,
+      -0.35,
+      2.621137235824527
+    ],
+    "shoulder_angle": 1.4351672243894813,
+    "elbow_absolute_angle": 0.08847378397106435
+  },
+  {
+    "frame": 150,
+    "headliner_center": [
+      -0.5964059250101572,
+      -0.35,
+      2.5784568847633618
+    ],
+    "shoulder_angle": 1.4209770194640332,
+    "elbow_absolute_angle": 0.06688355490342547
+  },
+  {
+    "frame": 151,
+    "headliner_center": [
+      -0.7117484925862667,
+      -0.35,
+      2.527871850834015
+    ],
+    "shoulder_angle": 1.4036408488911565,
+    "elbow_absolute_angle": 0.041707039359672515
+  },
+  {
+    "frame": 152,
+    "headliner_center": [
+      -0.8249725138724799,
+      -0.35,
+      2.470251983834581
+    ],
+    "shoulder_angle": 1.3832209251655212,
+    "elbow_absolute_angle": 0.01358732706912998
+  },
+  {
+    "frame": 153,
+    "headliner_center": [
+      -0.9357497232270482,
+      -0.35,
+      2.406559607036587
+    ],
+    "shoulder_angle": 1.3598319609293927,
+    "elbow_absolute_angle": -0.016782886883060504
+  },
+  {
+    "frame": 154,
+    "headliner_center": [
+      -1.043763312888182,
+      -0.35,
+      2.3378223733299506
+    ],
+    "shoulder_angle": 1.3336505177085416,
+    "elbow_absolute_angle": -0.04868697453396919
+  },
+  {
+    "frame": 155,
+    "headliner_center": [
+      -1.1487095698140328,
+      -0.35,
+      2.2651057394886642
+    ],
+    "shoulder_angle": 1.304919524381265,
+    "elbow_absolute_angle": -0.08140995686854424
+  },
+  {
+    "frame": 156,
+    "headliner_center": [
+      -1.2502995125226943,
+      -0.35,
+      2.1894861672652954
+    ],
+    "shoulder_angle": 1.2739472231318618,
+    "elbow_absolute_angle": -0.1142631899680299
+  },
+  {
+    "frame": 157,
+    "headliner_center": [
+      -1.3482605279321997,
+      -0.35,
+      2.1120260377996387
+    ],
+    "shoulder_angle": 1.2411005591588142,
+    "elbow_absolute_angle": -0.14660722746089108
+  },
+  {
+    "frame": 158,
+    "headliner_center": [
+      -1.4423380082005064,
+      -0.35,
+      2.0337510958171987
+    ],
+    "shoulder_angle": 1.2067937844481804,
+    "elbow_absolute_angle": -0.1778717873263732
+  },
+  {
+    "frame": 159,
+    "headliner_center": [
+      -1.5322969875654928,
+      -0.35,
+      1.9556310375910348
+    ],
+    "shoulder_angle": 1.171473656303021,
+    "elbow_absolute_angle": -0.20757171495123455
+  },
+  {
+    "frame": 160,
+    "headliner_center": [
+      -1.6179237791849583,
+      -0.35,
+      1.878563637919784
+    ],
+    "shoulder_angle": 1.1356029595827453,
+    "elbow_absolute_angle": -0.23531799543655693
+  },
+  {
+    "frame": 161,
+    "headliner_center": [
+      -1.699027611976605,
+      -0.35,
+      1.8033625922308094
+    ],
+    "shoulder_angle": 1.0996441094765093,
+    "elbow_absolute_angle": -0.2608232378226605
+  },
+  {
+    "frame": 162,
+    "headliner_center": [
+      -1.7754422674580335,
+      -0.35,
+      1.7307490444281148
+    ],
+    "shoulder_angle": 1.0640443215060067,
+    "elbow_absolute_angle": -0.28390156321406657
+  },
+  {
+    "frame": 163,
+    "headliner_center": [
+      -1.847027716586755,
+      -0.35,
+      1.6613465907121636
+    ],
+    "shoulder_angle": 1.0292233606112422,
+    "elbow_absolute_angle": -0.3044633606643613
+  },
+  {
+    "frame": 164,
+    "headliner_center": [
+      -1.9136717566001558,
+      -0.35,
+      1.5956794025611403
+    ],
+    "shoulder_angle": 0.9955643308752848,
+    "elbow_absolute_angle": -0.32250581184360383
+  },
+  {
+    "frame": 165,
+    "headliner_center": [
+      -1.9752916478555105,
+      -0.35,
+      1.5341730032764627
+    ],
+    "shoulder_angle": 0.9634074643547298,
+    "elbow_absolute_angle": -0.3381003509146904
+  },
+  {
+    "frame": 166,
+    "headliner_center": [
+      -2.0318357506699654,
+      -0.35,
+      1.4771571636415528
+    ],
+    "shoulder_angle": 0.9330464958828231,
+    "elbow_absolute_angle": -0.35137830028788064
+  },
+  {
+    "frame": 167,
+    "headliner_center": [
+      -2.0832851621605495,
+      -0.35,
+      1.4248703521871113
+    ],
+    "shoulder_angle": 0.9047270048864975,
+    "elbow_absolute_angle": -0.3625158370932664
+  },
+  {
+    "frame": 168,
+    "headliner_center": [
+      -2.129655353084134,
+      -0.35,
+      1.3774651809077767
+    ],
+    "shoulder_angle": 0.8786460561525884,
+    "elbow_absolute_angle": -0.37171925866918243
+  },
+  {
+    "frame": 169,
+    "headliner_center": [
+      -2.1709978046774605,
+      -0.35,
+      1.3350143230117726
+    ],
+    "shoulder_angle": 0.8549525429344008,
+    "elbow_absolute_angle": -0.37921129109392254
+  },
+  {
+    "frame": 170,
+    "headliner_center": [
+      -2.207401645497124,
+      -0.35,
+      1.2975164393673684
+    ],
+    "shoulder_angle": 0.8337477813418421,
+    "elbow_absolute_angle": -0.38521897143504075
+  },
+  {
+    "frame": 171,
+    "headliner_center": [
+      -2.238995288259556,
+      -0.35,
+      1.2649017282119757
+    ],
+    "shoulder_angle": 0.8150860798848933,
+    "elbow_absolute_angle": -0.3899634582728226
+  },
+  {
+    "frame": 172,
+    "headliner_center": [
+      -2.265948066681017,
+      -0.35,
+      1.2370368018221272
+    ],
+    "shoulder_angle": 0.7989751756798329,
+    "elbow_absolute_angle": -0.393651990904341
+  },
+  {
+    "frame": 173,
+    "headliner_center": [
+      -2.2884718723176154,
+      -0.35,
+      1.2137286878430713
+    ],
+    "shoulder_angle": 0.7853765627998541,
+    "elbow_absolute_angle": -0.39647211487498996
+  },
+  {
+    "frame": 174,
+    "headliner_center": [
+      -2.30682279140526,
+      -0.35,
+      1.1947278458916848
+    ],
+    "shoulder_angle": 0.7742058227795519,
+    "elbow_absolute_angle": -0.39858820274492757
+  },
+  {
+    "frame": 175,
+    "headliner_center": [
+      -2.3213027416997134,
+      -0.35,
+      1.1797301764319523
+    ],
+    "shoulder_angle": 0.765333096957633,
+    "elbow_absolute_angle": -0.40014020823069574
+  },
+  {
+    "frame": 176,
+    "headliner_center": [
+      -2.3322611093165158,
+      -0.35,
+      1.1683780739176706
+    ],
+    "shoulder_angle": 0.7585838194590233,
+    "elbow_absolute_angle": -0.40124449013979185
+  },
+  {
+    "frame": 177,
+    "headliner_center": [
+      -2.340096385571038,
+      -0.35,
+      1.1602606356164396
+    ],
+    "shoulder_angle": 0.7537397704700576,
+    "elbow_absolute_angle": -0.4019964303331429
+  },
+  {
+    "frame": 178,
+    "headliner_center": [
+      -2.3452578038184067,
+      -0.35,
+      1.1549131780411477
+    ],
+    "shoulder_angle": 0.7505404291325891,
+    "elbow_absolute_angle": -0.40247445580246505
+  },
+  {
+    "frame": 179,
+    "headliner_center": [
+      -2.348246976293585,
+      -0.35,
+      1.1518162323325352
+    ],
+    "shoulder_angle": 0.7486845213537058,
+    "elbow_absolute_angle": -0.4027449710764275
+  },
+  {
+    "frame": 180,
+    "headliner_center": [
+      -2.3496195309512964,
+      -0.35,
+      1.1503941876746668
+    ],
+    "shoulder_angle": 0.7478315835994231,
+    "elbow_absolute_angle": -0.40286762422801353
+  },
+  {
+    "frame": 181,
+    "headliner_center": [
+      -2.349986748306069,
+      -0.35,
+      1.1500137295122692
+    ],
+    "shoulder_angle": 0.747603305936078,
+    "elbow_absolute_angle": -0.40290027233163495
+  },
+  {
+    "frame": 182,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 183,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 184,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 185,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 186,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 187,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 188,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 189,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 190,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 191,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 192,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  },
+  {
+    "frame": 193,
+    "headliner_center": [
+      -2.35,
+      -0.35,
+      1.15
+    ],
+    "shoulder_angle": 0.7475950674961624,
+    "elbow_absolute_angle": -0.4029014491787851
+  }
+]

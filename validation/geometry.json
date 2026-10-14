@@ -1,0 +1,27 @@
+{
+  "vertices": 1235,
+  "quads": 1104,
+  "edges": 2343,
+  "boundary_loops": 6,
+  "apertures": 5,
+  "nonmanifold_edges_other_than_boundary": 0,
+  "euler_characteristic": -4,
+  "suction_contacts": 4,
+  "animation_frames": 192,
+  "fps": 24,
+  "rigid_link_lengths_m": [
+    1.95,
+    1.8
+  ],
+  "max_headliner_origin_z_m": 2.7,
+  "shell_thickness_geometry": false,
+  "subdivision_levels": 2,
+  "max_tool_position_error_m": 5.59934801699398e-07,
+  "max_rigid_link_length_error_m": 3.0365257708275806e-07,
+  "suction_center_surface_errors_m": [
+    1.1920928955078125e-07,
+    2.2351741790771484e-08,
+    1.1920928955078125e-07,
+    2.2351741790771484e-08
+  ]
+}
