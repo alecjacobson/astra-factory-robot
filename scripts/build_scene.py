@@ -4,6 +4,8 @@ from pathlib import Path
 from mathutils import Vector
 from collections import Counter, defaultdict
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'scripts'))
+from headliner_design import DESIGN_SCALE, CUP_DIAMETER_M, HOSE_OUTSIDE_DIAMETER_M, APERTURES, height, build_mesh
 bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
 for c in list(bpy.data.collections):
     if c.name!='Collection': bpy.data.collections.remove(c)
@@ -29,8 +31,10 @@ black=mat('Vacuum elastomer',(.018,.024,.028),.05,.6)
 teal=mat('Vacuum circuit | turquoise',(.025,.63,.59),.35,.3)
 cream=mat('Headliner | warm ivory textile',(.72,.66,.51),0,.8)
 # Fine procedural textile, no external assets.
-p=cream.node_tree.nodes.get('Principled BSDF');noise=cream.node_tree.nodes.new('ShaderNodeTexNoise');noise.inputs['Scale'].default_value=240
-bump=cream.node_tree.nodes.new('ShaderNodeBump');bump.inputs['Strength'].default_value=.17;bump.inputs['Distance'].default_value=.0015
+p=cream.node_tree.nodes.get('Principled BSDF');noise=cream.node_tree.nodes.new('ShaderNodeTexNoise');noise.inputs['Scale'].default_value=2400
+coord=cream.node_tree.nodes.new('ShaderNodeTexCoord');cream.node_tree.links.new(coord.outputs['Object'],noise.inputs['Vector'])
+p.inputs['Sheen Weight'].default_value=.18
+bump=cream.node_tree.nodes.new('ShaderNodeBump');bump.inputs['Strength'].default_value=.17;bump.inputs['Distance'].default_value=.00012
 cream.node_tree.links.new(noise.outputs['Fac'],bump.inputs['Height']);cream.node_tree.links.new(bump.outputs['Normal'],p.inputs['Normal'])
 floor=mat('Cell | blue charcoal',(.052,.075,.092),.25,.5)
 white=mat('Markings | pearl',(.69,.79,.81),.1,.5)
@@ -80,8 +84,8 @@ for x in [-2.35,2.35]:
  for dx in [-.62,.62]:
   box('Nest longitudinal rail',(x+dx,-.35,.88),(.08,1.94,.14),steel)
   for dy in [-.72,.72]:
-   cyl('Locating pedestal',(x+dx,-.35+dy,1.052),.055,.224,dark)
-   cyl('Soft nest pad',(x+dx,-.35+dy,1.181),.077,.035,teal)
+   cyl('Locating pedestal',(x+dx,-.35+dy,1.052),.020/DESIGN_SCALE,.224,dark)
+   cyl('Soft nest pad',(x+dx,-.35+dy,1.181),.035/DESIGN_SCALE,.035,teal)
  label('Station designation','A  /  INFEED' if x<0 else 'B  /  OUTFEED',(x,-1.80,.04),.19,white)
  for yy in [-1.67,.99]:
   box('Fixture floor marking',(x,yy,.035),(1.95,.022,.008),teal,bev=0)
@@ -95,7 +99,7 @@ label('Cell name','H L  /  0 4',(0,-2.42,.03),.24,white)
 activecoll=robotcoll
 box('Robot anchor plate',(0,1.65,.13),(1.12,1.12,.26),dark,bev=.08)
 for x in [-.43,.43]:
- for y in [1.22,2.08]:cyl('Anchor bolt',(x,y,.28),.055,.04,steel,vertices=6)
+ for y in [1.22,2.08]:cyl('Anchor bolt',(x,y,.28),.018/DESIGN_SCALE,.012/DESIGN_SCALE,steel,vertices=6)
 cyl('Fixed pedestal',(0,1.65,.48),.42,.55,dark)
 cyl('Axis 1 turntable',(0,1.65,.79),.40,.12,orange)
 yaw=empty('J1 • base azimuth',(0,1.65,1.15))
@@ -112,7 +116,7 @@ for root,r,depth in [(shoulder,.30,.70),(elbow,.245,.54),(wrist,.17,.36)]:
   cyl('Joint axle',(0,side*(depth/2+.04),0),r*.34,.025,steel,root,'Y')
   for a in range(8):
    phi=2*math.pi*a/8
-   cyl('Joint cap fastener',(r*.60*math.cos(phi),side*(depth/2+.041),r*.60*math.sin(phi)),.018,.018,steel,root,'Y',12)
+   cyl('Joint cap fastener',(r*.60*math.cos(phi),side*(depth/2+.041),r*.60*math.sin(phi)),.0065/DESIGN_SCALE,.006/DESIGN_SCALE,steel,root,'Y',12)
 def link(name,length,w0,w1,parent):
  # Tapered rigid cast link with planar side panels.
  verts=[]
@@ -134,31 +138,16 @@ for x in [-.56,.56]:box('Vacuum frame longitudinal',(x,0,-.27),(.055,1.53,.075),
 for y in [-.65,.65]:box('Vacuum frame crossbar',(0,y,-.27),(1.25,.065,.075),steel,tool,.012)
 box('Central tool bridge',(0,0,-.25),(1.19,.11,.085),steel,tool)
 box('Vacuum manifold',(0,0,-.15),(.29,.17,.13),dark,tool)
-# Curved shell with holes cut by omission of quad cells, no thickness or caps.
-def height(x,y):
- return .105*(1-(x/.80)**2)+.035*(1-(y/1.10)**2)-.045*math.exp(-((abs(x)-.71)/.08)**2)
+# Refined forming surface: every detail belongs to the same open quad midsurface.
 activecoll=panelcoll
-N=32;M=44;verts=[];faces=[]
-# widths are slightly narrower at windshield, with gently chamfered corners.
-for j in range(M+1):
- y=-1.1+j*.05
- for i in range(N+1):
-  u=-.8+i*.05
-  taper=1-.065*(y/1.1)-.075*(abs(y)/1.1)**10
-  x=u*taper;verts.append((x,y,height(x,y)))
-def hole(i,j):
- return (8<=i<24 and 15<=j<31) or (13<=i<19 and 36<=j<40) or (14<=i<18 and 5<=j<8) or (2<=i<4 and 28<=j<31) or (28<=i<30 and 28<=j<31)
-for j in range(M):
- for i in range(N):
-  if not hole(i,j):
-   a=j*(N+1)+i;faces.append((a,a+1,a+N+2,a+N+1))
-used=sorted(set(v for f in faces for v in f));remap={v:i for i,v in enumerate(used)};verts=[verts[v] for v in used];faces=[tuple(remap[v] for v in f) for f in faces]
-me=bpy.data.meshes.new('Headliner quad control surface • 5 open apertures');me.from_pydata(verts,[],faces);me.update()
+verts,faces=build_mesh()
+me=bpy.data.meshes.new('Headliner quad control surface • 11 open apertures');me.from_pydata(verts,[],faces);me.update()
 panel=bpy.data.objects.new('HEADLINER • midsurface only',me);activecoll.objects.link(panel);panel.parent=tool;panel.location=(0,0,-.62);me.materials.append(cream)
 for f in me.polygons:f.use_smooth=True
 sub=panel.modifiers.new('Catmull–Clark | open shell midsurface','SUBSURF');sub.levels=2;sub.render_levels=2;sub.boundary_smooth='PRESERVE_CORNERS'
 panel['representation']='Single midsurface. No Solidify, caps, back face, or modeled thickness.'
-panel['physical_thickness_m']=.003;panel['open_apertures']=5;panel['design']='Generic passenger-car headliner; not an OEM replica.'
+panel['physical_thickness_m']=.003;panel['open_apertures']=len(APERTURES);panel['design']='Generic passenger-car headliner; not an OEM replica.'
+panel['formed_details']='Sunroof rebate, visor trays, console/lamp seats, four paired-clip handle pockets, perimeter return'
 # Four contact cups, axis aligned to analytic surface normal.
 activecoll=toolcoll
 cups=[]
@@ -167,16 +156,16 @@ for k,(x,y) in enumerate([(-.56,-.65),(.56,-.65),(-.56,.65),(.56,.65)],1):
  eps=.0001;hx=(height(x+eps,y)-height(x-eps,y))/(2*eps);hy=(height(x,y+eps)-height(x,y-eps))/(2*eps)
  cup=empty(f'SUCTION {k:02d} • contact',(x,y,z),tool);cup.rotation_mode='QUATERNION';cup.rotation_quaternion=Vector((-hx,-hy,1)).to_track_quat('Z','Y');cups.append(cup)
  # Open bellows profile: open contact rim and tapered stem.
- profile=[(.095,0),(.098,.009),(.071,.026),(.084,.040),(.060,.054),(.072,.070),(.040,.089),(.033,.115)]
+ profile_mm=[(50,0),(51,3),(38,13),(45,22),(32,31),(39,40),(22,51),(17,61)]
+ profile=[(r*.001/DESIGN_SCALE,z*.001/DESIGN_SCALE) for r,z in profile_mm]
  vv=[(r*math.cos(a*math.tau/48),r*math.sin(a*math.tau/48),zz) for r,zz in profile for a in range(48)]
  ff=[]
  for j in range(len(profile)-1):
   for a in range(48):ff.append((j*48+a,j*48+(a+1)%48,(j+1)*48+(a+1)%48,(j+1)*48+a))
  mesh=bpy.data.meshes.new('Bellows elastomer');mesh.from_pydata(vv,[],ff);mesh.update();o=bpy.data.objects.new(f'Cup {k} • open bellows',mesh);activecoll.objects.link(o);o.parent=cup;mesh.materials.append(teal)
  for f in mesh.polygons:f.use_smooth=True
- cyl(f'Cup {k} • spring plunger',(0,0,.16),.025,.12,steel,cup)
- cyl(f'Cup {k} • vacuum fitting',(0,0,.223),.036,.03,dark,cup)
- curve(f'Vacuum hose {k}',[(x,y,-.29),(x*.85,y*.80,-.10),(x*.35,y*.3,-.10),(0,y*.12,-.12)],.012,teal,tool)
+ # Plunger and mounting collar are fitted after projection to the smoothed shell.
+ curve(f'Vacuum hose {k}',[(x,y,-.29),(x*.85,y*.80,-.10),(x*.35,y*.3,-.10),(0,y*.12,-.12)],HOSE_OUTSIDE_DIAMETER_M/(2*DESIGN_SCALE),teal,tool)
  cup['attachment']='Fixed contact on shell throughout transfer; no slip.'
 # Project each cup center and axis onto the actual subdivided midsurface.
 from mathutils.bvhtree import BVHTree
@@ -188,6 +177,36 @@ for cup in cups:
  nearest,normal,idx,dist=tree.find_nearest(local)
  cup.location=nearest+panel.location
  cup.rotation_quaternion=normal.to_track_quat('Z','Y')
+ # The stem reaches the frame's lower face; its axis follows the cup normal.
+ stem_start=.061/DESIGN_SCALE
+ stem_end=(-.27-cup.location.z)/normal.z
+ cyl(cup.name+' • adjustable plunger',(0,0,(stem_start+stem_end)/2),.008/DESIGN_SCALE,stem_end-stem_start,steel,cup)
+ cyl(cup.name+' • frame collar',(0,0,stem_end),.022/DESIGN_SCALE,.045/DESIGN_SCALE,dark,cup)
+ cyl(cup.name+' • stem fitting',(0,0,stem_start),.019/DESIGN_SCALE,.012/DESIGN_SCALE,steel,cup)
+ # Lip follows the local molded surface; the rest of the bellows remains rigid.
+ bellows=next(o for o in cup.children if 'open bellows' in o.name)
+ rotation=cup.rotation_quaternion.to_matrix()
+ for v in bellows.data.vertices[:48]:
+  local_surface=rotation@v.co+cup.location-panel.location
+  hit=tree.ray_cast(local_surface+Vector((0,0,.08)),Vector((0,0,-1)))
+  assert hit[0] is not None
+  v.co=rotation.inverted()@(hit[0]+panel.location-cup.location)
+# Refit the receiving pads to the actual refined surface, including its normals.
+for pad in [o for o in stagecoll.objects if o.name.startswith('Soft nest pad')]:
+ station_x=-2.35 if pad.location.x<0 else 2.35
+ local=Vector((pad.location.x-station_x,pad.location.y+.35,.5))
+ hit=tree.ray_cast(local,Vector((0,0,-1)))
+ assert hit[0] is not None
+ contact,normal=hit[0],hit[1]
+ pad.rotation_mode='QUATERNION';pad.rotation_quaternion=normal.to_track_quat('Z','Y')
+ pad.location=Vector((station_x,-.35,1.15))+contact-normal*(.035/2)
+ # Refit the vertical post beneath the tilted pad, without object scaling.
+ post=min((o for o in stagecoll.objects if o.name.startswith('Locating pedestal')),key=lambda o:(o.location.xy-pad.location.xy).length)
+ top=pad.location.z-(.035/2+normal.x*(post.location.x-pad.location.x)+normal.y*(post.location.y-pad.location.y))/normal.z
+ bottom=.94;depth=top-bottom
+ for vertex in post.data.vertices:vertex.co.z*=depth/.224
+ post.location.z=(top+bottom)/2
+# Geometry tree was obtained from the current evaluated mesh.
 ev.to_mesh_clear()
 # Motion: paired transfers, with a short station dwell at each side.
 scene.frame_start=1;scene.frame_end=192;scene.render.fps=24
@@ -221,7 +240,7 @@ cam=camera('CAM • transfer overview',(6.5,-10.5,7.3),(0,0,1.30),10.3);scene.ca
 for name,loc,power,size,color in [('Key',(-3,-4,8),2200,5.0,(.82,.91,1)),('Rim',(3,4,7),2800,4,(1,.69,.42)),('Fill',(5,-1,5),1400,4,(.62,.83,1))]:
  bpy.ops.object.light_add(type='AREA',location=loc);o=move(bpy.context.object);o.name=name;o.data.energy=power;o.data.shape='DISK';o.data.size=size;o.data.color=color;o.rotation_euler=(Vector((0,0,1))-o.location).to_track_quat('-Z','Y').to_euler()
 scene.world.color=(.16,.16,.16)
-scene.render.engine='CYCLES';scene.cycles.samples=32;scene.cycles.use_denoising=True
+scene.render.engine='CYCLES';scene.cycles.samples=32;scene.cycles.use_denoising=True;scene.cycles.denoiser='OPTIX'
 prefs=bpy.context.preferences.addons['cycles'].preferences
 try:
  prefs.compute_device_type='OPTIX';prefs.get_devices()
@@ -232,13 +251,40 @@ scene.render.resolution_x=1200;scene.render.resolution_y=900;scene.render.resolu
 scene.render.image_settings.file_format='PNG';scene.view_settings.view_transform='AgX';scene.view_settings.exposure=-.65
 scene.render.film_transparent=False
 scene.frame_set(49)
+# Resize the first-pass cell to final physical dimensions, baking every length.
+# This changes geometry, NOT the unit conversion (one Blender unit stays one meter).
+from mathutils import Matrix
+scaled_data=set()
+for obj in scene.objects:
+ obj.location*=DESIGN_SCALE
+ data=obj.data
+ if obj.type=='MESH' and data not in scaled_data:
+  data.transform(Matrix.Scale(DESIGN_SCALE,4));scaled_data.add(data)
+ elif obj.type=='CURVE' and data not in scaled_data:
+  for spline in data.splines:
+   for pt in spline.bezier_points:
+    pt.co*=DESIGN_SCALE;pt.handle_left*=DESIGN_SCALE;pt.handle_right*=DESIGN_SCALE
+   for pt in spline.points:
+    pt.co.xyz*=DESIGN_SCALE
+  data.bevel_depth*=DESIGN_SCALE;scaled_data.add(data)
+ elif obj.type=='FONT' and data not in scaled_data:
+  data.size*=DESIGN_SCALE;data.extrude*=DESIGN_SCALE;scaled_data.add(data)
+ elif obj.type=='CAMERA':data.ortho_scale*=DESIGN_SCALE
+ elif obj.type=='LIGHT':data.energy*=DESIGN_SCALE**2;data.size*=DESIGN_SCALE
+ for mod in obj.modifiers:
+  if mod.type=='BEVEL':mod.width*=DESIGN_SCALE
+for record in records:record['headliner_center']=[v*DESIGN_SCALE for v in record['headliner_center']]
+L1*=DESIGN_SCALE;L2*=DESIGN_SCALE
+scene['meters_per_blender_unit']=1.0
+scene['design_revision']='Pass 2: physical dimensions baked; nominal 100 mm suction cups; refined forming details'
+scene.frame_set(49);bpy.context.view_layer.update()
 # Default viewport opens in the presentation camera.
 for screen in bpy.data.screens:
  for area in screen.areas:
   if area.type=='VIEW_3D':
    area.spaces.active.region_3d.view_perspective='CAMERA';area.spaces.active.overlay.show_extras=False
 bpy.ops.object.select_all(action='DESELECT');panel.select_set(True);bpy.context.view_layer.objects.active=panel
-# Topological validation: one connected quad surface, exterior + five aperture loops.
+# Topological validation: one connected quad surface, exterior + eleven aperture loops.
 counts=Counter(tuple(sorted((face[i],face[(i+1)%4]))) for face in faces for i in range(4));boundary=[e for e,n in counts.items() if n==1];adj=defaultdict(list)
 for a,b in boundary:adj[a].append(b);adj[b].append(a)
 assert all(len(n)==2 for n in adj.values())
@@ -251,8 +297,8 @@ for v in adj:
   if q in seen:continue
   seen.add(q);loop.append(q);stack.extend(adj[q])
  loops.append(loop)
-assert len(loops)==6 and all(len(f)==4 for f in faces)
-report={'vertices':len(verts),'quads':len(faces),'edges':len(counts),'boundary_loops':len(loops),'apertures':5,'nonmanifold_edges_other_than_boundary':sum(n>2 for n in counts.values()),'euler_characteristic':len(verts)-len(counts)+len(faces),'suction_contacts':4,'animation_frames':192,'fps':24,'rigid_link_lengths_m':[L1,L2],'max_headliner_origin_z_m':max(r['headliner_center'][2] for r in records),'shell_thickness_geometry':False,'subdivision_levels':2}
+assert len(loops)==len(APERTURES)+1 and all(len(f)==4 for f in faces)
+report={'vertices':len(verts),'quads':len(faces),'edges':len(counts),'boundary_loops':len(loops),'apertures':len(APERTURES),'nonmanifold_edges_other_than_boundary':sum(n>2 for n in counts.values()),'euler_characteristic':len(verts)-len(counts)+len(faces),'suction_contacts':4,'animation_frames':192,'fps':24,'rigid_link_lengths_m':[L1,L2],'max_headliner_origin_z_m':max(r['headliner_center'][2] for r in records),'shell_thickness_geometry':False,'subdivision_levels':2}
 # Validate hierarchy end positions and contact distance to evaluated midsurface using BVH.
 from mathutils.bvhtree import BVHTree
 errors=[];contact_errors=[];rigid_errors=[]

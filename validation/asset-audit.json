@@ -1,13 +1,16 @@
 {
   "saved_scene_audited": true,
   "connected_surface_components": 1,
-  "open_boundary_loops": 6,
+  "open_boundary_loops": 12,
   "all_control_faces_quads": true,
+  "minimum_projected_triangle_area_m2": 2.1836967789568007e-07,
   "frames_checked": 192,
   "suction_contacts_checked_per_frame": 4,
-  "maximum_suction_center_error_m": 4.915124804938387e-07,
-  "maximum_path_error_m": 5.59934801699398e-07,
+  "maximum_suction_center_error_m": 2.893282271543285e-07,
+  "maximum_path_error_m": 4.5491270787935696e-07,
   "maximum_arm_scale_error": 1.1920928955078125e-07,
+  "maximum_suction_lip_surface_error_m": 3.3155083656311035e-07,
+  "maximum_fixture_pad_contact_error_m": 2.421438694000244e-07,
   "arm_shell_surface_intersections": [],
   "collision_check_scope": "Evaluated headliner versus upper-arm/forearm castings (including covers/ribs) and joint gearbox meshes at each integer frame. Not comprehensive cell or self-collision certification."
 }

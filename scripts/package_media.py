@@ -1,10 +1,13 @@
 """Label rendered views and encode a 12-fps GIF (requires Pillow and gifski)."""
-import argparse, math, subprocess
+import argparse, math, subprocess, json
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser();p.add_argument('--gifski',default='gifski');p.add_argument('--font-dir',default='/usr/share/fonts/truetype/dejavu');args=p.parse_args()
 FONT=Path(args.font_dir)
+geometry=json.loads((ROOT/'validation/geometry.json').read_text())
+dimensions=json.loads((ROOT/'validation/dimensions.json').read_text())
+motion=json.loads((ROOT/'validation/motion.json').read_text())
 def font(size,bold=False):
  return ImageFont.truetype(str(FONT/('DejaVuSans-Bold.ttf' if bold else 'DejaVuSans.ttf')),size)
 BG=(16,25,33);WHITE=(234,239,238);MUTED=(150,174,184);TEAL=(83,211,194)
@@ -20,14 +23,16 @@ def card(src,title,kicker,footer,technical=False):
  return out
 media=ROOT/'media';media.mkdir(exist_ok=True)
 card(ROOT/'build/hero.png','Headliner transfer','AUTOMOTIVE  /  ROBOTIC HANDLING','4 SUCTION CONTACTS     /     RIGID ARM     /     OPEN SUBDIVISION SHELL').save(media/'hero.png',optimize=True)
-views=[('headliner_wireframe','headliner-wireframe','Headliner / control cage','MESH INSPECTION  /  01','1,104 QUADS    /    ORANGE: OPEN BOUNDARIES    /    TEAL: SUCTION FOOTPRINTS'),('subdivision_wireframe','subdivision-wireframe','Headliner / subdivision','MESH INSPECTION  /  02','CATMULL–CLARK    /    EVALUATED QUAD EDGES    /    FIVE OPEN APERTURES'),('robot_wireframe','robot-wireframe','Robot / rigid assembly','MESH INSPECTION  /  03','RIGID CASTINGS    /    ROTATING JOINTS    /    FOUR-CUP VACUUM FRAME')]
+views=[('headliner_wireframe','headliner-wireframe','Headliner / control cage','MESH INSPECTION  /  01',f"{geometry['quads']:,} QUADS    /    ORANGE: OPEN BOUNDARIES    /    TEAL: SUCTION FOOTPRINTS"),('subdivision_wireframe','subdivision-wireframe','Headliner / subdivision','MESH INSPECTION  /  02','CATMULL–CLARK    /    EVALUATED QUAD EDGES    /    ELEVEN OPEN APERTURES'),('robot_wireframe','robot-wireframe','Robot / rigid assembly','MESH INSPECTION  /  03','RIGID CASTINGS    /    ROTATING JOINTS    /    FOUR-CUP VACUUM FRAME')]
 for src,dst,title,kicker,footer in views:
  card(ROOT/f'build/{src}.png',title,kicker,footer,True).save(media/f'{dst}.png',optimize=True)
+width,length,depth=dimensions['headliner_evaluated_width_length_depth_m']
+card(ROOT/'build/headliner_detail.png','Headliner / formed midsurface','DETAIL STUDY  /  TRUE METRIC SCALE',f'{width*1000:.0f} × {length*1000:.0f} mm     /     {depth*1000:.0f} mm FORM DEPTH     /     11 OPEN APERTURES',True).save(media/'headliner-detail.png',optimize=True)
 # Rendered forward frames 1,3,...,97. Reverse mapping exactly matches the baked return trajectory.
 forward=list(range(1,98,2));sequence=forward[:-1]+forward[:0:-1]
 folder=ROOT/'build/gif';folder.mkdir(exist_ok=True);files=[]
 for i,f in enumerate(sequence):
- t=(f-1)/96;s=max(0,min(1,(t-.12)/.76));s=s*s*s*(10+s*(-15+6*s));z=1.15+1.55*math.sin(math.pi*s)
+ t=(f-1)/96;s=max(0,min(1,(t-.12)/.76));s=s*s*s*(10+s*(-15+6*s));z=motion[f-1]['headliner_center'][2]
  direction='A → B' if i<48 else 'B → A'
  motion_t=t if i<48 else 1-t
  phase='STATION HOLD' if motion_t<.12 or motion_t>.88 else ('LIFT / TRANSFER' if motion_t<.5 else 'TRANSFER / LOWER')

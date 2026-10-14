@@ -1,0 +1,140 @@
+{
+  "units": "meters",
+  "meters_per_blender_unit": 1.0,
+  "all_scenes_metric": true,
+  "all_object_scales_applied": true,
+  "headliner_evaluated_width_length_depth_m": [
+    1.4205565452575684,
+    1.8700003623962402,
+    0.16467929631471634
+  ],
+  "headliner_nominal_physical_thickness_m": 0.003,
+  "headliner_has_thickness_geometry": false,
+  "boundary_dimensions_control_mesh": [
+    {
+      "width_m": 1.4205670356750488,
+      "length_m": 1.8700001239776611,
+      "center_m": [
+        0.0,
+        0.0014548075313751514,
+        -0.025829210224401322
+      ]
+    },
+    {
+      "width_m": 0.6910499930381775,
+      "length_m": 0.6800000071525574,
+      "center_m": [
+        0.0,
+        0.05305325917222283,
+        0.0871150189672004
+      ]
+    },
+    {
+      "width_m": 0.24229970574378967,
+      "length_m": 0.16150003671646118,
+      "center_m": [
+        0.0,
+        0.7046031445264817,
+        0.06016093660145998
+      ]
+    },
+    {
+      "width_m": 0.18644797801971436,
+      "length_m": 0.11900001764297485,
+      "center_m": [
+        0.0,
+        -0.6767168834805488,
+        0.061611616611480714
+      ]
+    },
+    {
+      "width_m": 0.026953518390655518,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        -0.5971234738826752,
+        -0.3936928901821375,
+        0.02865588350687176
+      ]
+    },
+    {
+      "width_m": 0.026953518390655518,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        0.5971234738826752,
+        -0.3936928901821375,
+        0.02865588350687176
+      ]
+    },
+    {
+      "width_m": 0.026727795600891113,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        -0.5929284195105234,
+        -0.2867952204412884,
+        0.03154440369043085
+      ]
+    },
+    {
+      "width_m": 0.026727795600891113,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        0.5929284195105234,
+        -0.2867952204412884,
+        0.03154440369043085
+      ]
+    },
+    {
+      "width_m": 0.02575230598449707,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        -0.5696551837027073,
+        0.2863071244210005,
+        0.035795033909380436
+      ]
+    },
+    {
+      "width_m": 0.02575230598449707,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        0.5696551837027073,
+        0.2863071244210005,
+        0.035795033909380436
+      ]
+    },
+    {
+      "width_m": 0.025525808334350586,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        0.5654393865002526,
+        0.3932047900226381,
+        0.03441075856486956
+      ]
+    },
+    {
+      "width_m": 0.025525808334350586,
+      "length_m": 0.034000009298324585,
+      "center_m": [
+        -0.5654393865002526,
+        0.3932047900226381,
+        0.03441075856486956
+      ]
+    }
+  ],
+  "robot_main_link_lengths_m": [
+    1.6574999932681813,
+    1.5299998454486545
+  ],
+  "robot_main_link_sum_m": 3.187499838716836,
+  "station_center_spacing_m": 3.995,
+  "headliner_origin_station_height_m": 0.9774999999999999,
+  "headliner_origin_peak_height_m": 2.295,
+  "suction_lip_nominal_diameter_m": 0.1,
+  "suction_lip_measured_diameter_m": 0.10009840354784291,
+  "suction_bellows_nominal_height_m": 0.061,
+  "vacuum_hose_outside_diameter_m": 0.009999999776482582,
+  "plunger_rod_diameter_m": 0.01600000091470915,
+  "fixture_pad_diameter_m": 0.07000000774860382,
+  "joint_cover_fastener_nominal_diameter_m": 0.013,
+  "anchor_bolt_head_nominal_diameter_m": 0.036,
+  "design_status": "Representative passenger-car panel and long-reach industrial arm. Not measured OEM CAD; nominal shell thickness remains metadata only."
+}

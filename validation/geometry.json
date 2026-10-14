@@ -1,27 +1,27 @@
 {
-  "vertices": 1235,
-  "quads": 1104,
-  "edges": 2343,
-  "boundary_loops": 6,
-  "apertures": 5,
+  "vertices": 8588,
+  "quads": 8184,
+  "edges": 16782,
+  "boundary_loops": 12,
+  "apertures": 11,
   "nonmanifold_edges_other_than_boundary": 0,
-  "euler_characteristic": -4,
+  "euler_characteristic": -10,
   "suction_contacts": 4,
   "animation_frames": 192,
   "fps": 24,
   "rigid_link_lengths_m": [
-    1.95,
-    1.8
+    1.6575,
+    1.53
   ],
-  "max_headliner_origin_z_m": 2.7,
+  "max_headliner_origin_z_m": 2.295,
   "shell_thickness_geometry": false,
   "subdivision_levels": 2,
-  "max_tool_position_error_m": 5.59934801699398e-07,
-  "max_rigid_link_length_error_m": 3.0365257708275806e-07,
+  "max_tool_position_error_m": 4.5491270787935696e-07,
+  "max_rigid_link_length_error_m": 2.324659238439608e-07,
   "suction_center_surface_errors_m": [
-    1.1920928955078125e-07,
-    2.2351741790771484e-08,
-    1.1920928955078125e-07,
-    2.2351741790771484e-08
+    1.48311471548368e-07,
+    1.4466411357716424e-07,
+    1.7760690695922676e-07,
+    1.7393556106526376e-07
   ]
 }
