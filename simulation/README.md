@@ -25,7 +25,7 @@ Every cup has the same prescribed rigid transform in this transfer because all c
 
 The existing transfer keeps the headliner orientation constant. `carrier(t)` evaluates its original quintic A→B→A translation on the device. The local-frame inertial predictor includes the exact discrete second difference of that translation. This implements prescribed moving supports; it is **not** a two-way robot multibody solve. Rotating carriers would require the corresponding rotating-frame inertial treatment or world-coordinate reconstruction, which is not implemented in this fixed-orientation example.
 
-Gravity ramps smoothly from zero to 9.81 m/s² over the initial 0.4 s dwell. Mass-proportional damping is 1 s⁻¹. The receiver stands, suction loss, friction and self-collision are not part of the mechanical problem. Both simulations start from the same stress-free, stationary configuration. The four-second A→B trajectory is not assumed to be a periodic dynamic steady state.
+Gravity ramps smoothly from zero to 9.81 m/s² over the initial 0.4 s dwell. Mass-proportional damping is 1 s⁻¹. Contact with the tooling and receiver stands, suction loss, friction and self-collision are not part of the mechanical problem. Both simulations start from the same stress-free, stationary configuration. The four-second A→B trajectory is not assumed to be a periodic dynamic steady state.
 
 ## Skinning reduction
 

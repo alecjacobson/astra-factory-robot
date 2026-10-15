@@ -1,0 +1,40 @@
+{
+  "model": "full",
+  "preconditioner": "fsai",
+  "linear_solver": "truncated",
+  "newton_limit": 200,
+  "absolute_tol": 1e-05,
+  "energy_slack": 1e-12,
+  "contacts": 2,
+  "steps": 3840,
+  "dt": 0.001041666666666667,
+  "stride": 80,
+  "setup_seconds": 4.878219112753868,
+  "simulation_seconds": 713.116469476372,
+  "hessian_evaluations": 12081,
+  "mean_newton": 3.14609375,
+  "max_newton": 131,
+  "last_cg_iterations": 113,
+  "preconditioner_refits": [
+    12080,
+    1
+  ],
+  "negative_curvature_truncations": 8,
+  "non_descent_fallbacks": 0,
+  "debug_host_checkpoints": false,
+  "last_cg_residual": 1.5180487036330323e-06,
+  "max_relative_stationarity": 0.006694048563470258,
+  "max_absolute_stationarity": 2.496295293953588e-05,
+  "line_search_failures": 0,
+  "max_patch_error_m": 0.0,
+  "max_displacement_m": 0.5441790390647727,
+  "mass_kg": 1.6748890097110127,
+  "free_dofs": 12245,
+  "material": {
+    "young_Pa": 300000000.0,
+    "poisson": 0.3,
+    "thickness_m": 0.003,
+    "density_kg_m3": 250.0
+  },
+  "basis_dofs": 12623
+}

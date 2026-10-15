@@ -4,7 +4,7 @@ A factory robot lifts an automobile headliner from station A, carries it up and 
 
 ## Dynamic shell comparison
 
-The new simulation uses a curved-rest **Bending-Active Cosserat shell implemented in Warp**, with a full-order model and a constrained, enriched skinning-eigenmode ROM. Each attachment fixes the **entire 100 mm circular contact region** to the rigid gripper. Both four-cup and two-diagonal-cup layouts use the same shell mesh and prescribed four-second transfer.
+The new simulation uses a curved-rest **Bending-Active Cosserat shell implemented in Warp**, with a full-order model and a constrained, enriched skinning-eigenmode ROM. Each attachment fixes the **entire 100 mm diameter circular contact region** to the rigid gripper. Both four-cup and two-diagonal-cup layouts use the same shell mesh and prescribed four-second transfer.
 
 After setup with Warp/cuDSS, one CUDA graph advances the complete trajectory, including nonlinear iterations, linear solves, line searches, moving supports and output storage. The graph audit checks nested conditional bodies for host nodes and host/device transfers. [Model, equations, limitations and reproduction](simulation/README.md).
 
@@ -12,13 +12,24 @@ After setup with Warp/cuDSS, one CUDA graph advances the complete trajectory, in
 
 ![Four-contact shell comparison](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/shell-comparison-4-contacts.gif)
 
-The dynamic animation shows deformation at **1× physical scale**. Green faces mark rigid contact regions. Material properties are illustrative: E = 300 MPa, Poisson ratio 0.3, density 250 kg/m³, thickness 3 mm; shell mass is approximately 1.675 kg. The model does not include suction failure, release, self-collision or receiver contact.
+**Two rigid contact regions — cups 01 and 04**
+
+![Two-contact shell comparison](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/shell-comparison-2-contacts.gif)
+
+Both animations show deformation at **1× physical scale**. Green faces mark rigid contact regions. Material properties are illustrative: E = 300 MPa, Poisson ratio 0.3, density 250 kg/m³, thickness 3 mm; shell mass is approximately 1.675 kg. The model does not include suction failure, release, self-collision, tooling collision or receiver contact.
 
 **Basis accuracy needs measurement.** In the preliminary, softer 30 MPa material study, the unaugmented 40-weight skinning basis has 93% relative trajectory error during initial loading. Offline compliance and nonlinear-correction enrichment reduces this to 44%, but is still too stiff for that case. The [basis study](validation/rom-basis-study.json) reports the tested alternatives. The full model is a reference on the shared simulation tessellation, without a spatial-convergence claim.
 
-At 300 MPa, the four-contact ROM has **6.3% relative trajectory error**, **0.088 mm maximum mass-weighted RMS error**, and **0.653 mm maximum vertex error**. The full model's peak sampled deformation is **4.51 mm**. All 480 timesteps converge, and constrained patch drift is exactly zero. [Four-contact results and graph audits](results/dynamics-4/comparison.json).
+The default 804-coordinate ROM works reasonably for the four-contact case, but is **much too stiff for the large two-contact deformation**.
 
-[Four-contact Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_dynamics_4_contacts.blend)
+| Rigid patches | Integration timestep | Full-model free DOFs | Full / ROM peak sampled deformation | Maximum RMS ROM error | Relative trajectory error |
+|---|---:|---:|---:|---:|---:|
+| 4 | 1/120 s | 11,867 | 4.51 / 4.17 mm | 0.088 mm | 6.3% |
+| 2 | 1/960 s | 12,245 | 544 / 104 mm | 153 mm | 79.0% |
+
+All 480 four-contact and 3,840 two-contact timesteps converge; patch drift is exactly zero. Errors use the 49 saved frames in the gripper-local frame. Both models use the same timestep within each layout. The two-contact ROM is **not an accurate surrogate for this large-bending case**. [Four-contact results and graph audits](results/dynamics-4/comparison.json) · [Two-contact results and graph audits](results/dynamics-2/comparison.json).
+
+[Four-contact Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_dynamics_4_contacts.blend) · [Two-contact Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_dynamics_2_contacts.blend)
 
 The simulation mesh has 2,172 vertices, 3,925 triangles and eleven open holes. Conforming 48-sided polygons cover the suction disks with at most 0.108 mm radial overreach. The original subdivision surface and robot wireframe scenes remain in the Blender files.
 

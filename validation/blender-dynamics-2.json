@@ -1,0 +1,14 @@
+{
+  "full": {
+    "max_sample_playback_error_m": 3.6883321341552033e-08,
+    "meters_per_blender_unit": 1.0,
+    "sample_count": 49,
+    "simulation_duration_s": 4.000000000000002
+  },
+  "rom": {
+    "max_sample_playback_error_m": 2.9767650455703176e-08,
+    "meters_per_blender_unit": 1.0,
+    "sample_count": 49,
+    "simulation_duration_s": 4.000000000000002
+  }
+}
