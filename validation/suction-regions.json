@@ -1,0 +1,62 @@
+{
+  "4": {
+    "1": {
+      "active": true,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.007865215537828587,
+      "covers_100mm_disk": true
+    },
+    "2": {
+      "active": true,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.00786521553782859,
+      "covers_100mm_disk": true
+    },
+    "3": {
+      "active": true,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.007865215537828587,
+      "covers_100mm_disk": true
+    },
+    "4": {
+      "active": true,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.00786521553782859,
+      "covers_100mm_disk": true
+    }
+  },
+  "2": {
+    "1": {
+      "active": true,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.007865215537828587,
+      "covers_100mm_disk": true
+    },
+    "2": {
+      "active": false,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.00786521553782859,
+      "covers_100mm_disk": true
+    },
+    "3": {
+      "active": false,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.007865215537828587,
+      "covers_100mm_disk": true
+    },
+    "4": {
+      "active": true,
+      "vertices": 48,
+      "triangles": 46,
+      "area_projected_m2": 0.00786521553782859,
+      "covers_100mm_disk": true
+    }
+  }
+}

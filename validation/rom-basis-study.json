@@ -1,0 +1,50 @@
+{
+  "duration_s": 0.5,
+  "dt": 0.004166666666666667,
+  "contacts": 4,
+  "reference": "Full BAC shell; all 120 steps converged",
+  "results": [
+    {
+      "configuration": "40 eigenweights only",
+      "reduced_coordinates": 480,
+      "relative_trajectory_L2_error": 0.9330095959494578,
+      "max_mass_rms_error_m": 0.007642459212463448,
+      "reproduce_arguments": "--contacts 4 --steps 120 --dt 0.004166666666666667 --stride 10 --weights 40 --enrichment 0 --young 3e7 --absolute-tol 1e-6 --newton-limit 60 --linear-solver standard"
+    },
+    {
+      "configuration": "40 eigenweights + 18 compliance weights",
+      "reduced_coordinates": 696,
+      "relative_trajectory_L2_error": 0.510688080898613,
+      "max_mass_rms_error_m": 0.004340257827963732,
+      "reproduce_arguments": "--contacts 4 --steps 120 --dt 0.004166666666666667 --stride 10 --weights 40 --enrichment 2 --no-nonlinear-enrichment --young 3e7 --absolute-tol 1e-6 --newton-limit 60 --linear-solver standard"
+    },
+    {
+      "configuration": "40 eigenweights + 18 compliance weights + independent reduced director coordinates",
+      "reduced_coordinates": 1392,
+      "relative_trajectory_L2_error": 0.5068289157354382,
+      "max_mass_rms_error_m": 0.0043087275171470865,
+      "reproduce_arguments": "--contacts 4 --steps 120 --dt 0.004166666666666667 --stride 10 --weights 40 --enrichment 2 --no-nonlinear-enrichment --free-directors --young 3e7 --absolute-tol 1e-6 --newton-limit 60 --linear-solver standard"
+    },
+    {
+      "configuration": "40 eigenweights + 18 compliance + 9 nonlinear-correction weights",
+      "reduced_coordinates": 804,
+      "relative_trajectory_L2_error": 0.4392195107242888,
+      "max_mass_rms_error_m": 0.0037140508109925192,
+      "reproduce_arguments": "--contacts 4 --steps 120 --dt 0.004166666666666667 --stride 10 --weights 40 --enrichment 2 --young 3e7 --absolute-tol 1e-6 --newton-limit 60 --linear-solver standard"
+    },
+    {
+      "configuration": "80 eigenweights + 18 compliance + 9 nonlinear-correction weights",
+      "reduced_coordinates": 1284,
+      "relative_trajectory_L2_error": 0.3830149921640145,
+      "max_mass_rms_error_m": 0.0032716101173939217,
+      "reproduce_arguments": "--contacts 4 --steps 120 --dt 0.004166666666666667 --stride 10 --weights 80 --enrichment 2 --young 3e7 --absolute-tol 1e-6 --newton-limit 60 --linear-solver standard"
+    }
+  ],
+  "material": {
+    "young_Pa": 30000000.0,
+    "poisson": 0.3,
+    "thickness_m": 0.003,
+    "density_kg_m3": 250
+  },
+  "timings": "Exploratory host-checkpoint runs; timings excluded."
+}

@@ -1,0 +1,11 @@
+{
+  "energy": 41.29791324592605,
+  "reference_energy": 41.297913245926026,
+  "energy_relative_error": 5.161588176590454e-16,
+  "gradient_relative_error": 5.664534093473369e-16,
+  "curved_rest_energy": 0.0,
+  "curved_rest_gradient": 0.0,
+  "rigid_energy_relative_error": 3.4410587843936338e-16,
+  "directional_gradient_relative_error": 2.6312883767122058e-09,
+  "rest_hessian_directional_error": 1.7626668713119843e-09
+}

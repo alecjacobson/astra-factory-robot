@@ -2,6 +2,30 @@
 
 A factory robot lifts an automobile headliner from station A, carries it up and over to station B, and returns it in a continuous animation. Choose either four corner suction contacts or two opposing diagonal contacts. The cup size, headliner, tooling frame, and prescribed motion are shared between both layouts.
 
+## Dynamic shell comparison
+
+The new simulation uses a curved-rest **Bending-Active Cosserat shell implemented in Warp**, with a full-order model and a constrained, enriched skinning-eigenmode ROM. Each attachment fixes the **entire 100 mm circular contact region** to the rigid gripper. Both four-cup and two-diagonal-cup layouts use the same shell mesh and prescribed four-second transfer.
+
+After setup with Warp/cuDSS, one CUDA graph advances the complete trajectory, including nonlinear iterations, linear solves, line searches, moving supports and output storage. The graph audit checks nested conditional bodies for host nodes and host/device transfers. [Model, equations, limitations and reproduction](simulation/README.md).
+
+**Four rigid contact regions — full simulation / enriched skinning ROM**
+
+![Four-contact shell comparison](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/shell-comparison-4-contacts.gif)
+
+The dynamic animation shows deformation at **1× physical scale**. Green faces mark rigid contact regions. Material properties are illustrative: E = 300 MPa, Poisson ratio 0.3, density 250 kg/m³, thickness 3 mm; shell mass is approximately 1.675 kg. The model does not include suction failure, release, self-collision or receiver contact.
+
+**Basis accuracy needs measurement.** In the preliminary, softer 30 MPa material study, the unaugmented 40-weight skinning basis has 93% relative trajectory error during initial loading. Offline compliance and nonlinear-correction enrichment reduces this to 44%, but is still too stiff for that case. The [basis study](validation/rom-basis-study.json) reports the tested alternatives. The full model is a reference on the shared simulation tessellation, without a spatial-convergence claim.
+
+At 300 MPa, the four-contact ROM has **6.3% relative trajectory error**, **0.088 mm maximum mass-weighted RMS error**, and **0.653 mm maximum vertex error**. The full model's peak sampled deformation is **4.51 mm**. All 480 timesteps converge, and constrained patch drift is exactly zero. [Four-contact results and graph audits](results/dynamics-4/comparison.json).
+
+[Four-contact Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_dynamics_4_contacts.blend)
+
+The simulation mesh has 2,172 vertices, 3,925 triangles and eleven open holes. Conforming 48-sided polygons cover the suction disks with at most 0.108 mm radial overreach. The original subdivision surface and robot wireframe scenes remain in the Blender files.
+
+![BAC shell wireframe and complete suction regions](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/bac-shell-wireframe.png)
+
+## Original kinematic scene
+
 **Four-contact baseline**
 
 ![Animated headliner transfer](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/headliner-transfer.gif)
@@ -24,7 +48,7 @@ The two-contact GIF is a geometric, kinematic comparison prepared for later stab
 |---|---:|
 | Headliner envelope, width × length | approximately **1,421 × 1,870 mm** |
 | Headliner form depth, highest to lowest surface point | approximately **165 mm** |
-| Nominal material thickness | **3 mm**, metadata only |
+| Nominal material thickness | **3 mm**, constitutive thickness in the simulation |
 | Suction lip diameter | **100 mm** |
 | Bellows height | **61 mm** |
 | Vacuum hose outside diameter | **10 mm** |
