@@ -5,6 +5,7 @@ import warp as wp
 from .model import load_headliner
 from .reduction import build_basis
 from .dynamics import Integrator
+from .settling import Settlement, capture_transfer
 
 
 def main():
@@ -30,7 +31,22 @@ def main():
     p.add_argument("--enrichment", type=int, default=2)
     p.add_argument("--free-directors", action="store_true")
     p.add_argument("--no-nonlinear-enrichment", action="store_true")
+    p.add_argument("--no-settle", action="store_true", help="Legacy stress-free start")
+    p.add_argument("--settle-dt", type=float, default=1 / 120)
+    p.add_argument("--settle-limit", type=float, default=30.0)
+    p.add_argument("--settle-damping", type=float, default=20.0)
     args = p.parse_args()
+    if (
+        args.settle_dt <= 0
+        or args.settle_dt > args.settle_limit
+        or args.settle_limit < 2.25
+        or args.settle_damping <= 0
+    ):
+        p.error(
+            "positive settling dt/damping and at least 2.25 s settling limit required"
+        )
+    if not args.no_settle and args.debug_chunk:
+        p.error("debug chunks are only available for legacy --no-settle runs")
     if args.steps <= 0 or args.stride <= 0 or args.steps % args.stride or args.dt <= 0:
         p.error("positive steps/dt/stride required; steps must be divisible by stride")
     if (
@@ -75,8 +91,32 @@ def main():
             newton_limit=args.newton_limit,
             absolute_tol=args.absolute_tol,
             energy_slack=args.energy_slack,
+            gravity_ramp=0.4 if args.no_settle else 0.0,
         )
-        graph = sim.capture(args.steps, args.stride)
+        settler = None
+        children = None
+        if args.no_settle:
+            graph = sim.capture(args.steps, args.stride)
+        else:
+            settle_steps = round(args.settle_limit / args.settle_dt)
+            settler = Integrator(
+                s,
+                h,
+                basis,
+                dt=args.settle_dt,
+                damping=args.settle_damping,
+                max_steps=settle_steps,
+                linear_solver="truncated",
+                newton_limit=args.newton_limit,
+                absolute_tol=args.absolute_tol,
+                energy_slack=args.energy_slack,
+                stationary=True,
+                gravity_ramp=2.0,
+            )
+            settler.settlement = Settlement(settler)
+            graph, children = capture_transfer(
+                settler, sim, settle_steps, args.steps, args.stride
+            )
         wp.synchronize()
         setup = time.perf_counter() - start
         wp.capture_debug_dot_print(
@@ -92,7 +132,9 @@ def main():
                     history=simulator.history.numpy()[:completed],
                     state=simulator.x.numpy(),
                     velocity=simulator.v.numpy(),
-                    frames=simulator.frames.numpy()[: completed // args.stride + 1],
+                    frames=simulator.frames.numpy()[
+                        : completed // simulator.stride + 1
+                    ],
                 )
                 raise RuntimeError(
                     f"{name}: unconverged timestep {completed}; device loop stopped and diagnostic checkpoint saved"
@@ -130,6 +172,44 @@ def main():
             wp.capture_launch(graph)
             wp.synchronize()
         elapsed = time.perf_counter() - start
+        settlement_report = None
+        if settler is not None:
+            ensure_converged(settler)
+            sn = int(settler.clock.numpy()[0])
+            sh = settler.history.numpy()[:sn]
+            sm = settler.settlement.history.numpy()[:sn]
+            np.savez_compressed(
+                out / (name + "-settling.npz"),
+                state=settler.x.numpy(),
+                velocity=settler.v.numpy(),
+                history=sh,
+                measurements=sm,
+                frames=settler.frames.numpy()[: sn // settler.stride + 1],
+                frame_dt=settler.dt * settler.stride,
+            )
+            settlement_report = dict(
+                converged=bool(settler.settlement.settled.numpy()[0]),
+                steps=sn,
+                duration_s=sn * settler.dt,
+                dt=settler.dt,
+                damping_per_s=settler.damping,
+                gravity_ramp_s=2.0,
+                required_quiet_duration_s=settler.settlement.hold * settler.dt,
+                speed_tolerance_m_s=settler.settlement.speed_tol,
+                acceleration_tolerance_m_s2=settler.settlement.acceleration_tol,
+                final_max_speed_m_s=float(sm[-1, 0]),
+                final_max_acceleration_m_s2=float(sm[-1, 1]),
+                line_search_failures=int(sh[-1, 3]),
+                unconverged_steps=int(
+                    ((sh[:, 1] > 1e-6) & (sh[:, 2] > args.absolute_tol)).sum()
+                ),
+            )
+            (out / (name + "-settling.json")).write_text(
+                json.dumps(settlement_report, indent=2)
+            )
+            assert settlement_report["converged"], (
+                "Settling limit reached; robot did not move"
+            )
         ensure_converged(sim)
         assert int(sim.clock.numpy()[0]) == args.steps
         x = sim.frames.numpy()
@@ -140,6 +220,8 @@ def main():
         patch = np.array(s.fixed_host[: 3 * s.nv], dtype=bool)
         report = dict(
             model=name,
+            settling=settlement_report,
+            simulation_timing_includes_settling=settler is not None,
             preconditioner=args.full_preconditioner
             if name == "full"
             else "reduced-rest-inverse",
@@ -203,7 +285,7 @@ def main():
         )
         (out / (name + ".json")).write_text(json.dumps(report, indent=2))
         print("RESULT", report, flush=True)
-        del graph, sim
+        del graph, children, sim, settler
 
 
 if __name__ == "__main__":

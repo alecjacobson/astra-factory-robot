@@ -6,8 +6,9 @@ from simulation.audit import audit
 
 p = argparse.ArgumentParser()
 p.add_argument("--contacts", type=int, required=True)
+p.add_argument("--folder")
 args = p.parse_args()
-source = Path(f"build/comparison-{args.contacts}")
+source = Path(args.folder or f"build/comparison-{args.contacts}")
 target = Path(f"results/dynamics-{args.contacts}")
 report = audit(source)
 assert all(not report[m]["debug_host_checkpoints"] for m in ["full", "rom"])
@@ -28,3 +29,9 @@ for name in [
 ]:
     shutil.copy2(source / name, target / name)
 print(target)
+
+for model in ["full", "rom"]:
+    if report[model].get("settling"):
+        for extension in ["json", "npz"]:
+            name = f"{model}-settling.{extension}"
+            shutil.copy2(source / name, target / name)

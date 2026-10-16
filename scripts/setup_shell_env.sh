@@ -2,7 +2,7 @@
 set -euo pipefail
 # Install into an activated Python environment. Runtime is pinned for graph support.
 python -m pip install 'warp-lang @ https://github.com/NVIDIA/warp/releases/download/v1.18.0/warp_lang-1.18.0%2Bcu12-py3-none-manylinux_2_28_x86_64.whl' \
- 'warpack[cudss] @ git+https://github.com/alecjacobson/warpack.git@b587ce49951f2944122ce5615dacf537f130799c' \
+ 'warpack[cudss] @ git+https://github.com/alecjacobson/warpack.git@6f7cfb61f0e434765fb1a6fd76be241d6ff34d7b' \
  'shapely==2.1.2' pillow matplotlib
 # Unmodified upstream FSAI implementation; numerical setup and application are Warp.
 warp_site=$(python -c 'import pathlib,warp; print(pathlib.Path(warp.__file__).parent)')

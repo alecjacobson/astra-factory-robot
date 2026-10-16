@@ -69,6 +69,17 @@ for model in ["full", "rom"]:
     s.frame_end = round(1 + (len(positions) - 1) * report["dt"] * report["stride"] * 24)
     mapping = {}
     for original in source.objects:
+        if original.name.startswith(
+            (
+                "Fixture leg",
+                "Adjustable foot",
+                "Nest crossmember",
+                "Nest longitudinal rail",
+                "Locating pedestal",
+                "Soft nest pad",
+            )
+        ):
+            continue
         if not original.visible_get(view_layer=source.view_layers[0]):
             continue
         o = original.copy()
@@ -92,7 +103,10 @@ for model in ["full", "rom"]:
         poly.material_index = int(
             owner != 0 and (args.contacts == 4 or owner in (1, 4))
         )
-    panel.shape_key_add(name="Rest midsurface")
+    initial = panel.shape_key_add(
+        name="Settled equilibrium" if report.get("settling") else "Rest midsurface"
+    )
+    initial.data.foreach_set("co", positions[0].astype("f").ravel())
     step_frames = report["dt"] * report["stride"] * 24
     for j in range(1, len(positions)):
         key = panel.shape_key_add(
@@ -132,6 +146,10 @@ for model in ["full", "rom"]:
     s["full_cell_camera"] = cell.name
     s["simulation"] = json.dumps(report)
     s["deformation_scale"] = 1.0
+    s["receiver_stands_removed"] = True
+    s["time_origin"] = (
+        "After gravity settling" if report.get("settling") else "Stress-free start"
+    )
     s["contact_coupling"] = "Entire 100 mm circular region; green constrained triangles"
     s["shell_model"] = (
         "BAC MidedgeAngleTan + StVK, 3 mm, curved rest; no self/contact collision"
@@ -142,7 +160,7 @@ bpy.context.window.scene = scenes[0][0]
 scenes[0][0].frame_set(49)
 text = bpy.data.texts.new(f"READ ME • {args.contacts}-contact dynamic comparison")
 text.write(
-    "Select FULL BAC shell or SKINNING ROM from the Scene menu. Both use actual, unamplified GPU trajectories. Green faces are rigid suction patches. Each scene has a following shell camera and an entire robot cell camera. Shape keys store the 12 fps samples; playback interpolates linearly. The source kinematic scenes remain available. Physical parameters, solver convergence and graph audit are in the repository validation reports.\n"
+    "Select FULL BAC shell or SKINNING ROM from the Scene menu. Both use actual, unamplified GPU trajectories. Time zero is the gravity-settled state when settling is enabled. The robot remains fixed during the device-controlled settling phase, which is omitted from transfer playback. Receiver stands are removed from the simulation scenes. Green faces are rigid suction patches. Each scene has a following shell camera and an entire robot cell camera. Shape keys store the 12 fps samples; playback interpolates linearly. The source kinematic scenes remain available. Physical parameters, solver convergence and graph audit are in the repository validation reports.\n"
     + json.dumps(json.loads((folder / "comparison.json").read_text()), indent=2)
 )
 bpy.ops.wm.save_as_mainfile(

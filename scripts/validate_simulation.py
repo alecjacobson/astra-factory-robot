@@ -35,9 +35,24 @@ for model, label in [("full", "FULL BAC shell"), ("rom", "SKINNING ROM")]:
         largest = max(largest, float(np.max(abs(co - x[j]))))
     assert largest < 1.0e-6, largest
     assert not panel.modifiers
+    assert not any(
+        o.name.startswith(
+            (
+                "Fixture leg",
+                "Adjustable foot",
+                "Nest crossmember",
+                "Nest longitudinal rail",
+                "Locating pedestal",
+                "Soft nest pad",
+            )
+        )
+        for o in s.objects
+    )
     reports[model] = {
         "max_sample_playback_error_m": largest,
         "meters_per_blender_unit": 1.0,
+        "receiver_stands_removed": True,
+        "starts_after_settling": bool(r.get("settling")),
         "sample_count": len(x),
         "simulation_duration_s": r["dt"] * r["steps"],
     }

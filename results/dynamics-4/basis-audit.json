@@ -1,8 +1,8 @@
 {
-  "position_mass_orthogonality_max": 8.881784197001252e-16,
+  "position_mass_orthogonality_max": 9.992007221626409e-16,
   "maximum_fixed_entry": 0.0,
   "position_coordinates": 804,
   "total_coordinates": 804,
-  "position_subspace_error_m": 4.543701569506564e-15,
-  "director_lift_error_rad": 1.0178732856580552e-12
+  "position_subspace_error_m": 4.655796215680304e-15,
+  "director_lift_error_rad": 1.771534308137035e-12
 }

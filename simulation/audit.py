@@ -45,6 +45,12 @@ def audit(folder):
     f = full["positions"]
     r = rom["positions"]
     m = full["mass"]
+    df = f - f[0]
+    dr = r - r[0]
+    motion_error = np.linalg.norm(dr - df, axis=2)
+    motion_rms = np.sqrt(np.sum(motion_error**2 * m, axis=1) / m.sum())
+    motion_full = np.linalg.norm(df, axis=2)
+    motion_rom = np.linalg.norm(dr, axis=2)
     error = np.linalg.norm(r - f, axis=2)
     deform = np.linalg.norm(f - x, axis=2)
     rms = np.sqrt(np.sum(error**2 * m, axis=1) / m.sum())
@@ -88,6 +94,13 @@ def audit(folder):
             np.sqrt(np.sum(error**2 * m) / np.sum(deform**2 * m))
         ),
         peak_full_displacement_m=float(deform.max()),
+        motion_peak_full_m=float(motion_full.max()),
+        motion_peak_rom_m=float(motion_rom.max()),
+        motion_max_mass_rms_error_m=float(motion_rms.max()),
+        motion_relative_mass_L2_error=float(
+            np.sqrt(np.sum(motion_error**2 * m) / np.sum(motion_full**2 * m))
+        ),
+        initial_equilibrium_max_vertex_difference_m=float(error[0].max()),
         full=freport,
         rom=rreport,
         graphs={
@@ -106,6 +119,36 @@ def audit(folder):
         )
         assert report[model]["max_patch_error_m"] < 1.0e-10
         report[model]["accepted"] = not bool(failed.any())
+        current_positions = full["positions"] if model == "full" else rom["positions"]
+        report[model]["initial_peak_sag_m"] = float(
+            np.linalg.norm(current_positions[0] - x, axis=1).max()
+        )
+        report[model]["initial_quiet_dwell_peak_change_m"] = float(
+            np.linalg.norm(
+                current_positions[time <= 0.4] - current_positions[0], axis=2
+            ).max()
+        )
+        settling = report[model].get("settling")
+        if settling:
+            assert settling["converged"] and settling["unconverged_steps"] == 0
+            a = np.load(folder / (model + "-settling.npz"))
+            quiet = round(settling["required_quiet_duration_s"] / settling["dt"])
+            assert np.all(
+                a["measurements"][-quiet:, 0] <= settling["speed_tolerance_m_s"]
+            )
+            assert np.all(
+                a["measurements"][-quiet:, 1] <= settling["acceleration_tolerance_m_s2"]
+            )
+            current = full if model == "full" else rom
+            assert (
+                np.max(
+                    abs(
+                        a["state"][: 3 * len(x)].reshape(-1, 3)
+                        - current["positions"][0]
+                    )
+                )
+                < 1e-12
+            )
         assert report[model]["accepted"], (
             f"{model}: {failed.sum()} unconverged timesteps"
         )
@@ -120,6 +163,10 @@ def audit(folder):
         full_rms=frms,
         max_error=error.max(axis=1),
         full_peak=deform.max(axis=1),
+        motion_rms_error=motion_rms,
+        motion_max_error=motion_error.max(axis=1),
+        motion_full_peak=motion_full.max(axis=1),
+        motion_rom_peak=motion_rom.max(axis=1),
     )
     import matplotlib
 
@@ -127,21 +174,26 @@ def audit(folder):
     import matplotlib.pyplot as plt
 
     fig, ax = plt.subplots(1, 2, figsize=(11, 3.6), layout="constrained")
-    ax[0].plot(time, deform.max(axis=1) * 1000, label="Full BAC shell", color="#087f8c")
+    ax[0].plot(
+        time, motion_full.max(axis=1) * 1000, label="Full BAC shell", color="#087f8c"
+    )
     ax[0].plot(
         time,
-        np.linalg.norm(r - x, axis=2).max(axis=1) * 1000,
+        motion_rom.max(axis=1) * 1000,
         label="Skinning ROM",
         color="#d78a14",
     )
-    ax[0].set(ylabel="Peak displacement (mm)", xlabel="Time (s)")
+    ax[0].set(ylabel="Change from initial equilibrium (mm)", xlabel="Transfer time (s)")
     ax[0].legend()
     ax[0].grid(alpha=0.2)
-    ax[1].plot(time, rms * 1000, label="Mass-weighted RMS", color="#087f8c")
+    ax[1].plot(time, motion_rms * 1000, label="Mass-weighted RMS", color="#087f8c")
     ax[1].plot(
-        time, error.max(axis=1) * 1000, label="Maximum vertex error", color="#d78a14"
+        time,
+        motion_error.max(axis=1) * 1000,
+        label="Maximum vertex error",
+        color="#d78a14",
     )
-    ax[1].set(ylabel="ROM − full discrepancy (mm)", xlabel="Time (s)")
+    ax[1].set(ylabel="Motion-induced ROM discrepancy (mm)", xlabel="Transfer time (s)")
     ax[1].legend()
     ax[1].grid(alpha=0.2)
     fig.savefig(folder / "comparison.png", dpi=180)

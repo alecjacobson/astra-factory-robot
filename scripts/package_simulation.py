@@ -51,15 +51,21 @@ for j in range(len(curves["time"])):
             (x, 92),
         )
     d = ImageDraw.Draw(canvas)
+    phase_label = (
+        "gravity settled" if report["full"].get("settling") else "stress-free start"
+    )
     d.text(
         (22, 821),
-        f"t = {curves['time'][j]:.2f} s    |    deformation scale 1×    |    green = rigid contact region",
+        f"Transfer t = {curves['time'][j]:.2f} s    |    {phase_label}    |    physical scale 1×",
         font=f(20),
         fill="#e1e9ef",
     )
+    reference_label = (
+        "equilibrium" if report["full"].get("settling") else "initial state"
+    )
     d.text(
         (22, 858),
-        f"ROM error: RMS {curves['rms_error'][j] * 1000:.2f} mm  /  peak {curves['max_error'][j] * 1000:.2f} mm",
+        f"Motion from {reference_label}: full {curves['motion_full_peak'][j] * 1000:.2f} / ROM {curves['motion_rom_peak'][j] * 1000:.2f} mm",
         font=f(19),
         fill="#b9c7d5",
     )

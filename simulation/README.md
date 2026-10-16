@@ -25,7 +25,11 @@ Every cup has the same prescribed rigid transform in this transfer because all c
 
 The existing transfer keeps the headliner orientation constant. `carrier(t)` evaluates its original quintic A→B→A translation on the device. The local-frame inertial predictor includes the exact discrete second difference of that translation. This implements prescribed moving supports; it is **not** a two-way robot multibody solve. Rotating carriers would require the corresponding rotating-frame inertial treatment or world-coordinate reconstruction, which is not implemented in this fixed-orientation example.
 
-Gravity ramps smoothly from zero to 9.81 m/s² over the initial 0.4 s dwell. Mass-proportional damping is 1 s⁻¹. Contact with the tooling and receiver stands, suction loss, friction and self-collision are not part of the mechanical problem. Both simulations start from the same stress-free, stationary configuration. The four-second A→B trajectory is not assumed to be a periodic dynamic steady state.
+The robot is held fixed while gravity ramps to 9.81 m/s² over two seconds. Settling uses a 1/120 s timestep and mass-proportional damping of 20 s⁻¹. A device-side gate requires **every vertex's speed below 0.01 mm/s and acceleration below 1 mm/s² for 0.25 s**, after the gravity ramp. If a Newton solve fails or the 30 s settling limit expires, the robot does not move and the run is rejected.
+
+Each model then starts the same four-second transfer from its own settled shape, retaining its tiny residual velocity. Transfer damping is 1 s⁻¹ and gravity remains fully applied. Time zero in the GIFs and Blender comparison scenes is the end of settling; the initial fall is omitted from playback. This deliberately separates preparation from motion, and does not assume the two models have identical gravitational equilibria. Settling trajectories and convergence measurements are saved separately. `--no-settle` restores the old stress-free start with its 0.4 s gravity ramp.
+
+Receiver stands are removed from the simulation scenes. Contact with tooling, suction loss, friction and self-collision remain outside the mechanical model. The four-second A→B trajectory is not assumed to be a periodic dynamic steady state.
 
 ## Skinning reduction
 
@@ -49,10 +53,12 @@ The [basis study](../validation/rom-basis-study.json) compares several construct
 
 ## Device-only integration
 
-After setup, one CUDA graph contains the entire requested trajectory:
+After setup, one CUDA graph contains both settling and the requested transfer:
 
 ```
-GPU timestep loop
+GPU stationary settling loop (including sustained speed/acceleration gate)
+If settled: copy state and velocity on device, reset transfer time
+GPU transfer timestep loop
   prescribed carrier / inertial predictor
   GPU nonlinear convergence loop
     BAC residuals and exact Jacobian
@@ -61,19 +67,19 @@ GPU timestep loop
   velocity update, diagnostics, device-resident frame storage
 ```
 
-The full model uses elementwise consistent-Hessian products and a Warp FSAI preconditioner. The four-contact run adds a coarse skinning correction (`--full-preconditioner two-level`). The two-contact run uses FSAI alone: the undeformed coarse correction becomes ineffective during its large bends. FSAI numeric factors are refitted to the current tangent on frozen sparse supports inside the captured loop. A GPU guard commits finite positive candidates; rejected candidates leave the previous factors intact. This bypasses the public FSAI update's host-side validation using prevalidated, immutable topology and device-side numeric checks. The exact mechanical operator is independent of this approximate inverse. This accelerates the full solve without restricting its solution to the skinning basis. The truncated Newton-CG option stops at nonpositive curvature and keeps the preceding descent iterate. A device-side descent-direction check falls back to the positive preconditioner if the Newton solve produces a non-descent direction. The ROM projects the same Hessian products and uses a precomputed reduced rest-tangent inverse. Linear iterations, nonlinear convergence, line-search decisions, timestep advancement and output-buffer writes all run on the GPU.
+The full model uses elementwise consistent-Hessian products and a Warp FSAI preconditioner. Both layouts now use FSAI alone. An optional coarse skinning correction remains available (`--full-preconditioner two-level`), but becomes ineffective during large bends. FSAI numeric factors are refitted to the current tangent on frozen sparse supports inside the captured loop. A GPU guard commits finite positive candidates; rejected candidates leave the previous factors intact. This bypasses the public FSAI update's host-side validation using prevalidated, immutable topology and device-side numeric checks. The exact mechanical operator is independent of this approximate inverse. This accelerates the full solve without restricting its solution to the skinning basis. The truncated Newton-CG option stops at nonpositive curvature and keeps the preceding descent iterate. A device-side descent-direction check falls back to the positive preconditioner if the Newton solve produces a non-descent direction. The ROM projects the same Hessian products and uses a precomputed reduced rest-tangent inverse. Linear iterations, nonlinear convergence, line-search decisions, timestep advancement and output-buffer writes all run on the GPU.
 
 **cuDSS is used only in setup**, avoiding its vendor scalar host-to-device metadata transfers in the simulation graph. There are no NumPy/SciPy/CuPy mechanical solves. Host work consists of mesh topology and file I/O, setup orchestration, graph launch, and post-run validation/rendering. Shapely is an offline mesh-construction dependency. NumPy handles data files and independent validation, not the mechanical runtime.
 
-The four-contact FOM uses ordinary PCG; the four-contact ROM and both two-contact models use truncated Newton-CG. Their equilibrium objectives are identical within each layout. Nonlinear stopping uses relative gradient norm 1e-6 or the reported absolute tolerance: 1e-6 for the four-contact FOM and 1e-5 otherwise. The [tolerance study](../validation/rom-tolerance-study.json) bounds the four-contact ROM trajectory change from tightening 1e-5 to 1e-6 by 2.2 nanometres, including variation between independent basis setups. All timesteps must pass their declared stopping criterion. A device-side failure flag stops the captured time loop if a solve fails; the driver writes a diagnostic checkpoint and raises instead of presenting the trajectory as accepted. The two-contact layout uses a finer timestep to resolve its large bending transitions. The Armijo comparison allows an energy-roundoff margin `energy_slack * max(1 J, abs(E))`: 1e-14 in the four-contact results and 1e-12 in the two-contact runs. The gradient stopping criterion is unaffected by this energy-comparison margin. A recovered line-search failure is recorded separately from an unconverged timestep.
+Both models and layouts use truncated Newton-CG, a maximum of 200 Newton iterations, and relative gradient norm 1e-6 or absolute tolerance 1e-5. The earlier [tolerance study](../validation/rom-tolerance-study.json) found a 2.2 nanometre trajectory change when tightening the four-contact ROM tolerance in the stress-free-start comparison; it is not a new tolerance study of settling. Every settling and transfer timestep must pass its declared stopping criterion. A device-side failure flag stops the captured loop if a solve fails. The driver writes a diagnostic checkpoint and raises instead of accepting the trajectory. The two-contact layout uses a finer transfer timestep to resolve its large bending transitions. The Armijo comparison permits the roundoff margin `1e-12 * max(1 J, abs(E))`; the gradient stopping criterion is unaffected. Recovered line-search failures are reported separately.
 
 The nonlinear energy and tangent evaluations still visit the full mesh: this is a Galerkin ROM, without cubature or hyper-reduction.
 
-The graph audit uses CUDA's verbose DOT dump, including the bodies of nested conditional nodes. It rejects host nodes, host-to-device or device-to-host copies, and unclassified memory copies. Device-to-device copies and memsets are allowed. Startup/JIT, cuDSS factorization, FSAI construction, graph capture and final output downloads are outside simulation timing. Timings are single synchronized runs on a shared NVIDIA L40, not isolated benchmark measurements or a hardware-independent real-time guarantee.
+The graph audit uses CUDA's verbose DOT dump, including the bodies of nested conditional nodes. It rejects host nodes, host-to-device or device-to-host copies, and unclassified memory copies. Device-to-device copies and memsets are allowed. Startup/JIT, cuDSS factorization, FSAI construction, graph capture and final output downloads are outside simulation timing. The reported graph runtime now includes settling and transfer. Timings are single synchronized runs on a shared NVIDIA L40, not isolated benchmark measurements or a hardware-independent real-time guarantee.
 
 ## Reproduction
 
-Use a fresh Python environment, CUDA 12.4+ capable driver, and a supported NVIDIA GPU. The setup script pins Warp 1.18.0, warpack and warp-cuDSS, and installs the unmodified FSAI overlay used by warpack's benchmark.
+Use a fresh Python environment, CUDA 12.4+ capable driver, and a supported NVIDIA GPU. The setup script pins Warp 1.18.0, warpack at `6f7cfb61f0e434765fb1a6fd76be241d6ff34d7b` and warp-cuDSS, and installs the unmodified FSAI overlay used by warpack's benchmark.
 
 ```bash
 bash scripts/setup_shell_env.sh
@@ -84,10 +90,8 @@ python -m tests.check_device_stop
 python -m tests.check_carrier
 python -m tests.check_truncated_cg
 python -m tests.check_contacts
-python -m simulation.run --contacts 4 --weights 40 --steps 480 --model full \
-  --full-preconditioner two-level --linear-solver standard --newton-limit 60 --absolute-tol 1e-6 --energy-slack 1e-14 \
-  --dt 0.008333333333333333 --stride 10 --output build/comparison-4
-python -m simulation.run --contacts 4 --weights 40 --steps 480 --model rom --energy-slack 1e-14 \
+python -m tests.check_settling
+python -m simulation.run --contacts 4 --weights 40 --steps 480 \
   --dt 0.008333333333333333 --stride 10 --output build/comparison-4
 python -m simulation.audit build/comparison-4
 python -m tests.check_basis build/comparison-4
@@ -114,12 +118,16 @@ The saved comparison Blender files contain chronological shape-key samples at 12
 
 `tests/libshell_bac_golden.txt` is the independent LibShell-generated numeric fixture from the reference project's `reference/golden.txt`; it contains the input geometry, deformation, material, energy and full gradient. The fixture is validation data only. No TinyAD, Eigen or LibShell code runs in the solver.
 
-`tests/check_bac.py` checks energy and gradient against that fixture, rigid-motion invariance, curved-rest stress freedom, finite-difference gradients, and the exact rest Hessian. `tests/check_hessian.py` checks the consistent tangent at a significantly deformed configuration. `tests/check_device_stop.py` verifies that an unconverged solve stops the graph after its first attempted timestep. `tests/check_carrier.py` compares prescribed supports with all 193 exported Blender poses. `tests/check_truncated_cg.py` checks positive-definite convergence and negative-curvature truncation. `tests/check_device_refit.py` verifies device-only factor acceptance and rejection. `tests/check_contacts.py` verifies complete disk coverage and activation of every patch vertex in both layouts. `simulation/audit.py` checks topology, patch drift, nonlinear stopping criteria, the full/ROM trajectory discrepancy and captured graph contents. Simulation histories and graph dumps are retained with the published results so solver limits can be inspected.
+`tests/check_bac.py` checks energy and gradient against that fixture, rigid-motion invariance, curved-rest stress freedom, finite-difference gradients, and the exact rest Hessian. `tests/check_hessian.py` checks the consistent tangent at a significantly deformed configuration. `tests/check_settling.py` verifies that the GPU gate prevents all robot timesteps when settling has not completed, and that successful settling transfers the exact state into the first animation sample. `tests/check_device_stop.py` verifies that an unconverged solve stops the graph after its first attempted timestep. `tests/check_carrier.py` compares prescribed supports with all 193 exported Blender poses. `tests/check_truncated_cg.py` checks positive-definite convergence and negative-curvature truncation. `tests/check_device_refit.py` verifies device-only factor acceptance and rejection. `tests/check_contacts.py` verifies complete disk coverage and activation of every patch vertex in both layouts. `simulation/audit.py` checks topology, patch drift, nonlinear stopping criteria, the full/ROM trajectory discrepancy and captured graph contents. Simulation histories and graph dumps are retained with the published results so solver limits can be inspected.
 
 ## Result files
 
 Displacement and ROM-error metrics use the 49 saved samples at 12 fps; convergence histories cover every integration timestep. Relative trajectory error is the mass-weighted norm of `x_ROM - x_full`, divided by the mass-weighted norm of `x_full - x_rest`, over those samples. Both are measured in the carrier-local frame, so the prescribed four-metre rigid translation does not dilute the deformation error. Reported displacement peaks are sampled peaks, not continuous-time maxima.
 
-Each `results/dynamics-N` folder contains the shared mesh, eigenmode diagnostics, full and reduced trajectory arrays, convergence histories, CUDA graph dumps, independent audits and comparison curves. `rom.npz` also stores the basis, with one generalized-coordinate column stored per **row** of the array. The first `3*nv` entries of each row are vertex displacements; the remaining entries are director angles. Samples store local positions and director angles. Recover default ROM coordinates as `q_row = (x-x_rest)_row M B_position^T`; the basis audit verifies both position-subspace membership and the director lift along the saved trajectory. World translation is supplied by `carrier(t)`.
+The new motion-specific metrics instead use `d_full(t)=x_full(t)-x_full(0)` and `d_ROM(t)=x_ROM(t)-x_ROM(0)`, with each initial state gravity-settled. Motion error is `d_ROM-d_full`; its relative mass L2 norm is normalized by `d_full`. These remove the static sag discrepancy from the movement comparison. Absolute discrepancies are still archived, including the difference between initial equilibria. Plots and GIF labels show motion relative to equilibrium.
+
+The [EigenFit assessment](EIGENFIT.md) compares the rest-state full and reduced spectra and explains why a frequency correction has not been applied blindly to this nonlinear ROM.
+
+Each `results/dynamics-N` folder contains the shared mesh, eigenmode diagnostics, full and reduced trajectory arrays, convergence histories, CUDA graph dumps, independent audits and comparison curves. `full-settling.npz` and `rom-settling.npz` retain the settling state, velocity, decimated frames and every-step speed/acceleration measurements. `rom.npz` also stores the basis, with one generalized-coordinate column stored per **row** of the array. The first `3*nv` entries of each row are vertex displacements; the remaining entries are director angles. Samples store local positions and director angles. Recover default ROM coordinates as `q_row = (x-x_rest)_row M B_position^T`; the basis audit verifies both position-subspace membership and the director lift along the saved trajectory. World translation is supplied by `carrier(t)`.
 
 Binary scenes, images, GIFs and NPZ arrays are in Git LFS. Run `git lfs pull` after cloning to obtain the actual files rather than pointer text.

@@ -1,785 +1,1740 @@
 digraph dot {
-subgraph cluster_2167 {
-label="graph_2167" graph[style="dashed"];
-"graph_2167_node_0"[style="bold" shape="record" label="{KERNEL
-| {ID | 0 (topoId: 2) | check_time_a92d4034_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD478DC8 | 0x0000563FC929BA00}}
+subgraph cluster_2199 {
+label="graph_2199" graph[style="dashed"];
+"graph_2199_node_0"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {0 (topoId: 25) | 0x0000563581C3FEF0}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000302000200 | 0 | 0 | 0 | 0x0000000317E99400 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 100984} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2199_node_1"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {1 (topoId: 24) | 0x0000563581C3F7E8 | 0x0000000317EB2000 | 0 | 0 | 1 | 100984 | 1}}}"];
+
+"graph_2199_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 23) | 0x0000563581C3F0E0 | 0x00000003078BE200 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_3"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {3 (topoId: 22) | 0x0000563581C3E9D8 | 0x00000003169E0000 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_4"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {4 (topoId: 21) | 0x0000563581C499A0 | 0x00000003169DF800 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 20) | 0x0000563581C3DBC8 | 0x00000003169DFC00 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_6"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {6 (topoId: 19) | 0x0000563581C6DA30 | 0x0000000316E82C00 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_7"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {7 (topoId: 18) | 0x0000563581C3BFA8 | 0x0000000316D10000 | 0 | 0 | 1 | 201600 | 1}}}"];
+
+"graph_2199_node_8"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {8 (topoId: 17) | 0x0000563581C3CDB8 | 0x0000000303842C00 | 0 | 0 | 1 | 100984 | 1}}}"];
+
+"graph_2199_node_9"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {9 (topoId: 16) | 0x0000563581C3C6B0 | 0x0000000316E82E00 | 0 | 0 | 1 | 16 | 1}}}"];
+
+"graph_2199_node_10"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {10 (topoId: 15) | 0x0000563581C3D4C0 | 0x0000000316E83000 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_11"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {11 (topoId: 14) | 0x0000563581C3B8A0 | 0x0000000316E83200 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_12"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {12 (topoId: 13) | 0x0000563581C43730 | 0x00000003078AD600 | 0 | 0 | 1 | 57600 | 1}}}"];
+
+"graph_2199_node_13"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {13 (topoId: 12) | 0x0000563581C6D328}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000302000200 | 0 | 0 | 0 | 0x0000000307894A00 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 100984} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2199_node_14"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {14 (topoId: 11) | 0x0000563581C670B8 | 0x0000000307113A00 | 0 | 0 | 1 | 100984 | 1}}}"];
+
+"graph_2199_node_15"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {15 (topoId: 10) | 0x0000563581C6CC20 | 0x0000000303B6A000 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_16"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {16 (topoId: 9) | 0x0000563581C6C518 | 0x0000000303871800 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_17"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {17 (topoId: 8) | 0x0000563581C6BE10 | 0x0000000303B6AA00 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_18"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {18 (topoId: 7) | 0x0000563581C6B708 | 0x0000000303871400 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_19"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {19 (topoId: 6) | 0x0000563581C6B000 | 0x0000000303722400 | 0 | 0 | 1 | 4 | 1}}}"];
+
+"graph_2199_node_20"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {20 (topoId: 5) | 0x0000563581C6A8F8 | 0x00000003168FDE00 | 0 | 0 | 1 | 215040 | 1}}}"];
+
+"graph_2199_node_21"[style="bold" shape="record" label="{KERNEL
+| {ID | 21 (topoId: 4) | check_time_a92d4034_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C6A1F0 | 0x000056356A45E7F0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2167_node_1"[style="bold" shape="record" label="{KERNEL
-| {ID | 1 (topoId: 1) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD4786C0 | 0x0000563FC5D10A30}}
+"graph_2199_node_22"[style="bold" shape="record" label="{KERNEL
+| {ID | 22 (topoId: 3) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C69AE8 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2167_node_2"[style="bold" shape="record" label="{
+"graph_2199_node_23"[style="bold" shape="record" label="{
 CONDITIONAL
-| {ID | 2 (topoId: 0)}
-| {node handle| 0x0000563FDD477FB8}
+| {ID | 23 (topoId: 2)}
+| {node handle| 0x0000563581C693E0}
 | {Conditional Handle|1}
 | {Conditional Type| WHILE}
-| {True|graph_2168}
+| {True|graph_2200}
 }
 "];
 
-"graph_2167_node_0" -> "graph_2167_node_1" [headlabel=0];
-"graph_2167_node_1" -> "graph_2167_node_2" [headlabel=0];
-}
-subgraph cluster_2168 {
-label="graph_2168" graph[style="dashed"];
-"graph_2168_node_0"[style="bold" shape="record" label="{KERNEL
-| {ID | 0 (topoId: 18) | prediction_1c39d74b_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD4778B0 | 0x0000563FC61A9600}}
+"graph_2199_node_24"[style="bold" shape="record" label="{KERNEL
+| {ID | 24 (topoId: 1) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C08270 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2168_node_1"[style="bold" shape="record" label="{KERNEL
-| {ID | 1 (topoId: 17) | evaluate_65e3eb6f_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD4771A8 | 0x0000563FBF11CAA0}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 16) | 0x0000563FDD476AA0 | 0x000000030715DE00 | 0 | 0 | 1 | 100984 | 1}}}"];
-
-"graph_2168_node_3"[style="bold" shape="record" label="{KERNEL
-| {ID | 3 (topoId: 15) | gradient_f1562405_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD476398 | 0x0000563FBE50AF60}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_4"[style="bold" shape="record" label="{KERNEL
-| {ID | 4 (topoId: 14) | inertia_gradient_15adb400_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD475C90 | 0x0000563FCE80D010}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 13) | 0x0000563FDD475588 | 0x0000000303B68600 | 0 | 0 | 1 | 6432 | 1}}}"];
-
-"graph_2168_node_6"[style="bold" shape="record" label="{KERNEL
-| {ID | 6 (topoId: 12) | project_c736abb4_cuda_kernel_forward\<\<\<40200,128,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD474E80 | 0x0000563FD96D8E60}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_7"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {7 (topoId: 11) | 0x0000563FDD474778 | 0x00000003078D1400 | 0 | 0 | 1 | 8 | 1}}}"];
-
-"graph_2168_node_8"[style="bold" shape="record" label="{KERNEL
-| {ID | 8 (topoId: 10) | norm2_a3480e80_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD474070 | 0x0000563FCA198810}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_9"[style="bold" shape="record" label="{KERNEL
-| {ID | 9 (topoId: 9) | init_newton_d47e60f9_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD473968 | 0x0000563FBF8B2D10}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_10"[style="bold" shape="record" label="{KERNEL
-| {ID | 10 (topoId: 8) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD473260 | 0x0000563FC5D10A30}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_11"[style="bold" shape="record" label="{
+"graph_2199_node_25"[style="bold" shape="record" label="{
 CONDITIONAL
-| {ID | 11 (topoId: 7)}
-| {node handle| 0x0000563FDD472B58}
+| {ID | 25 (topoId: 0)}
+| {node handle| 0x0000563581C07460}
+| {Conditional Handle|7}
+| {Conditional Type| IF}
+| {True|graph_2206}
+}
+"];
+
+"graph_2199_node_0" -> "graph_2199_node_1" [headlabel=0];
+"graph_2199_node_1" -> "graph_2199_node_2" [headlabel=0];
+"graph_2199_node_2" -> "graph_2199_node_3" [headlabel=0];
+"graph_2199_node_3" -> "graph_2199_node_4" [headlabel=0];
+"graph_2199_node_4" -> "graph_2199_node_5" [headlabel=0];
+"graph_2199_node_5" -> "graph_2199_node_6" [headlabel=0];
+"graph_2199_node_6" -> "graph_2199_node_7" [headlabel=0];
+"graph_2199_node_7" -> "graph_2199_node_8" [headlabel=0];
+"graph_2199_node_8" -> "graph_2199_node_9" [headlabel=0];
+"graph_2199_node_9" -> "graph_2199_node_10" [headlabel=0];
+"graph_2199_node_10" -> "graph_2199_node_11" [headlabel=0];
+"graph_2199_node_11" -> "graph_2199_node_12" [headlabel=0];
+"graph_2199_node_12" -> "graph_2199_node_13" [headlabel=0];
+"graph_2199_node_13" -> "graph_2199_node_14" [headlabel=0];
+"graph_2199_node_14" -> "graph_2199_node_15" [headlabel=0];
+"graph_2199_node_15" -> "graph_2199_node_16" [headlabel=0];
+"graph_2199_node_16" -> "graph_2199_node_17" [headlabel=0];
+"graph_2199_node_17" -> "graph_2199_node_18" [headlabel=0];
+"graph_2199_node_18" -> "graph_2199_node_19" [headlabel=0];
+"graph_2199_node_19" -> "graph_2199_node_20" [headlabel=0];
+"graph_2199_node_20" -> "graph_2199_node_21" [headlabel=0];
+"graph_2199_node_21" -> "graph_2199_node_22" [headlabel=0];
+"graph_2199_node_22" -> "graph_2199_node_23" [headlabel=0];
+"graph_2199_node_23" -> "graph_2199_node_24" [headlabel=0];
+"graph_2199_node_24" -> "graph_2199_node_25" [headlabel=0];
+}
+subgraph cluster_2200 {
+label="graph_2200" graph[style="dashed"];
+"graph_2200_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 22) | prediction_4ce3be86_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C68CD8 | 0x0000563564C5D680}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 21) | evaluate_65e3eb6f_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C685D0 | 0x0000563563867150}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 20) | 0x0000563581C67EC8 | 0x0000000316C3E200 | 0 | 0 | 1 | 100984 | 1}}}"];
+
+"graph_2200_node_3"[style="bold" shape="record" label="{KERNEL
+| {ID | 3 (topoId: 19) | gradient_f1562405_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C669B0 | 0x0000563562F14BD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_4"[style="bold" shape="record" label="{KERNEL
+| {ID | 4 (topoId: 18) | inertia_gradient_15adb400_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C662A8 | 0x0000563572F59DF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 17) | 0x0000563581C65BA0 | 0x0000000317EFC400 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2200_node_6"[style="bold" shape="record" label="{KERNEL
+| {ID | 6 (topoId: 16) | project_c736abb4_cuda_kernel_forward\<\<\<40200,128,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C65498 | 0x00005635900E9460}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_7"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {7 (topoId: 15) | 0x0000563581C64D90 | 0x00000003078BDE00 | 0 | 0 | 1 | 8 | 1}}}"];
+
+"graph_2200_node_8"[style="bold" shape="record" label="{KERNEL
+| {ID | 8 (topoId: 14) | norm2_a3480e80_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C64688 | 0x0000563573E12C20}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_9"[style="bold" shape="record" label="{KERNEL
+| {ID | 9 (topoId: 13) | init_newton_d47e60f9_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C45A58 | 0x0000563563FFCAE0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_10"[style="bold" shape="record" label="{KERNEL
+| {ID | 10 (topoId: 12) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C63F80 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_11"[style="bold" shape="record" label="{
+CONDITIONAL
+| {ID | 11 (topoId: 11)}
+| {node handle| 0x0000563581C63878}
 | {Conditional Handle|2}
 | {Conditional Type| WHILE}
-| {True|graph_2169}
+| {True|graph_2201}
 }
 "];
 
-"graph_2168_node_12"[style="bold" shape="record" label="{KERNEL
-| {ID | 12 (topoId: 6) | check_step_failure_929eacb4_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD453118 | 0x0000563FEB8E5100}}
+"graph_2200_node_12"[style="bold" shape="record" label="{KERNEL
+| {ID | 12 (topoId: 10) | check_step_failure_929eacb4_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C43E38 | 0x0000563573395CF0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2168_node_13"[style="bold" shape="record" label="{KERNEL
-| {ID | 13 (topoId: 5) | finish_velocity_b79df13e_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD452A10 | 0x0000563FCE7C96D0}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_14"[style="bold" shape="record" label="{KERNEL
-| {ID | 14 (topoId: 4) | log_linear_502f674c_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD452308 | 0x0000563FC8E5DDB0}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_15"[style="bold" shape="record" label="{KERNEL
-| {ID | 15 (topoId: 3) | log_step_1b642154_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD451C00 | 0x0000563FC8F71820}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_16"[style="bold" shape="record" label="{KERNEL
-| {ID | 16 (topoId: 2) | save_frame_dc616043_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD4514F8 | 0x0000563FC5D12BE0}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_17"[style="bold" shape="record" label="{KERNEL
-| {ID | 17 (topoId: 1) | check_time_a92d4034_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD450DF0 | 0x0000563FC929BA00}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_18"[style="bold" shape="record" label="{KERNEL
-| {ID | 18 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD4506E8 | 0x0000563FC5D10A30}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2168_node_0" -> "graph_2168_node_1" [headlabel=0];
-"graph_2168_node_1" -> "graph_2168_node_2" [headlabel=0];
-"graph_2168_node_2" -> "graph_2168_node_3" [headlabel=0];
-"graph_2168_node_3" -> "graph_2168_node_4" [headlabel=0];
-"graph_2168_node_4" -> "graph_2168_node_5" [headlabel=0];
-"graph_2168_node_5" -> "graph_2168_node_6" [headlabel=0];
-"graph_2168_node_6" -> "graph_2168_node_7" [headlabel=0];
-"graph_2168_node_7" -> "graph_2168_node_8" [headlabel=0];
-"graph_2168_node_8" -> "graph_2168_node_9" [headlabel=0];
-"graph_2168_node_9" -> "graph_2168_node_10" [headlabel=0];
-"graph_2168_node_10" -> "graph_2168_node_11" [headlabel=0];
-"graph_2168_node_11" -> "graph_2168_node_12" [headlabel=0];
-"graph_2168_node_12" -> "graph_2168_node_13" [headlabel=0];
-"graph_2168_node_13" -> "graph_2168_node_14" [headlabel=0];
-"graph_2168_node_14" -> "graph_2168_node_15" [headlabel=0];
-"graph_2168_node_15" -> "graph_2168_node_16" [headlabel=0];
-"graph_2168_node_16" -> "graph_2168_node_17" [headlabel=0];
-"graph_2168_node_17" -> "graph_2168_node_18" [headlabel=0];
-}
-subgraph cluster_2169 {
-label="graph_2169" graph[style="dashed"];
-"graph_2169_node_0"[style="bold" shape="record" label="{KERNEL
-| {ID | 0 (topoId: 38) | evaluate_ba318f52_cuda_kernel_forward\<\<\<6762,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD472450 | 0x0000563FD971D7D0}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2169_node_1"[style="bold" shape="record" label="{KERNEL
-| {ID | 1 (topoId: 37) | negate_8c5e6bd8_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD471D48 | 0x0000563FEB8F70E0}}
-| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
-| {cooperative | 0}
-| {priority | 0}
-}"];
-
-"graph_2169_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 36) | 0x0000563FDD471640 | 0x000000030408E600 | 0 | 0 | 1 | 6432 | 1}}}"];
-
-"graph_2169_node_3"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {3 (topoId: 35) | 0x0000563FDD470F38 | 0x000000030408E600 | 0 | 0 | 1 | 6432 | 1}}}"];
-
-"graph_2169_node_4"[style="solid" shape="record" label="{
+"graph_2200_node_13"[style="solid" shape="record" label="{
 MEMCPY
-| {{ID | node handle} | {4 (topoId: 34) | 0x0000563FDD470830}}
+| {{ID | node handle} | {13 (topoId: 9) | 0x0000563581C43028}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000317EB2000 | 0 | 0 | 0 | 0x0000000303842C00 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 100984} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2200_node_14"[style="bold" shape="record" label="{KERNEL
+| {ID | 14 (topoId: 8) | finish_velocity_b79df13e_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C41B10 | 0x000056356B7B0870}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_15"[style="bold" shape="record" label="{KERNEL
+| {ID | 15 (topoId: 7) | log_linear_502f674c_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C42920 | 0x000056357FBE5560}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_16"[style="bold" shape="record" label="{KERNEL
+| {ID | 16 (topoId: 6) | log_step_1b642154_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C42218 | 0x0000563574292BD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_17"[style="bold" shape="record" label="{KERNEL
+| {ID | 17 (topoId: 5) | save_frame_dc616043_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C3E2D0 | 0x0000563569E31430}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_18"[style="bold" shape="record" label="{KERNEL
+| {ID | 18 (topoId: 4) | check_time_a92d4034_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C41408 | 0x000056356A45E7F0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_19"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {19 (topoId: 3) | 0x0000563581C40D00 | 0x0000000316E82E00 | 0 | 0 | 1 | 16 | 1}}}"];
+
+"graph_2200_node_20"[style="bold" shape="record" label="{KERNEL
+| {ID | 20 (topoId: 2) | measure_ca6bad30_cuda_kernel_forward\<\<\<9,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C405F8 | 0x000056357E44A670}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_21"[style="bold" shape="record" label="{KERNEL
+| {ID | 21 (topoId: 1) | gate_5a5cbb21_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581BF7038 | 0x000056357F34B710}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_22"[style="bold" shape="record" label="{KERNEL
+| {ID | 22 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C08978 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2200_node_0" -> "graph_2200_node_1" [headlabel=0];
+"graph_2200_node_1" -> "graph_2200_node_2" [headlabel=0];
+"graph_2200_node_2" -> "graph_2200_node_3" [headlabel=0];
+"graph_2200_node_3" -> "graph_2200_node_4" [headlabel=0];
+"graph_2200_node_4" -> "graph_2200_node_5" [headlabel=0];
+"graph_2200_node_5" -> "graph_2200_node_6" [headlabel=0];
+"graph_2200_node_6" -> "graph_2200_node_7" [headlabel=0];
+"graph_2200_node_7" -> "graph_2200_node_8" [headlabel=0];
+"graph_2200_node_8" -> "graph_2200_node_9" [headlabel=0];
+"graph_2200_node_9" -> "graph_2200_node_10" [headlabel=0];
+"graph_2200_node_10" -> "graph_2200_node_11" [headlabel=0];
+"graph_2200_node_11" -> "graph_2200_node_12" [headlabel=0];
+"graph_2200_node_12" -> "graph_2200_node_13" [headlabel=0];
+"graph_2200_node_13" -> "graph_2200_node_14" [headlabel=0];
+"graph_2200_node_14" -> "graph_2200_node_15" [headlabel=0];
+"graph_2200_node_15" -> "graph_2200_node_16" [headlabel=0];
+"graph_2200_node_16" -> "graph_2200_node_17" [headlabel=0];
+"graph_2200_node_17" -> "graph_2200_node_18" [headlabel=0];
+"graph_2200_node_18" -> "graph_2200_node_19" [headlabel=0];
+"graph_2200_node_19" -> "graph_2200_node_20" [headlabel=0];
+"graph_2200_node_20" -> "graph_2200_node_21" [headlabel=0];
+"graph_2200_node_21" -> "graph_2200_node_22" [headlabel=0];
+}
+subgraph cluster_2206 {
+label="graph_2206" graph[style="dashed"];
+"graph_2206_node_0"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {0 (topoId: 5) | 0x0000563581C06D58}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000317E99400 | 0 | 0 | 0 | 0x0000000307894A00 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 100984} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2206_node_1"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {1 (topoId: 4) | 0x0000563581C06650}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000317EB2000 | 0 | 0 | 0 | 0x0000000307113A00 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 100984} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2206_node_2"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {2 (topoId: 3) | 0x0000563581C05F48}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000317E99400 | 0 | 0 | 0 | 0x00000003156DA800 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 100984} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2206_node_3"[style="bold" shape="record" label="{KERNEL
+| {ID | 3 (topoId: 2) | check_time_a92d4034_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C05840 | 0x000056356A45E7F0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2206_node_4"[style="bold" shape="record" label="{KERNEL
+| {ID | 4 (topoId: 1) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C05138 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2206_node_5"[style="bold" shape="record" label="{
+CONDITIONAL
+| {ID | 5 (topoId: 0)}
+| {node handle| 0x0000563581C04328}
+| {Conditional Handle|8}
+| {Conditional Type| WHILE}
+| {True|graph_2207}
+}
+"];
+
+"graph_2206_node_0" -> "graph_2206_node_1" [headlabel=0];
+"graph_2206_node_1" -> "graph_2206_node_2" [headlabel=0];
+"graph_2206_node_2" -> "graph_2206_node_3" [headlabel=0];
+"graph_2206_node_3" -> "graph_2206_node_4" [headlabel=0];
+"graph_2206_node_4" -> "graph_2206_node_5" [headlabel=0];
+}
+subgraph cluster_2201 {
+label="graph_2201" graph[style="dashed"];
+"graph_2201_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 38) | evaluate_ba318f52_cuda_kernel_forward\<\<\<6762,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C63170 | 0x000056357DEAD2C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 37) | negate_8c5e6bd8_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C62A68 | 0x0000563563BE2700}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 36) | 0x0000563581C62360 | 0x0000000317EFF800 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2201_node_3"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {3 (topoId: 35) | 0x0000563581C61550 | 0x0000000317EFF800 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2201_node_4"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {4 (topoId: 34) | 0x0000563581C60E48}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000317EFDE00 | 0 | 0 | 0 | 0x0000000316E7F400 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 6432} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2201_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 33) | 0x0000563581C60740 | 0x0000000316E80E00 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2201_node_6"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {6 (topoId: 32) | 0x0000563581C60038 | 0x00000003071A9C00 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2201_node_7"[style="bold" shape="record" label="{KERNEL
+| {ID | 7 (topoId: 31) | dense_mv_fdad1f67_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5F930 | 0x000056358FC270D0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_8"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {8 (topoId: 30) | 0x0000563581C5F228}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000316E80E00 | 0 | 0 | 0 | 0x00000003071A8200 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 6432} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2201_node_9"[style="bold" shape="record" label="{KERNEL
+| {ID | 9 (topoId: 29) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5CF00 | 0x00005635900E64C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_10"[style="bold" shape="record" label="{KERNEL
+| {ID | 10 (topoId: 28) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5EB20 | 0x00005635724DCCF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_11"[style="bold" shape="record" label="{KERNEL
+| {ID | 11 (topoId: 27) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5E418 | 0x00005635900E64C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_12"[style="bold" shape="record" label="{KERNEL
+| {ID | 12 (topoId: 26) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C61C58 | 0x00005635724DCCF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_13"[style="bold" shape="record" label="{KERNEL
+| {ID | 13 (topoId: 25) | initialize_f72838fb_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5DD10 | 0x000056357EF523E0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_14"[style="bold" shape="record" label="{KERNEL
+| {ID | 14 (topoId: 24) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C677C0 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_15"[style="bold" shape="record" label="{
+CONDITIONAL
+| {ID | 15 (topoId: 23)}
+| {node handle| 0x0000563581C5D608}
+| {Conditional Handle|3}
+| {Conditional Type| WHILE}
+| {True|graph_2202}
+}
+"];
+
+"graph_2201_node_16"[style="bold" shape="record" label="{KERNEL
+| {ID | 16 (topoId: 22) | lift_688a036a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C53B58 | 0x0000563574D0FEB0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_17"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {17 (topoId: 21) | 0x0000563581C53450 | 0x0000000303722600 | 0 | 0 | 1 | 8 | 1}}}"];
+
+"graph_2201_node_18"[style="bold" shape="record" label="{KERNEL
+| {ID | 18 (topoId: 20) | energy_3f7897e3_cuda_kernel_forward\<\<\<16,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C52D48 | 0x0000563563878900}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_19"[style="bold" shape="record" label="{KERNEL
+| {ID | 19 (topoId: 19) | inertia_energy_3aaf81a7_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C52640 | 0x000056356A8F6050}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_20"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {20 (topoId: 18) | 0x0000563581C51830 | 0x0000000303722A00 | 0 | 0 | 1 | 8 | 1}}}"];
+
+"graph_2201_node_21"[style="bold" shape="record" label="{KERNEL
+| {ID | 21 (topoId: 17) | dot_eaf2fb95_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C51128 | 0x000056357FF645F0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_22"[style="bold" shape="record" label="{KERNEL
+| {ID | 22 (topoId: 16) | direction_check_144b48ef_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C50A20 | 0x00005635715DF240}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_23"[style="bold" shape="record" label="{KERNEL
+| {ID | 23 (topoId: 15) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C50318 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_24"[style="bold" shape="record" label="{
+CONDITIONAL
+| {ID | 24 (topoId: 14)}
+| {node handle| 0x0000563581C4FC10}
+| {Conditional Handle|5}
+| {Conditional Type| IF}
+| {True|graph_2204}
+}
+"];
+
+"graph_2201_node_25"[style="bold" shape="record" label="{KERNEL
+| {ID | 25 (topoId: 13) | init_line_a689f689_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4DFF0 | 0x000056356E8E4F00}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_26"[style="bold" shape="record" label="{KERNEL
+| {ID | 26 (topoId: 12) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4D8E8 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_27"[style="bold" shape="record" label="{
+CONDITIONAL
+| {ID | 27 (topoId: 11)}
+| {node handle| 0x0000563581C4D1E0}
+| {Conditional Handle|6}
+| {Conditional Type| WHILE}
+| {True|graph_2205}
+}
+"];
+
+"graph_2201_node_28"[style="bold" shape="record" label="{KERNEL
+| {ID | 28 (topoId: 10) | apply_step_e6b89f32_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C48488 | 0x0000563581202B00}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_29"[style="bold" shape="record" label="{KERNEL
+| {ID | 29 (topoId: 9) | evaluate_65e3eb6f_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C49298 | 0x0000563563867150}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_30"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {30 (topoId: 8) | 0x0000563581C48B90 | 0x0000000316C3E200 | 0 | 0 | 1 | 100984 | 1}}}"];
+
+"graph_2201_node_31"[style="bold" shape="record" label="{KERNEL
+| {ID | 31 (topoId: 7) | gradient_f1562405_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C44540 | 0x0000563562F14BD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_32"[style="bold" shape="record" label="{KERNEL
+| {ID | 32 (topoId: 6) | inertia_gradient_15adb400_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C47D80 | 0x0000563572F59DF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_33"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {33 (topoId: 5) | 0x0000563581C47678 | 0x0000000317EFC400 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2201_node_34"[style="bold" shape="record" label="{KERNEL
+| {ID | 34 (topoId: 4) | project_c736abb4_cuda_kernel_forward\<\<\<40200,128,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C46F70 | 0x00005635900E9460}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_35"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {35 (topoId: 3) | 0x0000563581C46868 | 0x00000003078BDE00 | 0 | 0 | 1 | 8 | 1}}}"];
+
+"graph_2201_node_36"[style="bold" shape="record" label="{KERNEL
+| {ID | 36 (topoId: 2) | norm2_a3480e80_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C46160 | 0x0000563573E12C20}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_37"[style="bold" shape="record" label="{KERNEL
+| {ID | 37 (topoId: 1) | check_newton_f7d2d711_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C45350 | 0x000056357D362E00}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_38"[style="bold" shape="record" label="{KERNEL
+| {ID | 38 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C44C48 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2201_node_0" -> "graph_2201_node_1" [headlabel=0];
+"graph_2201_node_1" -> "graph_2201_node_2" [headlabel=0];
+"graph_2201_node_2" -> "graph_2201_node_3" [headlabel=0];
+"graph_2201_node_3" -> "graph_2201_node_4" [headlabel=0];
+"graph_2201_node_4" -> "graph_2201_node_5" [headlabel=0];
+"graph_2201_node_5" -> "graph_2201_node_6" [headlabel=0];
+"graph_2201_node_6" -> "graph_2201_node_7" [headlabel=0];
+"graph_2201_node_7" -> "graph_2201_node_8" [headlabel=0];
+"graph_2201_node_8" -> "graph_2201_node_9" [headlabel=0];
+"graph_2201_node_9" -> "graph_2201_node_10" [headlabel=0];
+"graph_2201_node_10" -> "graph_2201_node_11" [headlabel=0];
+"graph_2201_node_11" -> "graph_2201_node_12" [headlabel=0];
+"graph_2201_node_12" -> "graph_2201_node_13" [headlabel=0];
+"graph_2201_node_13" -> "graph_2201_node_14" [headlabel=0];
+"graph_2201_node_14" -> "graph_2201_node_15" [headlabel=0];
+"graph_2201_node_15" -> "graph_2201_node_16" [headlabel=0];
+"graph_2201_node_16" -> "graph_2201_node_17" [headlabel=0];
+"graph_2201_node_17" -> "graph_2201_node_18" [headlabel=0];
+"graph_2201_node_18" -> "graph_2201_node_19" [headlabel=0];
+"graph_2201_node_19" -> "graph_2201_node_20" [headlabel=0];
+"graph_2201_node_20" -> "graph_2201_node_21" [headlabel=0];
+"graph_2201_node_21" -> "graph_2201_node_22" [headlabel=0];
+"graph_2201_node_22" -> "graph_2201_node_23" [headlabel=0];
+"graph_2201_node_23" -> "graph_2201_node_24" [headlabel=0];
+"graph_2201_node_24" -> "graph_2201_node_25" [headlabel=0];
+"graph_2201_node_25" -> "graph_2201_node_26" [headlabel=0];
+"graph_2201_node_26" -> "graph_2201_node_27" [headlabel=0];
+"graph_2201_node_27" -> "graph_2201_node_28" [headlabel=0];
+"graph_2201_node_28" -> "graph_2201_node_29" [headlabel=0];
+"graph_2201_node_29" -> "graph_2201_node_30" [headlabel=0];
+"graph_2201_node_30" -> "graph_2201_node_31" [headlabel=0];
+"graph_2201_node_31" -> "graph_2201_node_32" [headlabel=0];
+"graph_2201_node_32" -> "graph_2201_node_33" [headlabel=0];
+"graph_2201_node_33" -> "graph_2201_node_34" [headlabel=0];
+"graph_2201_node_34" -> "graph_2201_node_35" [headlabel=0];
+"graph_2201_node_35" -> "graph_2201_node_36" [headlabel=0];
+"graph_2201_node_36" -> "graph_2201_node_37" [headlabel=0];
+"graph_2201_node_37" -> "graph_2201_node_38" [headlabel=0];
+}
+subgraph cluster_2207 {
+label="graph_2207" graph[style="dashed"];
+"graph_2207_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 18) | prediction_4ce3be86_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C03518 | 0x0000563564C5D680}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 17) | evaluate_65e3eb6f_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C02E10 | 0x0000563563867150}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 16) | 0x0000563581C02708 | 0x000000030715DE00 | 0 | 0 | 1 | 100984 | 1}}}"];
+
+"graph_2207_node_3"[style="bold" shape="record" label="{KERNEL
+| {ID | 3 (topoId: 15) | gradient_f1562405_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C02000 | 0x0000563562F14BD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_4"[style="bold" shape="record" label="{KERNEL
+| {ID | 4 (topoId: 14) | inertia_gradient_15adb400_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C04A30 | 0x0000563572F59DF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 13) | 0x0000563581C011F0 | 0x0000000303B68600 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2207_node_6"[style="bold" shape="record" label="{KERNEL
+| {ID | 6 (topoId: 12) | project_c736abb4_cuda_kernel_forward\<\<\<40200,128,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C00AE8 | 0x00005635900E9460}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_7"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {7 (topoId: 11) | 0x0000563581C003E0 | 0x00000003078D1400 | 0 | 0 | 1 | 8 | 1}}}"];
+
+"graph_2207_node_8"[style="bold" shape="record" label="{KERNEL
+| {ID | 8 (topoId: 10) | norm2_a3480e80_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581BFFCD8 | 0x0000563573E12C20}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_9"[style="bold" shape="record" label="{KERNEL
+| {ID | 9 (topoId: 9) | init_newton_d47e60f9_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581BFF5D0 | 0x0000563563FFCAE0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_10"[style="bold" shape="record" label="{KERNEL
+| {ID | 10 (topoId: 8) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581BFEEC8 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_11"[style="bold" shape="record" label="{
+CONDITIONAL
+| {ID | 11 (topoId: 7)}
+| {node handle| 0x0000563581C07B68}
+| {Conditional Handle|9}
+| {Conditional Type| WHILE}
+| {True|graph_2208}
+}
+"];
+
+"graph_2207_node_12"[style="bold" shape="record" label="{KERNEL
+| {ID | 12 (topoId: 6) | check_step_failure_929eacb4_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C194A8 | 0x0000563573395CF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_13"[style="bold" shape="record" label="{KERNEL
+| {ID | 13 (topoId: 5) | finish_velocity_b79df13e_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C16370 | 0x000056356B7B0870}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_14"[style="bold" shape="record" label="{KERNEL
+| {ID | 14 (topoId: 4) | log_linear_502f674c_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C18DA0 | 0x000056357FBE5560}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_15"[style="bold" shape="record" label="{KERNEL
+| {ID | 15 (topoId: 3) | log_step_1b642154_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C18698 | 0x0000563574292BD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_16"[style="bold" shape="record" label="{KERNEL
+| {ID | 16 (topoId: 2) | save_frame_dc616043_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C17F90 | 0x0000563569E31430}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_17"[style="bold" shape="record" label="{KERNEL
+| {ID | 17 (topoId: 1) | check_time_a92d4034_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C17888 | 0x000056356A45E7F0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_18"[style="bold" shape="record" label="{KERNEL
+| {ID | 18 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C17180 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2207_node_0" -> "graph_2207_node_1" [headlabel=0];
+"graph_2207_node_1" -> "graph_2207_node_2" [headlabel=0];
+"graph_2207_node_2" -> "graph_2207_node_3" [headlabel=0];
+"graph_2207_node_3" -> "graph_2207_node_4" [headlabel=0];
+"graph_2207_node_4" -> "graph_2207_node_5" [headlabel=0];
+"graph_2207_node_5" -> "graph_2207_node_6" [headlabel=0];
+"graph_2207_node_6" -> "graph_2207_node_7" [headlabel=0];
+"graph_2207_node_7" -> "graph_2207_node_8" [headlabel=0];
+"graph_2207_node_8" -> "graph_2207_node_9" [headlabel=0];
+"graph_2207_node_9" -> "graph_2207_node_10" [headlabel=0];
+"graph_2207_node_10" -> "graph_2207_node_11" [headlabel=0];
+"graph_2207_node_11" -> "graph_2207_node_12" [headlabel=0];
+"graph_2207_node_12" -> "graph_2207_node_13" [headlabel=0];
+"graph_2207_node_13" -> "graph_2207_node_14" [headlabel=0];
+"graph_2207_node_14" -> "graph_2207_node_15" [headlabel=0];
+"graph_2207_node_15" -> "graph_2207_node_16" [headlabel=0];
+"graph_2207_node_16" -> "graph_2207_node_17" [headlabel=0];
+"graph_2207_node_17" -> "graph_2207_node_18" [headlabel=0];
+}
+subgraph cluster_2202 {
+label="graph_2202" graph[style="dashed"];
+"graph_2202_node_0"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {0 (topoId: 13) | 0x0000563581C5C7F8}}
+| {kind | DtoD (DEVICE to DEVICE)}
+| {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000317F0FA40 | 0 | 0 | 0 | 0x0000000317F0FC00 | 0 | 0}}
+| {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 8} | {Height | 1} | {Depth | 1}}}}
+}"];
+
+"graph_2202_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 12) | lift_688a036a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5C0F0 | 0x0000563574D0FEB0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 11) | 0x0000563581C596C0 | 0x0000000316C88600 | 0 | 0 | 1 | 100984 | 1}}}"];
+
+"graph_2202_node_3"[style="bold" shape="record" label="{KERNEL
+| {ID | 3 (topoId: 10) | product_58005ea7_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5B9E8 | 0x000056357DEAE440}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_4"[style="bold" shape="record" label="{KERNEL
+| {ID | 4 (topoId: 9) | add_tangent_db27948a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5B2E0 | 0x000056356A1D4B00}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 8) | 0x0000563581C5ABD8 | 0x0000000317F01200 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2202_node_6"[style="bold" shape="record" label="{KERNEL
+| {ID | 6 (topoId: 7) | project_c736abb4_cuda_kernel_forward\<\<\<40200,128,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C5A4D0 | 0x00005635900E9460}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_7"[style="bold" shape="record" label="{KERNEL
+| {ID | 7 (topoId: 6) | combine_b958a269_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C58FB8 | 0x0000563563FFDF30}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_8"[style="bold" shape="record" label="{KERNEL
+| {ID | 8 (topoId: 5) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C588B0 | 0x00005635900E64C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_9"[style="bold" shape="record" label="{KERNEL
+| {ID | 9 (topoId: 4) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C581A8 | 0x00005635724DCCF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_10"[style="bold" shape="record" label="{KERNEL
+| {ID | 10 (topoId: 3) | curvature_50fc48c9_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C59DC8 | 0x000056357EF96CE0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_11"[style="bold" shape="record" label="{KERNEL
+| {ID | 11 (topoId: 2) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C57AA0 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_12"[style="bold" shape="record" label="{
+CONDITIONAL
+| {ID | 12 (topoId: 1)}
+| {node handle| 0x0000563581C57398}
+| {Conditional Handle|4}
+| {Conditional Type| IF}
+| {True|graph_2203}
+}
+"];
+
+"graph_2202_node_13"[style="bold" shape="record" label="{KERNEL
+| {ID | 13 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C56C90 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2202_node_0" -> "graph_2202_node_1" [headlabel=0];
+"graph_2202_node_1" -> "graph_2202_node_2" [headlabel=0];
+"graph_2202_node_2" -> "graph_2202_node_3" [headlabel=0];
+"graph_2202_node_3" -> "graph_2202_node_4" [headlabel=0];
+"graph_2202_node_4" -> "graph_2202_node_5" [headlabel=0];
+"graph_2202_node_5" -> "graph_2202_node_6" [headlabel=0];
+"graph_2202_node_6" -> "graph_2202_node_7" [headlabel=0];
+"graph_2202_node_7" -> "graph_2202_node_8" [headlabel=0];
+"graph_2202_node_8" -> "graph_2202_node_9" [headlabel=0];
+"graph_2202_node_9" -> "graph_2202_node_10" [headlabel=0];
+"graph_2202_node_10" -> "graph_2202_node_11" [headlabel=0];
+"graph_2202_node_11" -> "graph_2202_node_12" [headlabel=0];
+"graph_2202_node_12" -> "graph_2202_node_13" [headlabel=0];
+}
+subgraph cluster_2204 {
+label="graph_2204" graph[style="dashed"];
+"graph_2204_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 3) | dense_mv_fdad1f67_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4F508 | 0x000056358FC270D0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2204_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 2) | lift_688a036a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C6E840 | 0x0000563574D0FEB0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2204_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 1) | 0x0000563581C4EE00 | 0x0000000303722A00 | 0 | 0 | 1 | 8 | 1}}}"];
+
+"graph_2204_node_3"[style="bold" shape="record" label="{KERNEL
+| {ID | 3 (topoId: 0) | dot_eaf2fb95_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4E6F8 | 0x000056357FF645F0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2204_node_0" -> "graph_2204_node_1" [headlabel=0];
+"graph_2204_node_1" -> "graph_2204_node_2" [headlabel=0];
+"graph_2204_node_2" -> "graph_2204_node_3" [headlabel=0];
+}
+subgraph cluster_2205 {
+label="graph_2205" graph[style="dashed"];
+"graph_2205_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 5) | trial_766f5ea3_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4C3D0 | 0x000056357115CAD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2205_node_1"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {1 (topoId: 4) | 0x0000563581C4BCC8 | 0x0000000303722800 | 0 | 0 | 1 | 8 | 1}}}"];
+
+"graph_2205_node_2"[style="bold" shape="record" label="{KERNEL
+| {ID | 2 (topoId: 3) | energy_3f7897e3_cuda_kernel_forward\<\<\<16,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4B5C0 | 0x0000563563878900}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2205_node_3"[style="bold" shape="record" label="{KERNEL
+| {ID | 3 (topoId: 2) | inertia_energy_3aaf81a7_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4AEB8 | 0x000056356A8F6050}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2205_node_4"[style="bold" shape="record" label="{KERNEL
+| {ID | 4 (topoId: 1) | accept_line_11820807_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4A7B0 | 0x00005635706DFEE0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2205_node_5"[style="bold" shape="record" label="{KERNEL
+| {ID | 5 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4A0A8 | 0x000056356A45CDD0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2205_node_0" -> "graph_2205_node_1" [headlabel=0];
+"graph_2205_node_1" -> "graph_2205_node_2" [headlabel=0];
+"graph_2205_node_2" -> "graph_2205_node_3" [headlabel=0];
+"graph_2205_node_3" -> "graph_2205_node_4" [headlabel=0];
+"graph_2205_node_4" -> "graph_2205_node_5" [headlabel=0];
+}
+subgraph cluster_2208 {
+label="graph_2208" graph[style="dashed"];
+"graph_2208_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 38) | evaluate_ba318f52_cuda_kernel_forward\<\<\<6762,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581BFE0B8 | 0x000056357DEAD2C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2208_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 37) | negate_8c5e6bd8_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581BFD9B0 | 0x0000563563BE2700}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2208_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 36) | 0x0000563581BFE7C0 | 0x000000030408E600 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2208_node_3"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {3 (topoId: 35) | 0x0000563581BFC498 | 0x000000030408E600 | 0 | 0 | 1 | 6432 | 1}}}"];
+
+"graph_2208_node_4"[style="solid" shape="record" label="{
+MEMCPY
+| {{ID | node handle} | {4 (topoId: 34) | 0x0000563581BFBD90}}
 | {kind | DtoD (DEVICE to DEVICE)}
 | {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x000000030408CC00 | 0 | 0 | 0 | 0x0000000317E92C00 | 0 | 0}}
 | {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 6432} | {Height | 1} | {Depth | 1}}}}
 }"];
 
-"graph_2169_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 33) | 0x0000563FDD470128 | 0x0000000317E94600 | 0 | 0 | 1 | 6432 | 1}}}"];
+"graph_2208_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 33) | 0x0000563581BFB688 | 0x0000000317E94600 | 0 | 0 | 1 | 6432 | 1}}}"];
 
-"graph_2169_node_6"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {6 (topoId: 32) | 0x0000563FDD46FA20 | 0x0000000317E97A00 | 0 | 0 | 1 | 6432 | 1}}}"];
+"graph_2208_node_6"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {6 (topoId: 32) | 0x0000563581BFAF80 | 0x0000000317E97A00 | 0 | 0 | 1 | 6432 | 1}}}"];
 
-"graph_2169_node_7"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_7"[style="bold" shape="record" label="{KERNEL
 | {ID | 7 (topoId: 31) | dense_mv_fdad1f67_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46F318 | 0x0000563FBF497C30}}
+| {{node handle | func handle} | {0x0000563581BFA878 | 0x000056358FC270D0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_8"[style="solid" shape="record" label="{
+"graph_2208_node_8"[style="solid" shape="record" label="{
 MEMCPY
-| {{ID | node handle} | {8 (topoId: 30) | 0x0000563FDD46EC10}}
+| {{ID | node handle} | {8 (topoId: 30) | 0x0000563581BFA170}}
 | {kind | DtoD (DEVICE to DEVICE)}
 | {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x0000000317E94600 | 0 | 0 | 0 | 0x0000000317E96000 | 0 | 0}}
 | {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 6432} | {Height | 1} | {Depth | 1}}}}
 }"];
 
-"graph_2169_node_9"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_9"[style="bold" shape="record" label="{KERNEL
 | {ID | 9 (topoId: 29) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46E508 | 0x0000563FD8A44520}}
+| {{node handle | func handle} | {0x0000563581BF9A68 | 0x00005635900E64C0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_10"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_10"[style="bold" shape="record" label="{KERNEL
 | {ID | 10 (topoId: 28) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46DE00 | 0x0000563FC7FA4920}}
+| {{node handle | func handle} | {0x0000563581BF9360 | 0x00005635724DCCF0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_11"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_11"[style="bold" shape="record" label="{KERNEL
 | {ID | 11 (topoId: 27) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46D6F8 | 0x0000563FD8A44520}}
+| {{node handle | func handle} | {0x0000563581BF8C58 | 0x00005635900E64C0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_12"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_12"[style="bold" shape="record" label="{KERNEL
 | {ID | 12 (topoId: 26) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46CFF0 | 0x0000563FC7FA4920}}
+| {{node handle | func handle} | {0x0000563581BF8550 | 0x00005635724DCCF0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_13"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_13"[style="bold" shape="record" label="{KERNEL
 | {ID | 13 (topoId: 25) | initialize_f72838fb_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46C8E8 | 0x0000563FDA6630A0}}
+| {{node handle | func handle} | {0x0000563581BF7E48 | 0x000056357EF523E0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_14"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_14"[style="bold" shape="record" label="{KERNEL
 | {ID | 14 (topoId: 24) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46C1E0 | 0x0000563FC5D10A30}}
+| {{node handle | func handle} | {0x0000563581BF7740 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_15"[style="bold" shape="record" label="{
+"graph_2208_node_15"[style="bold" shape="record" label="{
 CONDITIONAL
 | {ID | 15 (topoId: 23)}
-| {node handle| 0x0000563FDD46BAD8}
-| {Conditional Handle|3}
+| {node handle| 0x0000563581BF6930}
+| {Conditional Handle|10}
 | {Conditional Type| WHILE}
-| {True|graph_2170}
+| {True|graph_2209}
 }
 "];
 
-"graph_2169_node_16"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_16"[style="bold" shape="record" label="{KERNEL
 | {ID | 16 (topoId: 22) | lift_688a036a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD461920 | 0x0000563FCEC49A80}}
+| {{node handle | func handle} | {0x0000563581BEDC90 | 0x0000563574D0FEB0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_17"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {17 (topoId: 21) | 0x0000563FDD461218 | 0x0000000304091A00 | 0 | 0 | 1 | 8 | 1}}}"];
+"graph_2208_node_17"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {17 (topoId: 21) | 0x0000563581BEF1A8 | 0x0000000304091A00 | 0 | 0 | 1 | 8 | 1}}}"];
 
-"graph_2169_node_18"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_18"[style="bold" shape="record" label="{KERNEL
 | {ID | 18 (topoId: 20) | energy_3f7897e3_cuda_kernel_forward\<\<\<16,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD460B10 | 0x0000563FBF12E250}}
+| {{node handle | func handle} | {0x0000563581BEC778 | 0x0000563563878900}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_19"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_19"[style="bold" shape="record" label="{KERNEL
 | {ID | 19 (topoId: 19) | inertia_energy_3aaf81a7_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD460408 | 0x0000563FC0511F60}}
+| {{node handle | func handle} | {0x0000563581BEB968 | 0x000056356A8F6050}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_20"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {20 (topoId: 18) | 0x0000563FDD45FD00 | 0x00000003078D1000 | 0 | 0 | 1 | 8 | 1}}}"];
+"graph_2208_node_20"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {20 (topoId: 18) | 0x0000563581BEB260 | 0x00000003078D1000 | 0 | 0 | 1 | 8 | 1}}}"];
 
-"graph_2169_node_21"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_21"[style="bold" shape="record" label="{KERNEL
 | {ID | 21 (topoId: 17) | dot_eaf2fb95_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45F5F8 | 0x0000563FDB817A60}}
+| {{node handle | func handle} | {0x0000563581BED588 | 0x000056357FF645F0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_22"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_22"[style="bold" shape="record" label="{KERNEL
 | {ID | 22 (topoId: 16) | direction_check_144b48ef_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45EEF0 | 0x0000563FCD90FF80}}
+| {{node handle | func handle} | {0x0000563581BEAB58 | 0x00005635715DF240}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_23"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_23"[style="bold" shape="record" label="{KERNEL
 | {ID | 23 (topoId: 15) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45E7E8 | 0x0000563FC5D10A30}}
+| {{node handle | func handle} | {0x0000563581BEA450 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_24"[style="bold" shape="record" label="{
+"graph_2208_node_24"[style="bold" shape="record" label="{
 CONDITIONAL
 | {ID | 24 (topoId: 14)}
-| {node handle| 0x0000563FDD45E0E0}
-| {Conditional Handle|5}
+| {node handle| 0x0000563581BEC070}
+| {Conditional Handle|12}
 | {Conditional Type| IF}
-| {True|graph_2172}
+| {True|graph_2211}
 }
 "];
 
-"graph_2169_node_25"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_25"[style="bold" shape="record" label="{KERNEL
 | {ID | 25 (topoId: 13) | init_line_a689f689_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45BDB8 | 0x0000563FC7F60FE0}}
+| {{node handle | func handle} | {0x0000563581C22148 | 0x000056356E8E4F00}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_26"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_26"[style="bold" shape="record" label="{KERNEL
 | {ID | 26 (topoId: 12) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45B6B0 | 0x0000563FC5D10A30}}
+| {{node handle | func handle} | {0x0000563581C1B0C8 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_27"[style="bold" shape="record" label="{
+"graph_2208_node_27"[style="bold" shape="record" label="{
 CONDITIONAL
 | {ID | 27 (topoId: 11)}
-| {node handle| 0x0000563FDD45AFA8}
-| {Conditional Handle|6}
+| {node handle| 0x0000563581C21338}
+| {Conditional Handle|13}
 | {Conditional Type| WHILE}
-| {True|graph_2173}
+| {True|graph_2212}
 }
 "];
 
-"graph_2169_node_28"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_28"[style="bold" shape="record" label="{KERNEL
 | {ID | 28 (topoId: 10) | apply_step_e6b89f32_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD457E70 | 0x0000563FDCAB5F70}}
+| {{node handle | func handle} | {0x0000563581C1E200 | 0x0000563581202B00}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_29"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_29"[style="bold" shape="record" label="{KERNEL
 | {ID | 29 (topoId: 9) | evaluate_65e3eb6f_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD457768 | 0x0000563FBF11CAA0}}
+| {{node handle | func handle} | {0x0000563581C1DAF8 | 0x0000563563867150}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_30"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {30 (topoId: 8) | 0x0000563FDD457060 | 0x000000030715DE00 | 0 | 0 | 1 | 100984 | 1}}}"];
+"graph_2208_node_30"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {30 (topoId: 8) | 0x0000563581C1D3F0 | 0x000000030715DE00 | 0 | 0 | 1 | 100984 | 1}}}"];
 
-"graph_2169_node_31"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_31"[style="bold" shape="record" label="{KERNEL
 | {ID | 31 (topoId: 7) | gradient_f1562405_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD456958 | 0x0000563FBE50AF60}}
+| {{node handle | func handle} | {0x0000563581C1CCE8 | 0x0000563562F14BD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_32"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_32"[style="bold" shape="record" label="{KERNEL
 | {ID | 32 (topoId: 6) | inertia_gradient_15adb400_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD456250 | 0x0000563FCE80D010}}
+| {{node handle | func handle} | {0x0000563581C1C5E0 | 0x0000563572F59DF0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_33"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {33 (topoId: 5) | 0x0000563FDD455B48 | 0x0000000303B68600 | 0 | 0 | 1 | 6432 | 1}}}"];
+"graph_2208_node_33"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {33 (topoId: 5) | 0x0000563581C1BED8 | 0x0000000303B68600 | 0 | 0 | 1 | 6432 | 1}}}"];
 
-"graph_2169_node_34"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_34"[style="bold" shape="record" label="{KERNEL
 | {ID | 34 (topoId: 4) | project_c736abb4_cuda_kernel_forward\<\<\<40200,128,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD455440 | 0x0000563FD96D8E60}}
+| {{node handle | func handle} | {0x0000563581C1B7D0 | 0x00005635900E9460}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_35"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {35 (topoId: 3) | 0x0000563FDD454D38 | 0x00000003078D1400 | 0 | 0 | 1 | 8 | 1}}}"];
+"graph_2208_node_35"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {35 (topoId: 3) | 0x0000563581C19BB0 | 0x00000003078D1400 | 0 | 0 | 1 | 8 | 1}}}"];
 
-"graph_2169_node_36"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_36"[style="bold" shape="record" label="{KERNEL
 | {ID | 36 (topoId: 2) | norm2_a3480e80_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD454630 | 0x0000563FCA198810}}
+| {{node handle | func handle} | {0x0000563581C1A9C0 | 0x0000563573E12C20}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_37"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_37"[style="bold" shape="record" label="{KERNEL
 | {ID | 37 (topoId: 1) | check_newton_f7d2d711_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD453F28 | 0x0000563FDA596FA0}}
+| {{node handle | func handle} | {0x0000563581C1A2B8 | 0x000056357D362E00}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_38"[style="bold" shape="record" label="{KERNEL
+"graph_2208_node_38"[style="bold" shape="record" label="{KERNEL
 | {ID | 38 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD453820 | 0x0000563FC5D10A30}}
+| {{node handle | func handle} | {0x0000563581C10F10 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2169_node_0" -> "graph_2169_node_1" [headlabel=0];
-"graph_2169_node_1" -> "graph_2169_node_2" [headlabel=0];
-"graph_2169_node_2" -> "graph_2169_node_3" [headlabel=0];
-"graph_2169_node_3" -> "graph_2169_node_4" [headlabel=0];
-"graph_2169_node_4" -> "graph_2169_node_5" [headlabel=0];
-"graph_2169_node_5" -> "graph_2169_node_6" [headlabel=0];
-"graph_2169_node_6" -> "graph_2169_node_7" [headlabel=0];
-"graph_2169_node_7" -> "graph_2169_node_8" [headlabel=0];
-"graph_2169_node_8" -> "graph_2169_node_9" [headlabel=0];
-"graph_2169_node_9" -> "graph_2169_node_10" [headlabel=0];
-"graph_2169_node_10" -> "graph_2169_node_11" [headlabel=0];
-"graph_2169_node_11" -> "graph_2169_node_12" [headlabel=0];
-"graph_2169_node_12" -> "graph_2169_node_13" [headlabel=0];
-"graph_2169_node_13" -> "graph_2169_node_14" [headlabel=0];
-"graph_2169_node_14" -> "graph_2169_node_15" [headlabel=0];
-"graph_2169_node_15" -> "graph_2169_node_16" [headlabel=0];
-"graph_2169_node_16" -> "graph_2169_node_17" [headlabel=0];
-"graph_2169_node_17" -> "graph_2169_node_18" [headlabel=0];
-"graph_2169_node_18" -> "graph_2169_node_19" [headlabel=0];
-"graph_2169_node_19" -> "graph_2169_node_20" [headlabel=0];
-"graph_2169_node_20" -> "graph_2169_node_21" [headlabel=0];
-"graph_2169_node_21" -> "graph_2169_node_22" [headlabel=0];
-"graph_2169_node_22" -> "graph_2169_node_23" [headlabel=0];
-"graph_2169_node_23" -> "graph_2169_node_24" [headlabel=0];
-"graph_2169_node_24" -> "graph_2169_node_25" [headlabel=0];
-"graph_2169_node_25" -> "graph_2169_node_26" [headlabel=0];
-"graph_2169_node_26" -> "graph_2169_node_27" [headlabel=0];
-"graph_2169_node_27" -> "graph_2169_node_28" [headlabel=0];
-"graph_2169_node_28" -> "graph_2169_node_29" [headlabel=0];
-"graph_2169_node_29" -> "graph_2169_node_30" [headlabel=0];
-"graph_2169_node_30" -> "graph_2169_node_31" [headlabel=0];
-"graph_2169_node_31" -> "graph_2169_node_32" [headlabel=0];
-"graph_2169_node_32" -> "graph_2169_node_33" [headlabel=0];
-"graph_2169_node_33" -> "graph_2169_node_34" [headlabel=0];
-"graph_2169_node_34" -> "graph_2169_node_35" [headlabel=0];
-"graph_2169_node_35" -> "graph_2169_node_36" [headlabel=0];
-"graph_2169_node_36" -> "graph_2169_node_37" [headlabel=0];
-"graph_2169_node_37" -> "graph_2169_node_38" [headlabel=0];
+"graph_2208_node_0" -> "graph_2208_node_1" [headlabel=0];
+"graph_2208_node_1" -> "graph_2208_node_2" [headlabel=0];
+"graph_2208_node_2" -> "graph_2208_node_3" [headlabel=0];
+"graph_2208_node_3" -> "graph_2208_node_4" [headlabel=0];
+"graph_2208_node_4" -> "graph_2208_node_5" [headlabel=0];
+"graph_2208_node_5" -> "graph_2208_node_6" [headlabel=0];
+"graph_2208_node_6" -> "graph_2208_node_7" [headlabel=0];
+"graph_2208_node_7" -> "graph_2208_node_8" [headlabel=0];
+"graph_2208_node_8" -> "graph_2208_node_9" [headlabel=0];
+"graph_2208_node_9" -> "graph_2208_node_10" [headlabel=0];
+"graph_2208_node_10" -> "graph_2208_node_11" [headlabel=0];
+"graph_2208_node_11" -> "graph_2208_node_12" [headlabel=0];
+"graph_2208_node_12" -> "graph_2208_node_13" [headlabel=0];
+"graph_2208_node_13" -> "graph_2208_node_14" [headlabel=0];
+"graph_2208_node_14" -> "graph_2208_node_15" [headlabel=0];
+"graph_2208_node_15" -> "graph_2208_node_16" [headlabel=0];
+"graph_2208_node_16" -> "graph_2208_node_17" [headlabel=0];
+"graph_2208_node_17" -> "graph_2208_node_18" [headlabel=0];
+"graph_2208_node_18" -> "graph_2208_node_19" [headlabel=0];
+"graph_2208_node_19" -> "graph_2208_node_20" [headlabel=0];
+"graph_2208_node_20" -> "graph_2208_node_21" [headlabel=0];
+"graph_2208_node_21" -> "graph_2208_node_22" [headlabel=0];
+"graph_2208_node_22" -> "graph_2208_node_23" [headlabel=0];
+"graph_2208_node_23" -> "graph_2208_node_24" [headlabel=0];
+"graph_2208_node_24" -> "graph_2208_node_25" [headlabel=0];
+"graph_2208_node_25" -> "graph_2208_node_26" [headlabel=0];
+"graph_2208_node_26" -> "graph_2208_node_27" [headlabel=0];
+"graph_2208_node_27" -> "graph_2208_node_28" [headlabel=0];
+"graph_2208_node_28" -> "graph_2208_node_29" [headlabel=0];
+"graph_2208_node_29" -> "graph_2208_node_30" [headlabel=0];
+"graph_2208_node_30" -> "graph_2208_node_31" [headlabel=0];
+"graph_2208_node_31" -> "graph_2208_node_32" [headlabel=0];
+"graph_2208_node_32" -> "graph_2208_node_33" [headlabel=0];
+"graph_2208_node_33" -> "graph_2208_node_34" [headlabel=0];
+"graph_2208_node_34" -> "graph_2208_node_35" [headlabel=0];
+"graph_2208_node_35" -> "graph_2208_node_36" [headlabel=0];
+"graph_2208_node_36" -> "graph_2208_node_37" [headlabel=0];
+"graph_2208_node_37" -> "graph_2208_node_38" [headlabel=0];
 }
-subgraph cluster_2170 {
-label="graph_2170" graph[style="dashed"];
-"graph_2170_node_0"[style="solid" shape="record" label="{
+subgraph cluster_2203 {
+label="graph_2203" graph[style="dashed"];
+"graph_2203_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 7) | advance_2065aa49_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C56588 | 0x000056357F3D5050}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 6) | dense_mv_fdad1f67_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C55E80 | 0x000056358FC270D0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_2"[style="bold" shape="record" label="{KERNEL
+| {ID | 2 (topoId: 5) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C4CAD8 | 0x00005635900E64C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_3"[style="bold" shape="record" label="{KERNEL
+| {ID | 3 (topoId: 4) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C55778 | 0x00005635724DCCF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_4"[style="bold" shape="record" label="{KERNEL
+| {ID | 4 (topoId: 3) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C51F38 | 0x00005635900E64C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_5"[style="bold" shape="record" label="{KERNEL
+| {ID | 5 (topoId: 2) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C55070 | 0x00005635724DCCF0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_6"[style="bold" shape="record" label="{KERNEL
+| {ID | 6 (topoId: 1) | direction_00a28851_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C54968 | 0x000056357FE531C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_7"[style="bold" shape="record" label="{KERNEL
+| {ID | 7 (topoId: 0) | check_538385e5_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000563581C54260 | 0x000056357EF95AB0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+}"];
+
+"graph_2203_node_0" -> "graph_2203_node_1" [headlabel=0];
+"graph_2203_node_1" -> "graph_2203_node_2" [headlabel=0];
+"graph_2203_node_2" -> "graph_2203_node_3" [headlabel=0];
+"graph_2203_node_3" -> "graph_2203_node_4" [headlabel=0];
+"graph_2203_node_4" -> "graph_2203_node_5" [headlabel=0];
+"graph_2203_node_5" -> "graph_2203_node_6" [headlabel=0];
+"graph_2203_node_6" -> "graph_2203_node_7" [headlabel=0];
+}
+subgraph cluster_2209 {
+label="graph_2209" graph[style="dashed"];
+"graph_2209_node_0"[style="solid" shape="record" label="{
 MEMCPY
-| {{ID | node handle} | {0 (topoId: 13) | 0x0000563FDD46B3D0}}
+| {{ID | node handle} | {0 (topoId: 13) | 0x0000563581BF6228}}
 | {kind | DtoD (DEVICE to DEVICE)}
 | {{srcPtr | dstPtr} | {pitch | ptr | xsize | ysize | pitch | ptr | xsize | ysize} | {0 | 0x00000003071AD240 | 0 | 0 | 0 | 0x00000003071AD400 | 0 | 0}}
 | {{srcPos | {{x | 0} | {y | 0} | {z | 0}}} | {dstPos | {{x | 0} | {y | 0} | {z | 0}}} | {Extent | {{Width | 8} | {Height | 1} | {Depth | 1}}}}
 }"];
 
-"graph_2170_node_1"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_1"[style="bold" shape="record" label="{KERNEL
 | {ID | 1 (topoId: 12) | lift_688a036a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD46ACC8 | 0x0000563FCEC49A80}}
+| {{node handle | func handle} | {0x0000563581BF5B20 | 0x0000563574D0FEB0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 11) | 0x0000563FDD46A5C0 | 0x0000000317D6EA00 | 0 | 0 | 1 | 100984 | 1}}}"];
+"graph_2209_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 11) | 0x0000563581BF5418 | 0x0000000317D6EA00 | 0 | 0 | 1 | 100984 | 1}}}"];
 
-"graph_2170_node_3"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_3"[style="bold" shape="record" label="{KERNEL
 | {ID | 3 (topoId: 10) | product_58005ea7_cuda_kernel_forward\<\<\<322,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD469EB8 | 0x0000563FC56E92A0}}
+| {{node handle | func handle} | {0x0000563581BF4D10 | 0x000056357DEAE440}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_4"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_4"[style="bold" shape="record" label="{KERNEL
 | {ID | 4 (topoId: 9) | add_tangent_db27948a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD4697B0 | 0x0000563FBF8B1590}}
+| {{node handle | func handle} | {0x0000563581C018F8 | 0x000056356A1D4B00}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 8) | 0x0000563FDD4690A8 | 0x0000000304090000 | 0 | 0 | 1 | 6432 | 1}}}"];
+"graph_2209_node_5"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {5 (topoId: 8) | 0x0000563581BF3F00 | 0x0000000304090000 | 0 | 0 | 1 | 6432 | 1}}}"];
 
-"graph_2170_node_6"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_6"[style="bold" shape="record" label="{KERNEL
 | {ID | 6 (topoId: 7) | project_c736abb4_cuda_kernel_forward\<\<\<40200,128,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD4689A0 | 0x0000563FD96D8E60}}
+| {{node handle | func handle} | {0x0000563581BF37F8 | 0x00005635900E9460}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_7"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_7"[style="bold" shape="record" label="{KERNEL
 | {ID | 7 (topoId: 6) | combine_b958a269_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD468298 | 0x0000563FD9B18590}}
+| {{node handle | func handle} | {0x0000563581BF4608 | 0x0000563563FFDF30}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_8"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_8"[style="bold" shape="record" label="{KERNEL
 | {ID | 8 (topoId: 5) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD467B90 | 0x0000563FD8A44520}}
+| {{node handle | func handle} | {0x0000563581BF30F0 | 0x00005635900E64C0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_9"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_9"[style="bold" shape="record" label="{KERNEL
 | {ID | 9 (topoId: 4) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD467488 | 0x0000563FC7FA4920}}
+| {{node handle | func handle} | {0x0000563581C21A40 | 0x00005635724DCCF0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_10"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_10"[style="bold" shape="record" label="{KERNEL
 | {ID | 10 (topoId: 3) | curvature_50fc48c9_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD466D80 | 0x0000563FDB9A46B0}}
+| {{node handle | func handle} | {0x0000563581BF29E8 | 0x000056357EF96CE0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_11"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_11"[style="bold" shape="record" label="{KERNEL
 | {ID | 11 (topoId: 2) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD466678 | 0x0000563FC5D10A30}}
+| {{node handle | func handle} | {0x0000563581BF22E0 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_12"[style="bold" shape="record" label="{
+"graph_2209_node_12"[style="bold" shape="record" label="{
 CONDITIONAL
 | {ID | 12 (topoId: 1)}
-| {node handle| 0x0000563FDD465F70}
-| {Conditional Handle|4}
+| {node handle| 0x0000563581BF1BD8}
+| {Conditional Handle|11}
 | {Conditional Type| IF}
-| {True|graph_2171}
+| {True|graph_2210}
 }
 "];
 
-"graph_2170_node_13"[style="bold" shape="record" label="{KERNEL
+"graph_2209_node_13"[style="bold" shape="record" label="{KERNEL
 | {ID | 13 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD462028 | 0x0000563FC5D10A30}}
+| {{node handle | func handle} | {0x0000563581BEF8B0 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2170_node_0" -> "graph_2170_node_1" [headlabel=0];
-"graph_2170_node_1" -> "graph_2170_node_2" [headlabel=0];
-"graph_2170_node_2" -> "graph_2170_node_3" [headlabel=0];
-"graph_2170_node_3" -> "graph_2170_node_4" [headlabel=0];
-"graph_2170_node_4" -> "graph_2170_node_5" [headlabel=0];
-"graph_2170_node_5" -> "graph_2170_node_6" [headlabel=0];
-"graph_2170_node_6" -> "graph_2170_node_7" [headlabel=0];
-"graph_2170_node_7" -> "graph_2170_node_8" [headlabel=0];
-"graph_2170_node_8" -> "graph_2170_node_9" [headlabel=0];
-"graph_2170_node_9" -> "graph_2170_node_10" [headlabel=0];
-"graph_2170_node_10" -> "graph_2170_node_11" [headlabel=0];
-"graph_2170_node_11" -> "graph_2170_node_12" [headlabel=0];
-"graph_2170_node_12" -> "graph_2170_node_13" [headlabel=0];
+"graph_2209_node_0" -> "graph_2209_node_1" [headlabel=0];
+"graph_2209_node_1" -> "graph_2209_node_2" [headlabel=0];
+"graph_2209_node_2" -> "graph_2209_node_3" [headlabel=0];
+"graph_2209_node_3" -> "graph_2209_node_4" [headlabel=0];
+"graph_2209_node_4" -> "graph_2209_node_5" [headlabel=0];
+"graph_2209_node_5" -> "graph_2209_node_6" [headlabel=0];
+"graph_2209_node_6" -> "graph_2209_node_7" [headlabel=0];
+"graph_2209_node_7" -> "graph_2209_node_8" [headlabel=0];
+"graph_2209_node_8" -> "graph_2209_node_9" [headlabel=0];
+"graph_2209_node_9" -> "graph_2209_node_10" [headlabel=0];
+"graph_2209_node_10" -> "graph_2209_node_11" [headlabel=0];
+"graph_2209_node_11" -> "graph_2209_node_12" [headlabel=0];
+"graph_2209_node_12" -> "graph_2209_node_13" [headlabel=0];
 }
-subgraph cluster_2172 {
-label="graph_2172" graph[style="dashed"];
-"graph_2172_node_0"[style="bold" shape="record" label="{KERNEL
+subgraph cluster_2211 {
+label="graph_2211" graph[style="dashed"];
+"graph_2211_node_0"[style="bold" shape="record" label="{KERNEL
 | {ID | 0 (topoId: 3) | dense_mv_fdad1f67_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45D9D8 | 0x0000563FBF497C30}}
+| {{node handle | func handle} | {0x0000563581C03C20 | 0x000056358FC270D0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2172_node_1"[style="bold" shape="record" label="{KERNEL
+"graph_2211_node_1"[style="bold" shape="record" label="{KERNEL
 | {ID | 1 (topoId: 2) | lift_688a036a_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45D2D0 | 0x0000563FCEC49A80}}
+| {{node handle | func handle} | {0x0000563581C0C8C0 | 0x0000563574D0FEB0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2172_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 1) | 0x0000563FDD45CBC8 | 0x00000003078D1000 | 0 | 0 | 1 | 8 | 1}}}"];
+"graph_2211_node_2"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {2 (topoId: 1) | 0x0000563581BECE80 | 0x00000003078D1000 | 0 | 0 | 1 | 8 | 1}}}"];
 
-"graph_2172_node_3"[style="bold" shape="record" label="{KERNEL
+"graph_2211_node_3"[style="bold" shape="record" label="{KERNEL
 | {ID | 3 (topoId: 0) | dot_eaf2fb95_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45C4C0 | 0x0000563FDB817A60}}
+| {{node handle | func handle} | {0x0000563581C16A78 | 0x000056357FF645F0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2172_node_0" -> "graph_2172_node_1" [headlabel=0];
-"graph_2172_node_1" -> "graph_2172_node_2" [headlabel=0];
-"graph_2172_node_2" -> "graph_2172_node_3" [headlabel=0];
+"graph_2211_node_0" -> "graph_2211_node_1" [headlabel=0];
+"graph_2211_node_1" -> "graph_2211_node_2" [headlabel=0];
+"graph_2211_node_2" -> "graph_2211_node_3" [headlabel=0];
 }
-subgraph cluster_2173 {
-label="graph_2173" graph[style="dashed"];
-"graph_2173_node_0"[style="bold" shape="record" label="{KERNEL
+subgraph cluster_2212 {
+label="graph_2212" graph[style="dashed"];
+"graph_2212_node_0"[style="bold" shape="record" label="{KERNEL
 | {ID | 0 (topoId: 5) | trial_766f5ea3_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD45A8A0 | 0x0000563FCB095A00}}
+| {{node handle | func handle} | {0x0000563581C20C30 | 0x000056357115CAD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2173_node_1"[style="solid" style="solid" shape="record" label="{MEMSET
-| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {1 (topoId: 4) | 0x0000563FDD45A198 | 0x00000003078D0E00 | 0 | 0 | 1 | 8 | 1}}}"];
+"graph_2212_node_1"[style="solid" style="solid" shape="record" label="{MEMSET
+| {{ID | node handle | dptr | pitch | value | elementSize | width | height} | {1 (topoId: 4) | 0x0000563581C20528 | 0x00000003078D0E00 | 0 | 0 | 1 | 8 | 1}}}"];
 
-"graph_2173_node_2"[style="bold" shape="record" label="{KERNEL
+"graph_2212_node_2"[style="bold" shape="record" label="{KERNEL
 | {ID | 2 (topoId: 3) | energy_3f7897e3_cuda_kernel_forward\<\<\<16,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD459A90 | 0x0000563FBF12E250}}
+| {{node handle | func handle} | {0x0000563581C1FE20 | 0x0000563563878900}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2173_node_3"[style="bold" shape="record" label="{KERNEL
+"graph_2212_node_3"[style="bold" shape="record" label="{KERNEL
 | {ID | 3 (topoId: 2) | inertia_energy_3aaf81a7_cuda_kernel_forward\<\<\<50,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD459388 | 0x0000563FC0511F60}}
+| {{node handle | func handle} | {0x0000563581C1F718 | 0x000056356A8F6050}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2173_node_4"[style="bold" shape="record" label="{KERNEL
+"graph_2212_node_4"[style="bold" shape="record" label="{KERNEL
 | {ID | 4 (topoId: 1) | accept_line_11820807_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD458C80 | 0x0000563FCBF93100}}
+| {{node handle | func handle} | {0x0000563581C1F010 | 0x00005635706DFEE0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2173_node_5"[style="bold" shape="record" label="{KERNEL
+"graph_2212_node_5"[style="bold" shape="record" label="{KERNEL
 | {ID | 5 (topoId: 0) | set_conditional_if_handle_kernel\<\<\<1,1,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD458578 | 0x0000563FC5D10A30}}
+| {{node handle | func handle} | {0x0000563581C1E908 | 0x000056356A45CDD0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2173_node_0" -> "graph_2173_node_1" [headlabel=0];
-"graph_2173_node_1" -> "graph_2173_node_2" [headlabel=0];
-"graph_2173_node_2" -> "graph_2173_node_3" [headlabel=0];
-"graph_2173_node_3" -> "graph_2173_node_4" [headlabel=0];
-"graph_2173_node_4" -> "graph_2173_node_5" [headlabel=0];
+"graph_2212_node_0" -> "graph_2212_node_1" [headlabel=0];
+"graph_2212_node_1" -> "graph_2212_node_2" [headlabel=0];
+"graph_2212_node_2" -> "graph_2212_node_3" [headlabel=0];
+"graph_2212_node_3" -> "graph_2212_node_4" [headlabel=0];
+"graph_2212_node_4" -> "graph_2212_node_5" [headlabel=0];
 }
-subgraph cluster_2171 {
-label="graph_2171" graph[style="dashed"];
-"graph_2171_node_0"[style="bold" shape="record" label="{KERNEL
+subgraph cluster_2210 {
+label="graph_2210" graph[style="dashed"];
+"graph_2210_node_0"[style="bold" shape="record" label="{KERNEL
 | {ID | 0 (topoId: 7) | advance_2065aa49_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD465868 | 0x0000563FD1B9AC60}}
+| {{node handle | func handle} | {0x0000563581BF14D0 | 0x000056357F3D5050}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_1"[style="bold" shape="record" label="{KERNEL
+"graph_2210_node_1"[style="bold" shape="record" label="{KERNEL
 | {ID | 1 (topoId: 6) | dense_mv_fdad1f67_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD465160 | 0x0000563FBF497C30}}
+| {{node handle | func handle} | {0x0000563581BF0DC8 | 0x000056358FC270D0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_2"[style="bold" shape="record" label="{KERNEL
+"graph_2210_node_2"[style="bold" shape="record" label="{KERNEL
 | {ID | 2 (topoId: 5) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD464A58 | 0x0000563FD8A44520}}
+| {{node handle | func handle} | {0x0000563581BF06C0 | 0x00005635900E64C0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_3"[style="bold" shape="record" label="{KERNEL
+"graph_2210_node_3"[style="bold" shape="record" label="{KERNEL
 | {ID | 3 (topoId: 4) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD464350 | 0x0000563FC7FA4920}}
+| {{node handle | func handle} | {0x0000563581BEFFB8 | 0x00005635724DCCF0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_4"[style="bold" shape="record" label="{KERNEL
+"graph_2210_node_4"[style="bold" shape="record" label="{KERNEL
 | {ID | 4 (topoId: 3) | _create_tiled_dot_kernels__locals__block_dot_kernel_5eb44f0c_cuda_kernel_forward\<\<\<2,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD463C48 | 0x0000563FD8A44520}}
+| {{node handle | func handle} | {0x0000563581BFCBA0 | 0x00005635900E64C0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_5"[style="bold" shape="record" label="{KERNEL
+"graph_2210_node_5"[style="bold" shape="record" label="{KERNEL
 | {ID | 5 (topoId: 2) | _create_tiled_dot_kernels__locals__block_sum_kernel_97adadea_cuda_kernel_forward\<\<\<1,512,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD463540 | 0x0000563FC7FA4920}}
+| {{node handle | func handle} | {0x0000563581BEEAA0 | 0x00005635724DCCF0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_6"[style="bold" shape="record" label="{KERNEL
+"graph_2210_node_6"[style="bold" shape="record" label="{KERNEL
 | {ID | 6 (topoId: 1) | direction_00a28851_cuda_kernel_forward\<\<\<4,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD462E38 | 0x0000563FDCB81BF0}}
+| {{node handle | func handle} | {0x0000563581BFD2A8 | 0x000056357FE531C0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_7"[style="bold" shape="record" label="{KERNEL
+"graph_2210_node_7"[style="bold" shape="record" label="{KERNEL
 | {ID | 7 (topoId: 0) | check_538385e5_cuda_kernel_forward\<\<\<1,256,0\>\>\>}
-| {{node handle | func handle} | {0x0000563FDD462730 | 0x0000563FDA664070}}
+| {{node handle | func handle} | {0x0000563581BEE398 | 0x000056357EF95AB0}}
 | {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
 | {cooperative | 0}
 | {priority | 0}
 }"];
 
-"graph_2171_node_0" -> "graph_2171_node_1" [headlabel=0];
-"graph_2171_node_1" -> "graph_2171_node_2" [headlabel=0];
-"graph_2171_node_2" -> "graph_2171_node_3" [headlabel=0];
-"graph_2171_node_3" -> "graph_2171_node_4" [headlabel=0];
-"graph_2171_node_4" -> "graph_2171_node_5" [headlabel=0];
-"graph_2171_node_5" -> "graph_2171_node_6" [headlabel=0];
-"graph_2171_node_6" -> "graph_2171_node_7" [headlabel=0];
+"graph_2210_node_0" -> "graph_2210_node_1" [headlabel=0];
+"graph_2210_node_1" -> "graph_2210_node_2" [headlabel=0];
+"graph_2210_node_2" -> "graph_2210_node_3" [headlabel=0];
+"graph_2210_node_3" -> "graph_2210_node_4" [headlabel=0];
+"graph_2210_node_4" -> "graph_2210_node_5" [headlabel=0];
+"graph_2210_node_5" -> "graph_2210_node_6" [headlabel=0];
+"graph_2210_node_6" -> "graph_2210_node_7" [headlabel=0];
 }
 }

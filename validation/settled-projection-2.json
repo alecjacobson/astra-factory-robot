@@ -1,0 +1,22 @@
+{
+  "contacts": 2,
+  "state": "full gravity-settled equilibrium",
+  "best_position_fit_mass_RMS_m": 0.00044485057420384343,
+  "best_position_fit_max_m": 0.003802815750927714,
+  "director_coordinate_max_difference_rad": 10.668382861182124,
+  "energies": {
+    "full": {
+      "barrier_rejected": false,
+      "elastic_energy_J": 0.9295668895538487
+    },
+    "position_fit_full_directors": {
+      "barrier_rejected": false,
+      "elastic_energy_J": 4147.081979085401
+    },
+    "position_fit_rom_director_lift": {
+      "barrier_rejected": true,
+      "elastic_energy_J": null
+    }
+  },
+  "interpretation": "Position-mass projection only, not an energy minimizer or proof that no other ROM state can fit the reference."
+}

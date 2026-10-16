@@ -42,12 +42,18 @@ def prediction(
     clock: wp.array[wp.int32],
     dt: wp.float64,
     nv: int,
+    stationary: int,
+    gravity_ramp: wp.float64,
 ):
     i = wp.tid()
     t = wp.float64(clock[0]) * dt
     delta = carrier(t + dt) - wp.float64(2) * carrier(t) + carrier(t - dt)
-    # Smoothly introduce gravity during the initial dwell; no hidden settling phase.
-    u = wp.clamp((t + dt) / wp.float64(0.4), wp.float64(0), wp.float64(1))
+    if stationary != 0:
+        delta = wp.vec3d(0.0, 0.0, 0.0)
+    # A zero ramp means gravity is already fully applied after equilibration.
+    u = wp.float64(1)
+    if gravity_ramp > wp.float64(0):
+        u = wp.clamp((t + dt) / gravity_ramp, wp.float64(0), wp.float64(1))
     ramp = u * u * (wp.float64(3) - wp.float64(2) * u)
     y = x[i] + dt * v[i]
     if i < 3 * nv:
@@ -395,11 +401,16 @@ class Integrator:
         energy_slack=1.0e-12,
         max_steps=960,
         linear_solver="truncated",
+        stationary=False,
+        gravity_ramp=0.4,
     ):
         self.s = shell
         self.basis = basis
         self.dt = dt
         self.damping = damping
+        self.stationary = int(stationary)
+        self.gravity_ramp = gravity_ramp
+        self.settlement = None
         self.newton_limit = newton_limit
         self.tol = tol
         self.absolute_tol = absolute_tol
@@ -689,7 +700,17 @@ class Integrator:
         wp.launch(
             prediction,
             self.n,
-            [self.x, self.v, self.target, self.old, self.clock, self.dt, self.s.nv],
+            [
+                self.x,
+                self.v,
+                self.target,
+                self.old,
+                self.clock,
+                self.dt,
+                self.s.nv,
+                self.stationary,
+                self.gravity_ramp,
+            ],
         )
         self.gradient()
         wp.launch(
@@ -703,6 +724,8 @@ class Integrator:
             1,
             [self.gnorm, self.reference, self.step_failed, self.tol, self.absolute_tol],
         )
+        if self.settlement is not None:
+            wp.copy(self.settlement.previous_velocity, self.v)
         wp.launch(finish_velocity, self.n, [self.x, self.old, self.v, self.dt])
         wp.launch(
             log_linear,
@@ -734,6 +757,9 @@ class Integrator:
         wp.launch(
             check_time, 1, [self.clock, self.time_running, self.total, self.step_failed]
         )
+
+        if self.settlement is not None:
+            self.settlement.check(self)
 
     def capture(self, steps, stride=10):
         self.total = wp.array([steps], dtype=wp.int32)
@@ -767,3 +793,5 @@ class Integrator:
         if self.basis is None:
             self.refit.counts.zero_()
         self.history.zero_()
+        if self.settlement is not None:
+            self.settlement.reset()

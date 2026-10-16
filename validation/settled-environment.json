@@ -1,0 +1,9 @@
+{
+  "python": "3.10.12",
+  "warp": "1.18.0",
+  "warpack_commit": "6f7cfb61f0e434765fb1a6fd76be241d6ff34d7b",
+  "warp_fsai_overlay": "04427b997fe7ff07bc6ed1dde5ca9813496c6b55",
+  "device": "NVIDIA L40",
+  "driver": "570.158.01",
+  "timings": "Shared GPU; settling and transfer included, setup excluded"
+}

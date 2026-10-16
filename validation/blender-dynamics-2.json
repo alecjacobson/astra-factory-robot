@@ -1,13 +1,17 @@
 {
   "full": {
-    "max_sample_playback_error_m": 3.6883321341552033e-08,
+    "max_sample_playback_error_m": 2.9779914978433908e-08,
     "meters_per_blender_unit": 1.0,
+    "receiver_stands_removed": true,
+    "starts_after_settling": true,
     "sample_count": 49,
     "simulation_duration_s": 4.000000000000002
   },
   "rom": {
-    "max_sample_playback_error_m": 2.9767650455703176e-08,
+    "max_sample_playback_error_m": 2.9802180057103556e-08,
     "meters_per_blender_unit": 1.0,
+    "receiver_stands_removed": true,
+    "starts_after_settling": true,
     "sample_count": 49,
     "simulation_duration_s": 4.000000000000002
   }

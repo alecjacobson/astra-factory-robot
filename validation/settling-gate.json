@@ -1,0 +1,36 @@
+{
+  "insufficient": {
+    "settling_steps": 5,
+    "transfer_steps": 0,
+    "settled": false,
+    "graph": {
+      "KERNEL": 137,
+      "CONDITIONAL": 15,
+      "MEMCPY": 22,
+      "MEMSET": 52,
+      "HOST": 0,
+      "HtoD": 0,
+      "DtoH": 0,
+      "DtoD": 22,
+      "sha256": "b3e332c1ae20c0411f6b8537d14056a1cc67eedbae79f828c2f705597b740b4c",
+      "accepted": true
+    }
+  },
+  "settled": {
+    "settling_steps": 45,
+    "transfer_steps": 2,
+    "settled": true,
+    "graph": {
+      "KERNEL": 137,
+      "CONDITIONAL": 15,
+      "MEMCPY": 22,
+      "MEMSET": 52,
+      "HOST": 0,
+      "HtoD": 0,
+      "DtoH": 0,
+      "DtoD": 22,
+      "sha256": "a07ffa669956c47191b5dfbb4ad61f02dccea1ab35d692b9262fdebcdcc20460",
+      "accepted": true
+    }
+  }
+}

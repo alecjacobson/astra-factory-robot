@@ -1,0 +1,15 @@
+{
+  "converged": true,
+  "steps": 335,
+  "duration_s": 2.7916666666666665,
+  "dt": 0.008333333333333333,
+  "damping_per_s": 20.0,
+  "gravity_ramp_s": 2.0,
+  "required_quiet_duration_s": 0.25,
+  "speed_tolerance_m_s": 1e-05,
+  "acceleration_tolerance_m_s2": 0.001,
+  "final_max_speed_m_s": 8.049891000302022e-07,
+  "final_max_acceleration_m_s2": 3.4372144336730416e-05,
+  "line_search_failures": 0,
+  "unconverged_steps": 0
+}

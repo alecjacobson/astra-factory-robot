@@ -1,37 +1,39 @@
 # HL / 04 — Robotic headliner transfer
 
-A factory robot lifts an automobile headliner from station A, carries it up and over to station B, and returns it in a continuous animation. Choose either four corner suction contacts or two opposing diagonal contacts. The cup size, headliner, tooling frame, and prescribed motion are shared between both layouts.
+A factory robot transfers an automobile headliner between stations using four suction contacts or two opposing diagonal contacts. Both layouts share the headliner, cup size, tooling frame and prescribed robot motion.
 
-## Dynamic shell comparison
+## Settled dynamic shell comparison
 
-The new simulation uses a curved-rest **Bending-Active Cosserat shell implemented in Warp**, with a full-order model and a constrained, enriched skinning-eigenmode ROM. Each attachment fixes the **entire 100 mm diameter circular contact region** to the rigid gripper. Both four-cup and two-diagonal-cup layouts use the same shell mesh and prescribed four-second transfer.
+The receiver stands are removed from the simulation scenes. The robot stays fixed while the shell settles under gravity, and only then begins the transfer. **The GIFs start after settling**, so the initial fall no longer dominates the motion. Labels and plots measure deformation relative to each model's own settled shape, at **1× physical scale**.
 
-After setup with Warp/cuDSS, one CUDA graph advances the complete trajectory, including nonlinear iterations, linear solves, line searches, moving supports and output storage. The graph audit checks nested conditional bodies for host nodes and host/device transfers. [Model, equations, limitations and reproduction](simulation/README.md).
+Each suction attachment rigidly constrains the **entire 100 mm diameter circular region**. The full-order and enriched skinning-eigenmode models use a curved-rest Bending-Active Cosserat shell implemented in Warp, with Warp/cuDSS precomputation. Both settling and transfer run inside **one device-resident CUDA graph**. The gate requires every vertex's speed below 0.01 mm/s and acceleration below 1 mm/s² for 0.25 s after the gravity ramp; the robot cannot move if settling fails. [Equations, implementation and reproduction](simulation/README.md).
 
-**Four rigid contact regions — full simulation / enriched skinning ROM**
+**Four rigid suction regions — full simulation / enriched skinning ROM**
 
-![Four-contact shell comparison](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/shell-comparison-4-contacts.gif)
+![Four-contact settled shell comparison](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/shell-comparison-4-contacts.gif)
 
-**Two rigid contact regions — cups 01 and 04**
+**Two rigid suction regions — opposing diagonal cups 01 and 04**
 
-![Two-contact shell comparison](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/shell-comparison-2-contacts.gif)
+![Two-contact settled shell comparison](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/shell-comparison-2-contacts.gif)
 
-Both animations show deformation at **1× physical scale**. Green faces mark rigid contact regions. Material properties are illustrative: E = 300 MPa, Poisson ratio 0.3, density 250 kg/m³, thickness 3 mm; shell mass is approximately 1.675 kg. The model does not include suction failure, release, self-collision, tooling collision or receiver contact.
+| Patches | Settling time, full / ROM | Peak motion from equilibrium, full / ROM | Maximum RMS motion error | Relative motion error |
+|---|---:|---:|---:|---:|
+| 4 | 2.32 / 2.31 s | 1.92 / 1.62 mm | 0.072 mm | 15.3% |
+| 2 | 5.92 / 2.79 s | 352.98 / 40.07 mm | 109.332 mm | 88.1% |
 
-**Basis accuracy needs measurement.** In the preliminary, softer 30 MPa material study, the unaugmented 40-weight skinning basis has 93% relative trajectory error during initial loading. Offline compliance and nonlinear-correction enrichment reduces this to 44%, but is still too stiff for that case. The [basis study](validation/rom-basis-study.json) reports the tested alternatives. The full model is a reference on the shared simulation tessellation, without a spatial-convergence claim.
+Errors compare `x(t)-x(0)` between models over 49 saved transfer samples in the gripper-local frame. The full and ROM models use the same timestep within each layout: 1/120 s for four patches, 1/960 s for two. Every settling and transfer timestep converged; patch drift is zero. Nested graph audits found no host nodes or host/device transfers during simulation. [Four-contact results and curves](results/dynamics-4/comparison.json) · [Two-contact results and curves](results/dynamics-2/comparison.json).
 
-The default 804-coordinate ROM works reasonably for the four-contact case, but is **much too stiff for the large two-contact deformation**.
+**The two-contact ROM remains too stiff.** Its initial peak gravitational sag is 73.0 mm, compared with 345.1 mm in the full model. Separating settling from transfer makes the motion-induced discrepancy measurable, but does not remove this reduction error. The ROM has 804 coordinates; the full models have 11,867 and 12,245 free DOFs.
 
-| Rigid patches | Integration timestep | Full-model free DOFs | Full / ROM peak sampled deformation | Maximum RMS ROM error | Relative trajectory error |
-|---|---:|---:|---:|---:|---:|
-| 4 | 1/120 s | 11,867 | 4.51 / 4.17 mm | 0.088 mm | 6.3% |
-| 2 | 1/960 s | 12,245 | 544 / 104 mm | 153 mm | 79.0% |
+Material properties remain illustrative: E = 300 MPa, Poisson ratio 0.3, density 250 kg/m³, thickness 3 mm; shell mass approximately 1.675 kg. Settling uses damping of 20 s⁻¹; transfer uses 1 s⁻¹. The model excludes suction failure, release, self-collision and tooling contact, and the shared simulation mesh has not undergone a spatial convergence study.
 
-All 480 four-contact and 3,840 two-contact timesteps converge; patch drift is exactly zero. Errors use the 49 saved frames in the gripper-local frame. Both models use the same timestep within each layout. The two-contact ROM is **not an accurate surrogate for this large-bending case**. [Four-contact results and graph audits](results/dynamics-4/comparison.json) · [Two-contact results and graph audits](results/dynamics-2/comparison.json).
+**EigenFit assessment.** A new Warp/cuDSS spectral diagnostic compares twelve full and reduced rest-state modes. The two-contact model's lowest three frequencies already agree within 0.55%; higher modes show stiffening and weaker mode-shape correspondence. The [assessment and measurements](simulation/EIGENFIT.md) explain why this does not yet justify a nonlinear correction. These animations retain the original shell energy; no spectral correction or Young's-modulus adjustment has been applied.
 
 [Four-contact Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_dynamics_4_contacts.blend) · [Two-contact Blender scene](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/scene/headliner_dynamics_2_contacts.blend)
 
-The simulation mesh has 2,172 vertices, 3,925 triangles and eleven open holes. Conforming 48-sided polygons cover the suction disks with at most 0.108 mm radial overreach. The original subdivision surface and robot wireframe scenes remain in the Blender files.
+[Four-contact motion plot](results/dynamics-4/comparison.png) · [Two-contact motion plot](results/dynamics-2/comparison.png)
+
+The simulation mesh has 2,172 vertices, 3,925 triangles and eleven open holes. Conforming 48-sided polygons cover the suction disks with at most 0.108 mm radial overreach. Green faces mark rigid contact regions. The original subdivision surface and robot wireframe scenes remain available in the Blender files.
 
 ![BAC shell wireframe and complete suction regions](https://media.githubusercontent.com/media/alecjacobson/astra-factory-robot/main/media/bac-shell-wireframe.png)
 
