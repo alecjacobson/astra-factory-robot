@@ -1,0 +1,119 @@
+{
+  "base_commit": "878af76f623225cb461a9e36758c82c1731579f7",
+  "files": [
+    {
+      "path": "experiments/bench_fsai_only.py",
+      "source": "build/bench_fsai_only.py",
+      "size": 922,
+      "sha256": "32472d411fc861fdc88da56850f13d4045bcbc6c4b43711bce16e4cf6f3c04a9"
+    },
+    {
+      "path": "experiments/bench_rotated_coarse.py",
+      "source": "build/bench_rotated_coarse.py",
+      "size": 3146,
+      "sha256": "7282390c46ab95fbcc4d4fc564573612228fc90d68f2bd3d218a18336bc065f3"
+    },
+    {
+      "path": "experiments/probe_preconditioner.py",
+      "source": "build/probe_preconditioner.py",
+      "size": 1019,
+      "sha256": "a78f73ddc7e049013bf3717a3d2191ddeba5d983dcd6ff1dfcfede8dd1a4b05b"
+    },
+    {
+      "path": "drafts/README-with-two.md",
+      "source": "build/README-with-two.md",
+      "size": 14732,
+      "sha256": "90edef985290ba3849ff60cdbccd3ee3ab8fc768477a29e8490d8df44f738a3a",
+      "git_blob": "5d62a29b4daf28388c8dcfbb045020458d115e94"
+    },
+    {
+      "path": "scenes/headliner_transfer-backup.blend",
+      "source": "scene/headliner_transfer.blend1",
+      "size": 12947058,
+      "sha256": "225f822a563a66b8dbed589d183ffa9070dbca8a29a15ef762a442ea37ce426b"
+    },
+    {
+      "path": "inputs/comparison-2/full-failed.npz",
+      "source": "build/comparison-2/full-failed.npz",
+      "size": 610325,
+      "sha256": "62ab74c272c792d346d9f59678ad870fa24f6068dc2098f1e7854faa92a6e9e5"
+    },
+    {
+      "path": "inputs/two-960/full-debug.npz",
+      "source": "build/two-960/full-debug.npz",
+      "size": 108267,
+      "sha256": "49f93ff2a7bda32dcf48b68f2850fdd0ad4e14ccb6783352a5d1cd921b4355f1"
+    },
+    {
+      "path": "results/rom-4-draft.json",
+      "source": "unreachable Git blob",
+      "size": 925,
+      "sha256": "0039ca9723d3e1e8097c6f354de46298096ab94cdf00ba248fdcb8b10e01665a",
+      "git_blob": "2b14c9df8625506fb04f29918ed67404557228c0"
+    },
+    {
+      "path": "drafts/dynamics.py",
+      "source": "unreachable Git blob",
+      "size": 21091,
+      "sha256": "76341cc29612e7ac56b207a7abd1172df84d3a4a10ad5141572867fc01dfcf5f",
+      "git_blob": "3592db933ce8b8be1e858a0ae1aa89f381b11ce9"
+    },
+    {
+      "path": "results/full-4-draft.json",
+      "source": "unreachable Git blob",
+      "size": 964,
+      "sha256": "0fbb84971a3e4522d31c223ff9a4b06e0e5106e5eb0b8fb7c59020b3f2066298",
+      "git_blob": "4402d22b2404e66835a33fe583e441e287bd4592"
+    },
+    {
+      "path": "results/comparison-4-draft.json",
+      "source": "unreachable Git blob",
+      "size": 3228,
+      "sha256": "2e716339cf1d58ae7bf29244bae359e66a8120329092051c8f6d6a30bf4aaf80",
+      "git_blob": "6f50ed24e777dbafd02936c05f98b5bf3fbdb235"
+    },
+    {
+      "path": "drafts/run.py",
+      "source": "unreachable Git blob",
+      "size": 7815,
+      "sha256": "b8a5f99d1faff68a76e84a0508a41b992e31f1534c9b0e2c437390bc7e236235",
+      "git_blob": "a22136657f6f0dda59966d47c046edf60aa1341c"
+    },
+    {
+      "path": "drafts/README-earlier.md",
+      "source": "unreachable Git blob",
+      "size": 14724,
+      "sha256": "3893ba58177319aa010c11da4186024f4e8dfd2508cc5bfd932b499010dd2236",
+      "git_blob": "aa65fa984bf959139b2302e34837ca991a2cf5a5"
+    },
+    {
+      "path": "drafts/simulation-README.md",
+      "source": "unreachable Git blob",
+      "size": 15929,
+      "sha256": "30837298d80a347e07f9a4acde5b375b171e3d7bcb0a3105ba1ef478fce565a0",
+      "git_blob": "b2c1ec38e5a1d96be4aa50687356c29f775426a2"
+    },
+    {
+      "path": "scenes/recovered-07281f3db92581341450069b8c9a5386c4b35817e961acc3dc8ed766d27be4b6.blend",
+      "source": "unreferenced local LFS object",
+      "size": 12891813,
+      "sha256": "07281f3db92581341450069b8c9a5386c4b35817e961acc3dc8ed766d27be4b6",
+      "lfs_oid": "07281f3db92581341450069b8c9a5386c4b35817e961acc3dc8ed766d27be4b6"
+    },
+    {
+      "path": "scenes/recovered-28c58743d88087a03624c656a5b5b119a656519025cc1dadd544cc68e7f2031e.blend",
+      "source": "unreferenced local LFS object",
+      "size": 16848758,
+      "sha256": "28c58743d88087a03624c656a5b5b119a656519025cc1dadd544cc68e7f2031e",
+      "lfs_oid": "28c58743d88087a03624c656a5b5b119a656519025cc1dadd544cc68e7f2031e",
+      "git_lfs_pointer_blob": "1c81c61d4b621786b21597fe2e17729d2d174e69"
+    },
+    {
+      "path": "scenes/recovered-368c7ccbd5d20cd1054f63e952c3eaa6c5a693cf2daedec8722e6f389b8168fb.blend",
+      "source": "unreferenced local LFS object",
+      "size": 12885678,
+      "sha256": "368c7ccbd5d20cd1054f63e952c3eaa6c5a693cf2daedec8722e6f389b8168fb",
+      "lfs_oid": "368c7ccbd5d20cd1054f63e952c3eaa6c5a693cf2daedec8722e6f389b8168fb"
+    }
+  ]
+}

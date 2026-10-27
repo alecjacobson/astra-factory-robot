@@ -1,0 +1,37 @@
+{
+  "model": "full",
+  "contacts": 4,
+  "steps": 480,
+  "dt": 0.008333333333333333,
+  "stride": 10,
+  "setup_seconds": 18.639401342719793,
+  "simulation_seconds": 216.78062672913074,
+  "mean_newton": 3.1104166666666666,
+  "max_newton": 7,
+  "last_cg_iterations": 190,
+  "preconditioner_refits": [
+    1495,
+    0
+  ],
+  "non_descent_fallbacks": 0,
+  "debug_host_checkpoints": false,
+  "last_cg_residual": 4.638827829890622e-10,
+  "max_relative_stationarity": 0.22425084842897042,
+  "max_absolute_stationarity": 9.999714154024443e-07,
+  "line_search_failures": 0,
+  "max_patch_error_m": 0.0,
+  "max_displacement_m": 0.004506372371223343,
+  "mass_kg": 1.6748890097110127,
+  "free_dofs": 11867,
+  "material": {
+    "young_Pa": 300000000.0,
+    "poisson": 0.3,
+    "thickness_m": 0.003,
+    "density_kg_m3": 250.0
+  },
+  "basis_dofs": 12623,
+  "linear_solver": "standard",
+  "newton_limit": 60,
+  "absolute_tol": 1e-06,
+  "preconditioner_counts_include_warmup": true
+}
